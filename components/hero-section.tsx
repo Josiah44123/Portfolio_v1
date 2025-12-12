@@ -183,7 +183,7 @@ export function HeroSection() {
       <div className="hidden lg:flex absolute left-8 top-1/2 -translate-y-1/2 flex-col gap-5 items-center">
         <div className="w-px h-24 bg-gradient-to-b from-transparent via-primary/50 to-transparent" />
         <a
-          href="https://github.com/[Your-GitHub-Username]"
+          href="https://github.com/Josiah44123"
           target="_blank"
           rel="noopener noreferrer"
           className="p-3 glass rounded-xl hover:bg-primary/20 hover:scale-110 transition-all duration-300"
@@ -191,7 +191,7 @@ export function HeroSection() {
           <Github className="w-6 h-6 text-muted-foreground hover:text-primary" />
         </a>
         <a
-          href="https://linkedin.com/in/[Your-LinkedIn-URL]"
+          href="https://www.linkedin.com/in/josiahlamuelrosell/"
           target="_blank"
           rel="noopener noreferrer"
           className="p-3 glass rounded-xl hover:bg-primary/20 hover:scale-110 transition-all duration-300"
