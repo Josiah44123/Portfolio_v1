@@ -1850,7 +1850,7 @@ const certifications = [
         title: "Generative AI for Business Leaders",
         issuer: "LinkedIn Learning",
         date: "Issued Nov 2025",
-        credentialId: "  ",
+        credentialId: "N/A",
         credentialUrl: "https://www.linkedin.com/learning/certificates/6702b5accde429e6f3817d2a85c19540f204c9a94f698034930d6643d8e5e804",
         skills: [
             "AI",
@@ -1889,7 +1889,7 @@ const certifications = [
         title: "Project Management Foundations",
         issuer: "LinkedIn Learning",
         date: "Issued Jun 2025",
-        credentialId: " ",
+        credentialId: "N/A",
         credentialUrl: "https://www.linkedin.com/in/josiahlamuelrosell/details/certifications/",
         skills: [
             "Project Management"
@@ -1901,7 +1901,7 @@ const certifications = [
         title: "Start and Improve Your Business",
         issuer: "TESDA",
         date: "Issued Jun 2025",
-        credentialId: " ",
+        credentialId: "N/A",
         credentialUrl: "https://www.linkedin.com/in/josiahlamuelrosell/details/certifications/",
         skills: [
             "New Business Development"
@@ -1913,7 +1913,7 @@ const certifications = [
         title: "DLSL – Java Programming 1",
         issuer: "CodeChum",
         date: "Issued Mar 2025",
-        credentialId: " ",
+        credentialId: "N/A",
         credentialUrl: "https://www.linkedin.com/in/josiahlamuelrosell/details/certifications/",
         skills: [
             "Java Programming"
@@ -1925,7 +1925,7 @@ const certifications = [
         title: "Managing Your Personal Finances",
         issuer: "TESDA",
         date: "Issued Jun 2020",
-        credentialId: " ",
+        credentialId: "N/A",
         credentialUrl: "https://www.linkedin.com/in/josiahlamuelrosell/details/certifications/",
         skills: [
             "Finance"
