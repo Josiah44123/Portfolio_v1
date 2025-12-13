@@ -561,7 +561,7 @@ function HeroSection() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                        href: "https://github.com/[Your-GitHub-Username]",
+                        href: "https://github.com/Josiah44123",
                         target: "_blank",
                         rel: "noopener noreferrer",
                         className: "p-3 glass rounded-xl hover:bg-primary/20 hover:scale-110 transition-all duration-300",
@@ -578,7 +578,7 @@ function HeroSection() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                        href: "https://linkedin.com/in/[Your-LinkedIn-URL]",
+                        href: "https://www.linkedin.com/in/josiahlamuelrosell/",
                         target: "_blank",
                         rel: "noopener noreferrer",
                         className: "p-3 glass rounded-xl hover:bg-primary/20 hover:scale-110 transition-all duration-300",
@@ -1462,46 +1462,164 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$use$2d$in$2d$view$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/hooks/use-in-view.tsx [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$code$2d$xml$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Code2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/code-xml.js [app-client] (ecmascript) <export default as Code2>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/users.js [app-client] (ecmascript) <export default as Users>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$presentation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Presentation$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/presentation.js [app-client] (ecmascript) <export default as Presentation>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/search.js [app-client] (ecmascript) <export default as Search>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$award$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Award$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/award.js [app-client] (ecmascript) <export default as Award>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$lightbulb$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Lightbulb$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/lightbulb.js [app-client] (ecmascript) <export default as Lightbulb>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$building$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Building2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/building-2.js [app-client] (ecmascript) <export default as Building2>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$house$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Home$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/house.js [app-client] (ecmascript) <export default as Home>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$megaphone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Megaphone$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/megaphone.js [app-client] (ecmascript) <export default as Megaphone>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$wallet$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Wallet$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/wallet.js [app-client] (ecmascript) <export default as Wallet>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$wrench$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Wrench$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/wrench.js [app-client] (ecmascript) <export default as Wrench>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$rocket$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Rocket$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/rocket.js [app-client] (ecmascript) <export default as Rocket>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$folder$2d$kanban$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FolderKanban$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/folder-kanban.js [app-client] (ecmascript) <export default as FolderKanban>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$palette$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Palette$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/palette.js [app-client] (ecmascript) <export default as Palette>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$bot$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Bot$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/bot.js [app-client] (ecmascript) <export default as Bot>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$brain$2d$circuit$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__BrainCircuit$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/brain-circuit.js [app-client] (ecmascript) <export default as BrainCircuit>");
 ;
 var _s = __turbopack_context__.k.signature(), _s1 = __turbopack_context__.k.signature(), _s2 = __turbopack_context__.k.signature();
 "use client";
 ;
 ;
 ;
-const skills = [
+const skillCategories = [
     {
-        name: "Java",
-        level: 85,
-        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$code$2d$xml$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Code2$3e$__["Code2"],
-        gradient: "from-orange-500 to-red-500"
+        name: "Technical",
+        skills: [
+            {
+                name: "Java",
+                level: 85,
+                icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$code$2d$xml$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Code2$3e$__["Code2"],
+                gradient: "from-orange-500 to-red-500"
+            },
+            {
+                name: "Programming",
+                level: 80,
+                icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$code$2d$xml$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Code2$3e$__["Code2"],
+                gradient: "from-blue-500 to-indigo-500"
+            },
+            {
+                name: "Research Skills",
+                level: 85,
+                icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__["Search"],
+                gradient: "from-green-500 to-emerald-500"
+            },
+            {
+                name: "Design",
+                level: 75,
+                icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$palette$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Palette$3e$__["Palette"],
+                gradient: "from-pink-500 to-rose-500"
+            }
+        ]
     },
     {
-        name: "Project Management",
-        level: 80,
-        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$users$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Users$3e$__["Users"],
-        gradient: "from-blue-500 to-cyan-500"
+        name: "Leadership",
+        skills: [
+            {
+                name: "Project Management",
+                level: 80,
+                icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$folder$2d$kanban$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FolderKanban$3e$__["FolderKanban"],
+                gradient: "from-blue-500 to-cyan-500"
+            },
+            {
+                name: "Student Leadership",
+                level: 88,
+                icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$award$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Award$3e$__["Award"],
+                gradient: "from-yellow-500 to-orange-500"
+            },
+            {
+                name: "Presentations",
+                level: 90,
+                icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$presentation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Presentation$3e$__["Presentation"],
+                gradient: "from-purple-500 to-pink-500"
+            },
+            {
+                name: "New Business Development",
+                level: 75,
+                icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$rocket$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Rocket$3e$__["Rocket"],
+                gradient: "from-teal-500 to-green-500"
+            }
+        ]
     },
+    {
+        name: "Business",
+        skills: [
+            {
+                name: "Property Management",
+                level: 78,
+                icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$building$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Building2$3e$__["Building2"],
+                gradient: "from-slate-500 to-gray-600"
+            },
+            {
+                name: "Real Estate",
+                level: 75,
+                icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$house$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Home$3e$__["Home"],
+                gradient: "from-amber-500 to-yellow-500"
+            },
+            {
+                name: "Finance",
+                level: 72,
+                icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$wallet$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Wallet$3e$__["Wallet"],
+                gradient: "from-emerald-500 to-teal-500"
+            },
+            {
+                name: "Vehicle Maintenance",
+                level: 70,
+                icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$wrench$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Wrench$3e$__["Wrench"],
+                gradient: "from-zinc-500 to-stone-600"
+            }
+        ]
+    },
+    {
+        name: "Marketing & AI",
+        skills: [
+            {
+                name: "Creative Strategy",
+                level: 82,
+                icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$lightbulb$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Lightbulb$3e$__["Lightbulb"],
+                gradient: "from-yellow-400 to-orange-500"
+            },
+            {
+                name: "Advertising",
+                level: 80,
+                icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$megaphone$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Megaphone$3e$__["Megaphone"],
+                gradient: "from-red-500 to-pink-500"
+            },
+            {
+                name: "Artificial Intelligence",
+                level: 78,
+                icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$bot$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Bot$3e$__["Bot"],
+                gradient: "from-violet-500 to-purple-500"
+            },
+            {
+                name: "Generative AI for Leadership",
+                level: 76,
+                icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$brain$2d$circuit$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__BrainCircuit$3e$__["BrainCircuit"],
+                gradient: "from-cyan-500 to-blue-500"
+            }
+        ]
+    }
+];
+const topSkills = [
     {
         name: "Presentations",
-        level: 90,
-        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$presentation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Presentation$3e$__["Presentation"],
         gradient: "from-purple-500 to-pink-500"
     },
     {
+        name: "Student Leadership",
+        gradient: "from-yellow-500 to-orange-500"
+    },
+    {
+        name: "Java",
+        gradient: "from-orange-500 to-red-500"
+    },
+    {
         name: "Research",
-        level: 85,
-        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$search$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Search$3e$__["Search"],
         gradient: "from-green-500 to-emerald-500"
     },
     {
-        name: "Student Leadership",
-        level: 88,
-        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$award$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Award$3e$__["Award"],
-        gradient: "from-yellow-500 to-orange-500"
+        name: "Creative Strategy",
+        gradient: "from-yellow-400 to-orange-500"
     }
 ];
 function FloatingBinarySkills({ id }) {
@@ -1551,7 +1669,7 @@ function FloatingBinarySkills({ id }) {
         children: char.current
     }, void 0, false, {
         fileName: "[project]/components/skills-section.tsx",
-        lineNumber: 43,
+        lineNumber: 98,
         columnNumber: 5
     }, this);
 }
@@ -1595,12 +1713,12 @@ function SkillBar({ name, level, delay, icon: Icon, gradient }) {
                                     className: "w-4 h-4"
                                 }, void 0, false, {
                                     fileName: "[project]/components/skills-section.tsx",
-                                    lineNumber: 95,
+                                    lineNumber: 150,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/skills-section.tsx",
-                                lineNumber: 90,
+                                lineNumber: 145,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1608,13 +1726,13 @@ function SkillBar({ name, level, delay, icon: Icon, gradient }) {
                                 children: name
                             }, void 0, false, {
                                 fileName: "[project]/components/skills-section.tsx",
-                                lineNumber: 97,
+                                lineNumber: 152,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/skills-section.tsx",
-                        lineNumber: 89,
+                        lineNumber: 144,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1625,13 +1743,13 @@ function SkillBar({ name, level, delay, icon: Icon, gradient }) {
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/skills-section.tsx",
-                        lineNumber: 101,
+                        lineNumber: 156,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/skills-section.tsx",
-                lineNumber: 88,
+                lineNumber: 143,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1646,12 +1764,12 @@ function SkillBar({ name, level, delay, icon: Icon, gradient }) {
                             className: `absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent transition-opacity duration-300 ${isHovered ? "opacity-100 animate-shimmer" : "opacity-0"}`
                         }, void 0, false, {
                             fileName: "[project]/components/skills-section.tsx",
-                            lineNumber: 114,
+                            lineNumber: 169,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/skills-section.tsx",
-                        lineNumber: 110,
+                        lineNumber: 165,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1662,19 +1780,19 @@ function SkillBar({ name, level, delay, icon: Icon, gradient }) {
                         }
                     }, void 0, false, {
                         fileName: "[project]/components/skills-section.tsx",
-                        lineNumber: 120,
+                        lineNumber: 175,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/skills-section.tsx",
-                lineNumber: 109,
+                lineNumber: 164,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/skills-section.tsx",
-        lineNumber: 82,
+        lineNumber: 137,
         columnNumber: 5
     }, this);
 }
@@ -1688,6 +1806,7 @@ function SkillsSection() {
     _s2();
     const { ref, isInView } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$use$2d$in$2d$view$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useInView"])();
     const [mounted, setMounted] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [activeTab, setActiveTab] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(0);
     const floatingParticles = Array.from({
         length: 15
     }, (_, i)=>i);
@@ -1706,12 +1825,12 @@ function SkillsSection() {
                         id: id
                     }, id, false, {
                         fileName: "[project]/components/skills-section.tsx",
-                        lineNumber: 141,
+                        lineNumber: 197,
                         columnNumber: 51
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/components/skills-section.tsx",
-                lineNumber: 140,
+                lineNumber: 196,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1729,31 +1848,72 @@ function SkillsSection() {
                                         className: "w-6 h-6 text-white"
                                     }, void 0, false, {
                                         fileName: "[project]/components/skills-section.tsx",
-                                        lineNumber: 153,
+                                        lineNumber: 209,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/components/skills-section.tsx",
-                                    lineNumber: 152,
+                                    lineNumber: 208,
                                     columnNumber: 13
                                 }, this),
-                                "Top Skills"
+                                "Skills"
                             ]
                         }, void 0, true, {
                             fileName: "[project]/components/skills-section.tsx",
-                            lineNumber: 151,
+                            lineNumber: 207,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                            className: "w-20 h-1 bg-gradient-to-r from-primary to-accent rounded-full mb-8"
+                            className: "w-20 h-1 bg-gradient-to-r from-primary to-accent rounded-full mb-4"
                         }, void 0, false, {
                             fileName: "[project]/components/skills-section.tsx",
-                            lineNumber: 157,
+                            lineNumber: 213,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex flex-wrap gap-2 mb-8",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "text-sm text-muted-foreground mr-2",
+                                    children: "Top:"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/skills-section.tsx",
+                                    lineNumber: 216,
+                                    columnNumber: 13
+                                }, this),
+                                topSkills.map((skill)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                        className: `text-xs px-3 py-1.5 rounded-full bg-gradient-to-r ${skill.gradient} text-white font-medium`,
+                                        children: skill.name
+                                    }, skill.name, false, {
+                                        fileName: "[project]/components/skills-section.tsx",
+                                        lineNumber: 218,
+                                        columnNumber: 15
+                                    }, this))
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/skills-section.tsx",
+                            lineNumber: 215,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "flex flex-wrap gap-2 mb-6",
+                            children: skillCategories.map((category, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    onClick: ()=>setActiveTab(index),
+                                    className: `px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${activeTab === index ? "bg-gradient-to-r from-primary to-accent text-white" : "bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground"}`,
+                                    children: category.name
+                                }, category.name, false, {
+                                    fileName: "[project]/components/skills-section.tsx",
+                                    lineNumber: 229,
+                                    columnNumber: 15
+                                }, this))
+                        }, void 0, false, {
+                            fileName: "[project]/components/skills-section.tsx",
+                            lineNumber: 227,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "glass rounded-2xl p-6 md:p-8",
-                            children: skills.map((skill, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(SkillBar, {
+                            children: skillCategories[activeTab].skills.map((skill, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(SkillBar, {
                                     name: skill.name,
                                     level: skill.level,
                                     delay: index * 150,
@@ -1761,33 +1921,33 @@ function SkillsSection() {
                                     gradient: skill.gradient
                                 }, skill.name, false, {
                                     fileName: "[project]/components/skills-section.tsx",
-                                    lineNumber: 161,
+                                    lineNumber: 245,
                                     columnNumber: 15
                                 }, this))
                         }, void 0, false, {
                             fileName: "[project]/components/skills-section.tsx",
-                            lineNumber: 159,
+                            lineNumber: 243,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/components/skills-section.tsx",
-                    lineNumber: 145,
+                    lineNumber: 201,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/components/skills-section.tsx",
-                lineNumber: 144,
+                lineNumber: 200,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/components/skills-section.tsx",
-        lineNumber: 139,
+        lineNumber: 195,
         columnNumber: 5
     }, this);
 }
-_s2(SkillsSection, "PVO0by+yk2zdinEhlRqU+iP3YAQ=", false, function() {
+_s2(SkillsSection, "b6JzOnrwkSLTUKqbyzTI04LAmW0=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$use$2d$in$2d$view$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useInView"]
     ];
@@ -1813,6 +1973,14 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$hooks$2f$use$2d$in$2d$view$2
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$external$2d$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ExternalLink$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/external-link.js [app-client] (ecmascript) <export default as ExternalLink>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$calendar$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Calendar$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/calendar.js [app-client] (ecmascript) <export default as Calendar>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Shield$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/shield.js [app-client] (ecmascript) <export default as Shield>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$building$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Building2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/building-2.js [app-client] (ecmascript) <export default as Building2>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$bot$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Bot$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/bot.js [app-client] (ecmascript) <export default as Bot>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$pen$2d$tool$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__PenTool$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/pen-tool.js [app-client] (ecmascript) <export default as PenTool>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chart$2d$column$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__BarChart3$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chart-column.js [app-client] (ecmascript) <export default as BarChart3>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$folder$2d$kanban$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FolderKanban$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/folder-kanban.js [app-client] (ecmascript) <export default as FolderKanban>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$rocket$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Rocket$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/rocket.js [app-client] (ecmascript) <export default as Rocket>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$code$2d$xml$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Code2$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/code-xml.js [app-client] (ecmascript) <export default as Code2>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$wallet$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Wallet$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/wallet.js [app-client] (ecmascript) <export default as Wallet>");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
@@ -1823,87 +1991,103 @@ const certifications = [
         title: "Essentials of Property Management Work",
         issuer: "Alison",
         date: "Issued Nov 2025",
-        credentialId: "5776-53971925",
+        credentialId: "{{PROPERTY_MANAGEMENT_ID}}",
+        credentialUrl: "{{PROPERTY_MANAGEMENT_URL}}",
         skills: [
             "Real Estate",
             "Project Management",
             "Property Management"
         ],
         badge: "CPD Certified",
-        icon: "🏢"
+        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$building$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Building2$3e$__["Building2"],
+        gradient: "from-slate-500 to-gray-600"
     },
     {
         title: "Generative AI for Business Leaders",
         issuer: "LinkedIn Learning",
         date: "Issued Nov 2025",
-        credentialId: "167690530",
+        credentialId: "{{GEN_AI_BIZ_ID}}",
+        credentialUrl: "{{GEN_AI_BIZ_URL}}",
         skills: [
             "AI",
             "Generative AI for Leadership",
             "AI for Management"
         ],
-        icon: "🤖"
+        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$bot$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Bot$3e$__["Bot"],
+        gradient: "from-violet-500 to-purple-500"
     },
     {
         title: "Google Ads Creative Certification",
         issuer: "Google Skillshop",
         date: "Issued Nov 2025 · Expires Nov 2026",
-        credentialId: "167690530",
+        credentialId: "{{GOOGLE_CREATIVE_ID}}",
+        credentialUrl: "{{GOOGLE_CREATIVE_URL}}",
         skills: [
             "Creative Strategy",
             "Advertising"
         ],
-        icon: "🎨"
+        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$pen$2d$tool$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__PenTool$3e$__["PenTool"],
+        gradient: "from-yellow-400 to-orange-500"
     },
     {
         title: "Google Ads Display Certification",
         issuer: "Google Skillshop",
         date: "Issued Jun 2025 · Expires Jun 2026",
-        credentialId: "150130236",
+        credentialId: "{{GOOGLE_DISPLAY_ID}}",
+        credentialUrl: "{{GOOGLE_DISPLAY_URL}}",
         skills: [
             "Advertising"
         ],
-        icon: "📊"
+        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chart$2d$column$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__BarChart3$3e$__["BarChart3"],
+        gradient: "from-red-500 to-pink-500"
     },
     {
         title: "Project Management Foundations",
         issuer: "LinkedIn Learning",
         date: "Issued Jun 2025",
-        credentialId: "N/A",
+        credentialId: "{{PM_FOUNDATIONS_ID}}",
+        credentialUrl: "{{PM_FOUNDATIONS_URL}}",
         skills: [
             "Project Management"
         ],
-        icon: "📋"
+        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$folder$2d$kanban$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FolderKanban$3e$__["FolderKanban"],
+        gradient: "from-blue-500 to-cyan-500"
     },
     {
         title: "Start and Improve Your Business",
         issuer: "TESDA",
         date: "Issued Jun 2025",
-        credentialId: "N/A",
+        credentialId: "{{TESDA_BUSINESS_ID}}",
+        credentialUrl: "{{TESDA_BUSINESS_URL}}",
         skills: [
             "New Business Development"
         ],
-        icon: "🚀"
+        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$rocket$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Rocket$3e$__["Rocket"],
+        gradient: "from-teal-500 to-green-500"
     },
     {
         title: "DLSL – Java Programming 1",
         issuer: "CodeChum",
         date: "Issued Mar 2025",
-        credentialId: "N/A",
+        credentialId: "{{JAVA_CODECHUM_ID}}",
+        credentialUrl: "{{JAVA_CODECHUM_URL}}",
         skills: [
             "Java Programming"
         ],
-        icon: "☕"
+        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$code$2d$xml$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Code2$3e$__["Code2"],
+        gradient: "from-orange-500 to-red-500"
     },
     {
         title: "Managing Your Personal Finances",
         issuer: "TESDA",
         date: "Issued Jun 2020",
-        credentialId: "N/A",
+        credentialId: "{{TESDA_FINANCE_ID}}",
+        credentialUrl: "{{TESDA_FINANCE_URL}}",
         skills: [
             "Finance"
         ],
-        icon: "💰"
+        icon: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$wallet$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Wallet$3e$__["Wallet"],
+        gradient: "from-emerald-500 to-teal-500"
     }
 ];
 function CertificationsSection() {
@@ -1921,31 +2105,39 @@ function CertificationsSection() {
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                         className: "text-3xl md:text-4xl font-bold mb-2 flex items-center gap-3",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                className: "text-primary",
-                                children: "📜"
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "p-2 rounded-lg bg-gradient-to-br from-primary to-accent",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$shield$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Shield$3e$__["Shield"], {
+                                    className: "w-6 h-6 text-white"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/certifications-section.tsx",
+                                    lineNumber: 116,
+                                    columnNumber: 15
+                                }, this)
                             }, void 0, false, {
                                 fileName: "[project]/components/certifications-section.tsx",
-                                lineNumber: 87,
+                                lineNumber: 115,
                                 columnNumber: 13
                             }, this),
-                            " Certifications"
+                            "Certifications"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/components/certifications-section.tsx",
-                        lineNumber: 86,
+                        lineNumber: 114,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "w-20 h-1 bg-primary rounded-full mb-8"
+                        className: "w-20 h-1 bg-gradient-to-r from-primary to-accent rounded-full mb-8"
                     }, void 0, false, {
                         fileName: "[project]/components/certifications-section.tsx",
-                        lineNumber: 89,
+                        lineNumber: 120,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "grid md:grid-cols-2 lg:grid-cols-3 gap-4",
-                        children: certifications.map((cert, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        children: certifications.map((cert, index)=>{
+                            const Icon = cert.icon;
+                            return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "glass rounded-2xl p-6 hover:-translate-y-2 transition-all duration-300 group hover:border-primary/50 hover:glow-sm cursor-pointer",
                                 style: {
                                     transitionDelay: `${index * 50}ms`,
@@ -1956,13 +2148,19 @@ function CertificationsSection() {
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "flex items-start justify-between mb-4",
                                         children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-3xl",
-                                                children: cert.icon
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: `p-3 rounded-xl bg-gradient-to-br ${cert.gradient} text-white`,
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Icon, {
+                                                    className: "w-6 h-6"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/certifications-section.tsx",
+                                                    lineNumber: 137,
+                                                    columnNumber: 23
+                                                }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/components/certifications-section.tsx",
-                                                lineNumber: 103,
-                                                columnNumber: 19
+                                                lineNumber: 136,
+                                                columnNumber: 21
                                             }, this),
                                             cert.badge && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 className: "flex items-center gap-1 text-xs bg-primary/20 text-primary px-2 py-1 rounded-full",
@@ -1971,37 +2169,37 @@ function CertificationsSection() {
                                                         className: "w-3 h-3"
                                                     }, void 0, false, {
                                                         fileName: "[project]/components/certifications-section.tsx",
-                                                        lineNumber: 106,
-                                                        columnNumber: 23
+                                                        lineNumber: 141,
+                                                        columnNumber: 25
                                                     }, this),
                                                     cert.badge
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/components/certifications-section.tsx",
-                                                lineNumber: 105,
-                                                columnNumber: 21
+                                                lineNumber: 140,
+                                                columnNumber: 23
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/certifications-section.tsx",
-                                        lineNumber: 102,
-                                        columnNumber: 17
+                                        lineNumber: 135,
+                                        columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                         className: "font-bold text-lg mb-1 group-hover:text-primary transition-colors line-clamp-2",
                                         children: cert.title
                                     }, void 0, false, {
                                         fileName: "[project]/components/certifications-section.tsx",
-                                        lineNumber: 112,
-                                        columnNumber: 17
+                                        lineNumber: 147,
+                                        columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-muted-foreground text-sm mb-2",
                                         children: cert.issuer
                                     }, void 0, false, {
                                         fileName: "[project]/components/certifications-section.tsx",
-                                        lineNumber: 115,
-                                        columnNumber: 17
+                                        lineNumber: 150,
+                                        columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "flex items-center gap-2 text-xs text-muted-foreground mb-3",
@@ -2010,21 +2208,21 @@ function CertificationsSection() {
                                                 className: "w-3 h-3"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/certifications-section.tsx",
-                                                lineNumber: 118,
-                                                columnNumber: 19
+                                                lineNumber: 153,
+                                                columnNumber: 21
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 children: cert.date
                                             }, void 0, false, {
                                                 fileName: "[project]/components/certifications-section.tsx",
-                                                lineNumber: 119,
-                                                columnNumber: 19
+                                                lineNumber: 154,
+                                                columnNumber: 21
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/certifications-section.tsx",
-                                        lineNumber: 117,
-                                        columnNumber: 17
+                                        lineNumber: 152,
+                                        columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "text-xs text-muted-foreground mb-3 font-mono",
@@ -2034,8 +2232,8 @@ function CertificationsSection() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/certifications-section.tsx",
-                                        lineNumber: 122,
-                                        columnNumber: 17
+                                        lineNumber: 157,
+                                        columnNumber: 19
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "flex flex-wrap gap-1.5 mb-4",
@@ -2044,15 +2242,18 @@ function CertificationsSection() {
                                                 children: skill
                                             }, skill, false, {
                                                 fileName: "[project]/components/certifications-section.tsx",
-                                                lineNumber: 126,
-                                                columnNumber: 21
+                                                lineNumber: 161,
+                                                columnNumber: 23
                                             }, this))
                                     }, void 0, false, {
                                         fileName: "[project]/components/certifications-section.tsx",
-                                        lineNumber: 124,
-                                        columnNumber: 17
+                                        lineNumber: 159,
+                                        columnNumber: 19
                                     }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                        href: cert.credentialUrl,
+                                        target: "_blank",
+                                        rel: "noopener noreferrer",
                                         className: "flex items-center gap-1 text-sm text-primary hover:underline group-hover:translate-x-1 transition-transform",
                                         children: [
                                             "View Credential ",
@@ -2060,40 +2261,41 @@ function CertificationsSection() {
                                                 className: "w-3 h-3"
                                             }, void 0, false, {
                                                 fileName: "[project]/components/certifications-section.tsx",
-                                                lineNumber: 133,
-                                                columnNumber: 35
+                                                lineNumber: 173,
+                                                columnNumber: 37
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/components/certifications-section.tsx",
-                                        lineNumber: 132,
-                                        columnNumber: 17
+                                        lineNumber: 167,
+                                        columnNumber: 19
                                     }, this)
                                 ]
                             }, cert.title, true, {
                                 fileName: "[project]/components/certifications-section.tsx",
-                                lineNumber: 93,
-                                columnNumber: 15
-                            }, this))
+                                lineNumber: 126,
+                                columnNumber: 17
+                            }, this);
+                        })
                     }, void 0, false, {
                         fileName: "[project]/components/certifications-section.tsx",
-                        lineNumber: 91,
+                        lineNumber: 122,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/components/certifications-section.tsx",
-                lineNumber: 80,
+                lineNumber: 108,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/components/certifications-section.tsx",
-            lineNumber: 79,
+            lineNumber: 107,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/components/certifications-section.tsx",
-        lineNumber: 78,
+        lineNumber: 106,
         columnNumber: 5
     }, this);
 }
