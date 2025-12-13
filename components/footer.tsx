@@ -6,7 +6,7 @@ export function Footer() {
         © {new Date().getFullYear()} Josiah Lamuel Rosell. All rights reserved.
       </p>
       <p className="text-muted-foreground/60 text-xs mt-2">
-        Built with passion and purpose ❤️
+        Built with ❤️
       </p>
     </div>
   </footer>
