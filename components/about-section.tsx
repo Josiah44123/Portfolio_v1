@@ -47,8 +47,6 @@ export function AboutSection() {
                   focused technologies. I enjoy building projects that balance technical depth with clarity, 
                   usability, and real-world impact. Beyond coding, I value clear communication, 
                   thoughtful design, and the ability to translate complex ideas into accessible solutions.
-                  Driven by curiosity and a strong sense of responsibility, I’m constantly learning,
-                  experimenting, and pushing myself to do better with every project I take on.
                 </p>
               </div>
             </div>
