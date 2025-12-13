@@ -4,14 +4,69 @@ import type React from "react"
 
 import { useInView } from "@/hooks/use-in-view"
 import { useEffect, useState, useRef } from "react"
-import { Code2, Users, Presentation, Search, Award } from "lucide-react"
+import {
+  Code2,
+  Presentation,
+  Search,
+  Award,
+  Lightbulb,
+  Building2,
+  Home,
+  Megaphone,
+  Wallet,
+  Wrench,
+  Rocket,
+  FolderKanban,
+  Palette,
+  Bot,
+  BrainCircuit,
+} from "lucide-react"
 
-const skills = [
-  { name: "Java", level: 85, icon: Code2, gradient: "from-orange-500 to-red-500" },
-  { name: "Project Management", level: 80, icon: Users, gradient: "from-blue-500 to-cyan-500" },
-  { name: "Presentations", level: 90, icon: Presentation, gradient: "from-purple-500 to-pink-500" },
-  { name: "Research", level: 85, icon: Search, gradient: "from-green-500 to-emerald-500" },
-  { name: "Student Leadership", level: 88, icon: Award, gradient: "from-yellow-500 to-orange-500" },
+const skillCategories = [
+  {
+    name: "Technical",
+    skills: [
+      { name: "Java", level: 85, icon: Code2, gradient: "from-orange-500 to-red-500" },
+      { name: "Programming", level: 80, icon: Code2, gradient: "from-blue-500 to-indigo-500" },
+      { name: "Research Skills", level: 85, icon: Search, gradient: "from-green-500 to-emerald-500" },
+      { name: "Design", level: 75, icon: Palette, gradient: "from-pink-500 to-rose-500" },
+    ],
+  },
+  {
+    name: "Leadership",
+    skills: [
+      { name: "Project Management", level: 80, icon: FolderKanban, gradient: "from-blue-500 to-cyan-500" },
+      { name: "Student Leadership", level: 88, icon: Award, gradient: "from-yellow-500 to-orange-500" },
+      { name: "Presentations", level: 90, icon: Presentation, gradient: "from-purple-500 to-pink-500" },
+      { name: "New Business Development", level: 75, icon: Rocket, gradient: "from-teal-500 to-green-500" },
+    ],
+  },
+  {
+    name: "Business",
+    skills: [
+      { name: "Property Management", level: 78, icon: Building2, gradient: "from-slate-500 to-gray-600" },
+      { name: "Real Estate", level: 75, icon: Home, gradient: "from-amber-500 to-yellow-500" },
+      { name: "Finance", level: 72, icon: Wallet, gradient: "from-emerald-500 to-teal-500" },
+      { name: "Vehicle Maintenance", level: 70, icon: Wrench, gradient: "from-zinc-500 to-stone-600" },
+    ],
+  },
+  {
+    name: "Marketing & AI",
+    skills: [
+      { name: "Creative Strategy", level: 82, icon: Lightbulb, gradient: "from-yellow-400 to-orange-500" },
+      { name: "Advertising", level: 80, icon: Megaphone, gradient: "from-red-500 to-pink-500" },
+      { name: "Artificial Intelligence", level: 78, icon: Bot, gradient: "from-violet-500 to-purple-500" },
+      { name: "Generative AI for Leadership", level: 76, icon: BrainCircuit, gradient: "from-cyan-500 to-blue-500" },
+    ],
+  },
+]
+
+const topSkills = [
+  { name: "Presentations", gradient: "from-purple-500 to-pink-500" },
+  { name: "Student Leadership", gradient: "from-yellow-500 to-orange-500" },
+  { name: "Java", gradient: "from-orange-500 to-red-500" },
+  { name: "Research", gradient: "from-green-500 to-emerald-500" },
+  { name: "Creative Strategy", gradient: "from-yellow-400 to-orange-500" },
 ]
 
 function FloatingBinarySkills({ id }: { id: number }) {
@@ -129,6 +184,7 @@ function SkillBar({
 export function SkillsSection() {
   const { ref, isInView } = useInView()
   const [mounted, setMounted] = useState(false)
+  const [activeTab, setActiveTab] = useState(0)
   const floatingParticles = Array.from({ length: 15 }, (_, i) => i)
 
   useEffect(() => {
@@ -152,12 +208,40 @@ export function SkillsSection() {
             <div className="p-2 rounded-lg bg-gradient-to-br from-primary to-accent">
               <Code2 className="w-6 h-6 text-white" />
             </div>
-            Top Skills
+            Skills
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent rounded-full mb-8" />
+          <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent rounded-full mb-4" />
+
+          <div className="flex flex-wrap gap-2 mb-8">
+            <span className="text-sm text-muted-foreground mr-2">Top:</span>
+            {topSkills.map((skill) => (
+              <span
+                key={skill.name}
+                className={`text-xs px-3 py-1.5 rounded-full bg-gradient-to-r ${skill.gradient} text-white font-medium`}
+              >
+                {skill.name}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap gap-2 mb-6">
+            {skillCategories.map((category, index) => (
+              <button
+                key={category.name}
+                onClick={() => setActiveTab(index)}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                  activeTab === index
+                    ? "bg-gradient-to-r from-primary to-accent text-white"
+                    : "bg-secondary/50 text-muted-foreground hover:bg-secondary hover:text-foreground"
+                }`}
+              >
+                {category.name}
+              </button>
+            ))}
+          </div>
 
           <div className="glass rounded-2xl p-6 md:p-8">
-            {skills.map((skill, index) => (
+            {skillCategories[activeTab].skills.map((skill, index) => (
               <SkillBar
                 key={skill.name}
                 name={skill.name}

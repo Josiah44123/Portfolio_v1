@@ -1,76 +1,101 @@
 "use client"
 
 import { useInView } from "@/hooks/use-in-view"
-import { ExternalLink, Calendar, Shield } from "lucide-react"
+import {
+  ExternalLink,
+  Calendar,
+  Shield,
+  Building2,
+  Bot,
+  PenTool,
+  BarChart3,
+  FolderKanban,
+  Rocket,
+  Code2,
+  Wallet,
+} from "lucide-react"
 
 const certifications = [
   {
     title: "Essentials of Property Management Work",
     issuer: "Alison",
     date: "Issued Nov 2025",
-    credentialId: "5776-53971925",
+    credentialId: "{{PROPERTY_MANAGEMENT_ID}}",
+    credentialUrl: "{{PROPERTY_MANAGEMENT_URL}}",
     skills: ["Real Estate", "Project Management", "Property Management"],
     badge: "CPD Certified",
-    icon: "🏢",
+    icon: Building2,
+    gradient: "from-slate-500 to-gray-600",
   },
   {
     title: "Generative AI for Business Leaders",
     issuer: "LinkedIn Learning",
     date: "Issued Nov 2025",
-    credentialId: "167690530",
+    credentialId: "{{GEN_AI_BIZ_ID}}",
+    credentialUrl: "{{GEN_AI_BIZ_URL}}",
     skills: ["AI", "Generative AI for Leadership", "AI for Management"],
-    icon: "🤖",
+    icon: Bot,
+    gradient: "from-violet-500 to-purple-500",
   },
   {
     title: "Google Ads Creative Certification",
     issuer: "Google Skillshop",
     date: "Issued Nov 2025 · Expires Nov 2026",
-    credentialId: "167690530",
+    credentialId: "{{GOOGLE_CREATIVE_ID}}",
+    credentialUrl: "{{GOOGLE_CREATIVE_URL}}",
     skills: ["Creative Strategy", "Advertising"],
-    icon: "🎨",
+    icon: PenTool,
+    gradient: "from-yellow-400 to-orange-500",
   },
   {
     title: "Google Ads Display Certification",
     issuer: "Google Skillshop",
     date: "Issued Jun 2025 · Expires Jun 2026",
-    credentialId: "150130236",
+    credentialId: "{{GOOGLE_DISPLAY_ID}}",
+    credentialUrl: "{{GOOGLE_DISPLAY_URL}}",
     skills: ["Advertising"],
-    icon: "📊",
+    icon: BarChart3,
+    gradient: "from-red-500 to-pink-500",
   },
   {
     title: "Project Management Foundations",
     issuer: "LinkedIn Learning",
     date: "Issued Jun 2025",
-    credentialId: "N/A",
+    credentialId: "{{PM_FOUNDATIONS_ID}}",
+    credentialUrl: "{{PM_FOUNDATIONS_URL}}",
     skills: ["Project Management"],
-    icon: "📋",
+    icon: FolderKanban,
+    gradient: "from-blue-500 to-cyan-500",
   },
   {
     title: "Start and Improve Your Business",
     issuer: "TESDA",
     date: "Issued Jun 2025",
-    credentialId: "N/A",
-    credentialUrl: "https://www.linkedin.com/in/josiahlamuelrosell/details/certifications/",
+    credentialId: "{{TESDA_BUSINESS_ID}}",
+    credentialUrl: "{{TESDA_BUSINESS_URL}}",
     skills: ["New Business Development"],
-    icon: "🚀",
+    icon: Rocket,
+    gradient: "from-teal-500 to-green-500",
   },
   {
     title: "DLSL – Java Programming 1",
     issuer: "CodeChum",
     date: "Issued Mar 2025",
-    credentialId: "N/A",
-    credentialUrl: "https://drive.google.com/file/d/1gkXoX1bYxX3Y2F1Q1Z2Z3Z4Z5Z6Z7Z8Z/view?usp=sharing",
+    credentialId: "{{JAVA_CODECHUM_ID}}",
+    credentialUrl: "{{JAVA_CODECHUM_URL}}",
     skills: ["Java Programming"],
-    icon: "☕",
+    icon: Code2,
+    gradient: "from-orange-500 to-red-500",
   },
   {
     title: "Managing Your Personal Finances",
     issuer: "TESDA",
     date: "Issued Jun 2020",
-    credentialId: "N/A",
-    credentialUrl: "https://drive.google.com/file/d/1gkXoX1bYxX3Y2F1Q1Z2Z3Z4Z5Z6Z7Z8Z/view?usp=sharing",
+    credentialId: "{{TESDA_FINANCE_ID}}",
+    credentialUrl: "{{TESDA_FINANCE_URL}}",
     skills: ["Finance"],
-    icon: "💰",
+    icon: Wallet,
+    gradient: "from-emerald-500 to-teal-500",
   },
 ]
 
@@ -87,56 +112,69 @@ export function CertificationsSection() {
           }`}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-2 flex items-center gap-3">
-            <span className="text-primary">📜</span> Certifications
+            <div className="p-2 rounded-lg bg-gradient-to-br from-primary to-accent">
+              <Shield className="w-6 h-6 text-white" />
+            </div>
+            Certifications
           </h2>
-          <div className="w-20 h-1 bg-primary rounded-full mb-8" />
+          <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent rounded-full mb-8" />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {certifications.map((cert, index) => (
-              <div
-                key={cert.title}
-                className="glass rounded-2xl p-6 hover:-translate-y-2 transition-all duration-300 group hover:border-primary/50 hover:glow-sm cursor-pointer"
-                style={{
-                  transitionDelay: `${index * 50}ms`,
-                  opacity: isInView ? 1 : 0,
-                  transform: isInView ? "translateY(0)" : "translateY(20px)",
-                }}
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <span className="text-3xl">{cert.icon}</span>
-                  {cert.badge && (
-                    <span className="flex items-center gap-1 text-xs bg-primary/20 text-primary px-2 py-1 rounded-full">
-                      <Shield className="w-3 h-3" />
-                      {cert.badge}
-                    </span>
-                  )}
+            {certifications.map((cert, index) => {
+              const Icon = cert.icon
+              return (
+                <div
+                  key={cert.title}
+                  className="glass rounded-2xl p-6 hover:-translate-y-2 transition-all duration-300 group hover:border-primary/50 hover:glow-sm cursor-pointer"
+                  style={{
+                    transitionDelay: `${index * 50}ms`,
+                    opacity: isInView ? 1 : 0,
+                    transform: isInView ? "translateY(0)" : "translateY(20px)",
+                  }}
+                >
+                  <div className="flex items-start justify-between mb-4">
+                    <div className={`p-3 rounded-xl bg-gradient-to-br ${cert.gradient} text-white`}>
+                      <Icon className="w-6 h-6" />
+                    </div>
+                    {cert.badge && (
+                      <span className="flex items-center gap-1 text-xs bg-primary/20 text-primary px-2 py-1 rounded-full">
+                        <Shield className="w-3 h-3" />
+                        {cert.badge}
+                      </span>
+                    )}
+                  </div>
+
+                  <h3 className="font-bold text-lg mb-1 group-hover:text-primary transition-colors line-clamp-2">
+                    {cert.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-2">{cert.issuer}</p>
+
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3">
+                    <Calendar className="w-3 h-3" />
+                    <span>{cert.date}</span>
+                  </div>
+
+                  <div className="text-xs text-muted-foreground mb-3 font-mono">ID: {cert.credentialId}</div>
+
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {cert.skills.map((skill) => (
+                      <span key={skill} className="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+
+                  <a
+                    href={cert.credentialUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1 text-sm text-primary hover:underline group-hover:translate-x-1 transition-transform"
+                  >
+                    View Credential <ExternalLink className="w-3 h-3" />
+                  </a>
                 </div>
-
-                <h3 className="font-bold text-lg mb-1 group-hover:text-primary transition-colors line-clamp-2">
-                  {cert.title}
-                </h3>
-                <p className="text-muted-foreground text-sm mb-2">{cert.issuer}</p>
-
-                <div className="flex items-center gap-2 text-xs text-muted-foreground mb-3">
-                  <Calendar className="w-3 h-3" />
-                  <span>{cert.date}</span>
-                </div>
-
-                <div className="text-xs text-muted-foreground mb-3 font-mono">ID: {cert.credentialId}</div>
-
-                <div className="flex flex-wrap gap-1.5 mb-4">
-                  {cert.skills.map((skill) => (
-                    <span key={skill} className="text-xs bg-secondary px-2 py-1 rounded-md text-secondary-foreground">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-
-                <button className="flex items-center gap-1 text-sm text-primary hover:underline group-hover:translate-x-1 transition-transform">
-                  View Credential <ExternalLink className="w-3 h-3" />
-                </button>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </div>
