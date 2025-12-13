@@ -20,30 +20,40 @@ export function AboutSection() {
           </h2>
           <div className="w-20 h-1 bg-primary rounded-full mb-8" />
 
-          {/* Main Content: "block" allows text to wrap naturally around the float */}
-          <div className="glass rounded-2xl p-6 md:p-8 block">
+          {/* MAIN CARD CONTAINER */}
+          <div className="glass rounded-2xl p-6 md:p-8">
             
-            {/* Image Floated Left */}
-            <div className="relative float-left mr-8 mb-4">
-              <div className="w-40 h-40 md:w-48 md:h-48 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 border-2 border-dashed border-primary/40 flex items-center justify-center overflow-hidden group hover:border-primary/60 transition-colors">
-                <img
-                  src="/images/profile.jpg" // <--- CORRECTED PATH
-                  alt="Josiah Lamuel Rosell"
-                  className="w-full h-full object-cover"
-                />
+            {/* --- BLOCK 1: TOP ROW (Photo + First Paragraph) --- */}
+            {/* This flex container forces the text to stay next to the photo */}
+            <div className="flex flex-col md:flex-row gap-8 items-start mb-6">
+              
+              {/* Photo Column */}
+              <div className="flex-shrink-0 mx-auto md:mx-0">
+                <div className="w-40 h-40 md:w-48 md:h-48 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 border-2 border-dashed border-primary/40 flex items-center justify-center overflow-hidden group hover:border-primary/60 transition-colors">
+                  <img
+                    src="/images/profile.jpg"
+                    alt="Josiah Lamuel Rosell"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Text Column (First Paragraph Only) */}
+              {/* 'flex-1' makes this fill the remaining width perfectly */}
+              <div className="flex-1">
+                <p className="text-muted-foreground leading-relaxed text-lg text-justify">
+                  I am a Computer Science student at De La Salle Lipa passionate about software development, digital
+                  solutions, and communication-focused technologies. With a strong foundation in Java and object-oriented
+                  programming, I am actively expanding my skills in data structures, algorithms, system design, and
+                  end-to-end problem solving.
+                </p>
               </div>
             </div>
 
-            {/* Paragraphs: No 'flex' or 'clear' hacks. Just standard text flow. */}
+            {/* --- BLOCK 2: BOTTOM ROW (Rest of the content) --- */}
+            {/* This sits naturally below the Flex container above */}
             <div className="text-muted-foreground leading-relaxed text-lg">
-              <p className="mb-6">
-                I am a Computer Science student at De La Salle Lipa passionate about software development, digital
-                solutions, and communication-focused technologies. With a strong foundation in Java and object-oriented
-                programming, I am actively expanding my skills in data structures, algorithms, system design, and
-                end-to-end problem solving.
-              </p>
-              
-              <p className="mb-6">
+              <p className="mb-6 text-justify">
                 I believe technology isn&apos;t just about code — it&apos;s about creating tools that help people, tell
                 meaningful stories, and solve real problems. I carry a mindset of continuous learning, curiosity, and
                 intentional craftsmanship in everything I build.
@@ -53,6 +63,7 @@ export function AboutSection() {
                 Open to internships, mentorships, and collaborations that create real-world impact through technology.
               </p>
             </div>
+
           </div>
 
           {/* Values Cards */}
