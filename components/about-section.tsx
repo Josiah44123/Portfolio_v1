@@ -44,12 +44,11 @@ export function AboutSection() {
                 <p className="text-muted-foreground leading-relaxed text-lg mb-3 text-justify">
                   I am a Computer Science student at De La Salle Lipa passionate
                   about software development, digital solutions, and communication-
-                  focused technologies. With a strong foundation in Java and object-
-                  oriented programming, I am actively expanding my skills in data 
-                  structures, algorithms, system design, and end-to-end problem solving. 
-                  I enjoy building projects that balance technical depth with clarity, 
-                  usability, and real-world impact. Beyond coding, I value clear communication, t
-                  houghtful design, and the ability to translate complex ideas into accessible solutions.
+                  focused technologies. I enjoy building projects that balance technical depth with clarity, 
+                  usability, and real-world impact. Beyond coding, I value clear communication, 
+                  thoughtful design, and the ability to translate complex ideas into accessible solutions.
+                  Driven by curiosity and a strong sense of responsibility, I’m constantly learning,
+                  experimenting, and pushing myself to do better with every project I take on.
                 </p>
               </div>
             </div>
