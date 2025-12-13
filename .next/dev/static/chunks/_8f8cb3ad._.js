@@ -1991,8 +1991,8 @@ const certifications = [
         title: "Essentials of Property Management Work",
         issuer: "Alison",
         date: "Issued Nov 2025",
-        credentialId: "{{PROPERTY_MANAGEMENT_ID}}",
-        credentialUrl: "{{PROPERTY_MANAGEMENT_URL}}",
+        credentialId: "5776-53971925",
+        credentialUrl: "https://alison.com/certification/check/1aa0e25752",
         skills: [
             "Real Estate",
             "Project Management",
@@ -2006,8 +2006,8 @@ const certifications = [
         title: "Generative AI for Business Leaders",
         issuer: "LinkedIn Learning",
         date: "Issued Nov 2025",
-        credentialId: "{{GEN_AI_BIZ_ID}}",
-        credentialUrl: "{{GEN_AI_BIZ_URL}}",
+        credentialId: "  ",
+        credentialUrl: "https://www.linkedin.com/learning/certificates/6702b5accde429e6f3817d2a85c19540f204c9a94f698034930d6643d8e5e804",
         skills: [
             "AI",
             "Generative AI for Leadership",
@@ -2020,8 +2020,8 @@ const certifications = [
         title: "Google Ads Creative Certification",
         issuer: "Google Skillshop",
         date: "Issued Nov 2025 · Expires Nov 2026",
-        credentialId: "{{GOOGLE_CREATIVE_ID}}",
-        credentialUrl: "{{GOOGLE_CREATIVE_URL}}",
+        credentialId: "167690530",
+        credentialUrl: "https://skillshop.credential.net/c9379b6c-3cbc-448a-819a-45df0e8fa7f4",
         skills: [
             "Creative Strategy",
             "Advertising"
@@ -2033,8 +2033,8 @@ const certifications = [
         title: "Google Ads Display Certification",
         issuer: "Google Skillshop",
         date: "Issued Jun 2025 · Expires Jun 2026",
-        credentialId: "{{GOOGLE_DISPLAY_ID}}",
-        credentialUrl: "{{GOOGLE_DISPLAY_URL}}",
+        credentialId: "150130236",
+        credentialUrl: "https://skillshop.credential.net/912d0b72-e879-48f0-bd48-8faf67d30c65#acc.DB40MCaH",
         skills: [
             "Advertising"
         ],
@@ -2045,8 +2045,8 @@ const certifications = [
         title: "Project Management Foundations",
         issuer: "LinkedIn Learning",
         date: "Issued Jun 2025",
-        credentialId: "{{PM_FOUNDATIONS_ID}}",
-        credentialUrl: "{{PM_FOUNDATIONS_URL}}",
+        credentialId: " ",
+        credentialUrl: "https://www.linkedin.com/in/josiahlamuelrosell/details/certifications/",
         skills: [
             "Project Management"
         ],
@@ -2057,8 +2057,8 @@ const certifications = [
         title: "Start and Improve Your Business",
         issuer: "TESDA",
         date: "Issued Jun 2025",
-        credentialId: "{{TESDA_BUSINESS_ID}}",
-        credentialUrl: "{{TESDA_BUSINESS_URL}}",
+        credentialId: " ",
+        credentialUrl: "https://www.linkedin.com/in/josiahlamuelrosell/details/certifications/",
         skills: [
             "New Business Development"
         ],
@@ -2069,8 +2069,8 @@ const certifications = [
         title: "DLSL – Java Programming 1",
         issuer: "CodeChum",
         date: "Issued Mar 2025",
-        credentialId: "{{JAVA_CODECHUM_ID}}",
-        credentialUrl: "{{JAVA_CODECHUM_URL}}",
+        credentialId: " ",
+        credentialUrl: "https://www.linkedin.com/in/josiahlamuelrosell/details/certifications/",
         skills: [
             "Java Programming"
         ],
@@ -2081,8 +2081,8 @@ const certifications = [
         title: "Managing Your Personal Finances",
         issuer: "TESDA",
         date: "Issued Jun 2020",
-        credentialId: "{{TESDA_FINANCE_ID}}",
-        credentialUrl: "{{TESDA_FINANCE_URL}}",
+        credentialId: " ",
+        credentialUrl: "https://www.linkedin.com/in/josiahlamuelrosell/details/certifications/",
         skills: [
             "Finance"
         ],
