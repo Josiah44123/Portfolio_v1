@@ -41,7 +41,7 @@ export function AboutSection() {
               {/* Text Column (First Paragraph Only) */}
               {/* 'flex-1' makes this fill the remaining width perfectly */}
               <div className="flex-1">
-                <p className="text-muted-foreground leading-relaxed text-lg text-justify">
+                <p className="text-muted-foreground leading-relaxed text-lg mb-4 text-justify">
                   I am a Computer Science student at De La Salle Lipa passionate about software development, digital
                   solutions, and communication-focused technologies. With a strong foundation in Java and object-oriented
                   programming, I am actively expanding my skills in data structures, algorithms, system design, and
@@ -53,7 +53,7 @@ export function AboutSection() {
             {/* --- BLOCK 2: BOTTOM ROW (Rest of the content) --- */}
             {/* This sits naturally below the Flex container above */}
             <div className="text-muted-foreground leading-relaxed text-lg">
-              <p className="mb-6 text-justify">
+              <p className="mb-4 text-justify">
                 I believe technology isn&apos;t just about code — it&apos;s about creating tools that help people, tell
                 meaningful stories, and solve real problems. I carry a mindset of continuous learning, curiosity, and
                 intentional craftsmanship in everything I build.
