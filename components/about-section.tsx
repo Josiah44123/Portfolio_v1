@@ -42,10 +42,14 @@ export function AboutSection() {
               {/* 'flex-1' makes this fill the remaining width perfectly */}
               <div className="flex-1">
                 <p className="text-muted-foreground leading-relaxed text-lg mb-3 text-justify">
-                  I am a Computer Science student at De La Salle Lipa passionate about software development, digital
-                  solutions, and communication-focused technologies. With a strong foundation in Java and object-oriented
-                  programming, I am actively expanding my skills in data structures, algorithms, system design, and
-                  end-to-end problem solving.
+                  I am a Computer Science student at De La Salle Lipa passionate
+                  about software development, digital solutions, and communication-
+                  focused technologies. With a strong foundation in Java and object-
+                  oriented programming, I am actively expanding my skills in data 
+                  structures, algorithms, system design, and end-to-end problem solving. 
+                  I enjoy building projects that balance technical depth with clarity, 
+                  usability, and real-world impact. Beyond coding, I value clear communication, t
+                  houghtful design, and the ability to translate complex ideas into accessible solutions.
                 </p>
               </div>
             </div>
