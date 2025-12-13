@@ -21,19 +21,15 @@ export function AboutSection() {
           <div className="w-20 h-1 bg-primary rounded-full mb-8" />
 
           <div className="glass rounded-2xl p-6 md:p-8 flex flex-col md:flex-row gap-8 items-center md:items-start">
-            {/* Photo placeholder */}
+            {/* Photo Implemented: src updated to /profile.jpg and placeholder removed */}
             <div className="flex-shrink-0">
               <div className="w-40 h-40 md:w-48 md:h-48 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 border-2 border-dashed border-primary/40 flex items-center justify-center overflow-hidden group hover:border-primary/60 transition-colors">
-                {/* Replace src with your photo URL */}
                 <img
-                  src="{{YOUR_PHOTO_URL}}"
+                  src="/profile.jpg" // <--- YOUR PHOTO PATH
                   alt="Josiah Lamuel Rosell"
-                  className="w-full h-full object-cover hidden"
+                  className="w-full h-full object-cover" // 'hidden' class removed
                 />
-                <div className="text-center p-4">
-                  <User className="w-12 h-12 text-primary/50 mx-auto mb-2" />
-                  <span className="text-xs text-muted-foreground">Your Photo Here</span>
-                </div>
+                {/* Placeholder content removed */}
               </div>
             </div>
 
