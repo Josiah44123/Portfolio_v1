@@ -67,3 +67,38 @@ https://react.dev/link/hydration-mismatch
 [00:42:04.950] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
 [00:42:08.035] Browser ERROR   Maximum update depth exceeded. This can happen when a component calls setState inside useEffect, but useEffect either doesn't have a dependency array, or one of the dependencies changes on every render.
 [00:43:01.401] Server  LOG      ✓ Compiled in 90ms
+[09:39:01.817] Server  LOG      ✓ Compiled in 170ms
+[09:44:05.931] Server  ERROR    ⨯ ./app/page.tsx:4:1
+Module not found: Can't resolve '@/components/journey-section'
+  2 | import { HeroSection } from "@/components/hero-section"
+  3 | import { AboutSection } from "@/components/about-section"
+> 4 | import { JourneySection } from "@/components/journey-section"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { SkillsSection } from "@/components/skills-section"
+  6 | import { CertificationsSection } from "@/components/certifications-section"
+  7 | import { ContactSection } from "@/components/contact-section"
+
+Import map: aliased to relative './components/journey-section' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[09:44:05.934] Server  ERROR    ⨯ ./app/page.tsx:4:1
+Module not found: Can't resolve '@/components/journey-section'
+  2 | import { HeroSection } from "@/components/hero-section"
+  3 | import { AboutSection } from "@/components/about-section"
+> 4 | import { JourneySection } from "@/components/journey-section"
+    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  5 | import { SkillsSection } from "@/components/skills-section"
+  6 | import { CertificationsSection } from "@/components/certifications-section"
+  7 | import { ContactSection } from "@/components/contact-section"
+
+Import map: aliased to relative './components/journey-section' inside of [project]/
+
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+[09:44:33.586] Server  LOG      ✓ Compiled in 87ms
+[09:46:15.749] Server  LOG      ✓ Compiled in 88ms
