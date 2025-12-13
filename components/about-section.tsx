@@ -25,7 +25,7 @@ export function AboutSection() {
             <div className="flex-shrink-0">
               <div className="w-40 h-40 md:w-48 md:h-48 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 border-2 border-dashed border-primary/40 flex items-center justify-center overflow-hidden group hover:border-primary/60 transition-colors">
                 <img
-                  src="/profile.jpg" // <--- YOUR PHOTO PATH
+                  src="/images/profile.jpg" // <--- YOUR PHOTO PATH
                   alt="Josiah Lamuel Rosell"
                   className="w-full h-full object-cover" // 'hidden' class removed
                 />
