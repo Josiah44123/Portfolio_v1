@@ -20,35 +20,43 @@ export function AboutSection() {
           </h2>
           <div className="w-20 h-1 bg-primary rounded-full mb-8" />
 
-          <div className="glass rounded-2xl p-6 md:p-8 flex flex-col md:flex-row gap-8 items-center md:items-start">
-            {/* Photo Implemented: src updated to /profile.jpg and placeholder removed */}
-            <div className="flex-shrink-0">
-              <div className="w-40 h-40 md:w-48 md:h-48 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 border-2 border-dashed border-primary/40 flex items-center justify-center overflow-hidden group hover:border-primary/60 transition-colors">
-                <img
-                  src="/images/profile.jpg" // <--- YOUR PHOTO PATH
-                  alt="Josiah Lamuel Rosell"
-                  className="w-full h-full object-cover" // 'hidden' class removed
-                />
-                {/* Placeholder content removed */}
-              </div>
-            </div>
+          <div className="glass rounded-2xl p-6 md:p-8"> {/* Removed flex class here */}
 
-            <div className="flex-1">
+            {/* NEW WRAPPER DIV for the float layout on large screens */}
+            <div className="mb-6 clearfix"> 
+
+              {/* Photo Container: Added md:float-left and md:mr-8 for wrapping */}
+              <div className="flex-shrink-0 mb-6 md:mb-0 md:float-left md:mr-8">
+                <div className="w-40 h-40 md:w-48 md:h-48 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 border-2 border-dashed border-primary/40 flex items-center justify-center overflow-hidden group hover:border-primary/60 transition-colors">
+                  <img
+                    src="/profile.jpg" // <--- YOUR PHOTO PATH
+                    alt="Josiah Lamuel Rosell"
+                    className="w-full h-full object-cover" 
+                  />
+                </div>
+              </div>
+
+              {/* First Paragraph: This paragraph will now wrap around the floated image */}
               <p className="text-muted-foreground leading-relaxed text-lg mb-6">
                 I am a Computer Science student at De La Salle Lipa passionate about software development, digital
                 solutions, and communication-focused technologies. With a strong foundation in Java and object-oriented
                 programming, I am actively expanding my skills in data structures, algorithms, system design, and
                 end-to-end problem solving.
               </p>
-              <p className="text-muted-foreground leading-relaxed text-lg mb-6">
-                I believe technology isn&apos;t just about code — it&apos;s about creating tools that help people, tell
-                meaningful stories, and solve real problems. I carry a mindset of continuous learning, curiosity, and
-                intentional craftsmanship in everything I build.
-              </p>
-              <p className="text-primary font-medium">
-                Open to internships, mentorships, and collaborations that create real-world impact through technology.
-              </p>
-            </div>
+            </div> 
+            {/* End of the clearfix wrapper */}
+
+
+            {/* Second Paragraph and Contact Line: Now start AFTER the float element */}
+            <p className="text-muted-foreground leading-relaxed text-lg mb-6 clear-left">
+              I believe technology isn&apos;t just about code — it&apos;s about creating tools that help people, tell
+              meaningful stories, and solve real problems. I carry a mindset of continuous learning, curiosity, and
+              intentional craftsmanship in everything I build.
+            </p>
+            <p className="text-primary font-medium">
+              Open to internships, mentorships, and collaborations that create real-world impact through technology.
+            </p>
+
           </div>
 
           {/* Values Cards */}
