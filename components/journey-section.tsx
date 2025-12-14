@@ -21,6 +21,7 @@ interface TimelineItem {
 }
 
 const timelineData: TimelineItem[] = [
+  // --- College / Current ---
   {
     id: "dlsl",
     type: "education",
@@ -39,39 +40,14 @@ const timelineData: TimelineItem[] = [
     gradient: "from-cyan-500 to-blue-500",
   },
   {
-    id: "barcelona-shs",
-    type: "education",
-    title: "Senior High School – STEM Strand",
-    organization: "Barcelona Academy",
-    location: "Marilao, Bulacan",
-    period: "2022 – 2024",
-    description:
-      "Completed Science, Technology, Engineering, and Mathematics (STEM) strand with consistent academic excellence.",
-    details: [
-      "Specialized in advanced mathematics and science subjects",
-      "Developed strong foundation in research and analytical thinking",
-      "Graduated with High Honors",
-    ],
-    highlight: "With High Honors",
-    icon: BookOpen,
-    gradient: "from-violet-500 to-purple-500",
-  },
-  {
-    id: "barcelona-jhs",
-    type: "education",
-    title: "Junior High School (Grades 7-10)",
-    organization: "Barcelona Academy",
-    location: "Marilao, Bulacan",
-    period: "2018 – 2022",
-    description: "Completed junior high school education with consistent academic honors throughout all grade levels.",
-    details: [
-      "Consistent With High Honors recipient",
-      "Developed early interest in technology and programming",
-      "Active participation in academic competitions",
-    ],
-    highlight: "Consistent High Honors",
-    icon: GraduationCap,
-    gradient: "from-emerald-500 to-teal-500",
+    id: "dlsl-dl-running",
+    type: "award",
+    title: "Dean's Lister Candidate (Running)",
+    organization: "De La Salle Lipa",
+    period: "1st Sem, A.Y. 2025-2026",
+    description: "Currently maintaining academic standing for Dean's List honors for the first semester of the second year.",
+    icon: Star,
+    gradient: "from-blue-500 to-indigo-500",
   },
   {
     id: "jpcs",
@@ -92,6 +68,52 @@ const timelineData: TimelineItem[] = [
     gradient: "from-orange-500 to-red-500",
   },
   {
+    id: "nstp-lingkod",
+    type: "award",
+    title: "NSTP Lingkod Award",
+    organization: "De La Salle Lipa",
+    period: "June 5, 2025",
+    description: "Recognized for outstanding service and dedication to the National Service Training Program.",
+    icon: Award,
+    gradient: "from-green-500 to-emerald-500",
+  },
+  {
+    id: "dlsl-dl-1y2s",
+    type: "award",
+    title: "Dean's Lister - 2nd Honors",
+    organization: "De La Salle Lipa",
+    period: "2nd Sem, A.Y. 2024-2025",
+    description: "Achieved Second Honors distinction during the second semester of the first year.",
+    icon: Star,
+    gradient: "from-cyan-500 to-blue-500",
+  },
+  {
+    id: "dlsl-dl-1y1s",
+    type: "award",
+    title: "Dean's Lister - 2nd Honors",
+    organization: "De La Salle Lipa",
+    period: "1st Sem, A.Y. 2024-2025",
+    description: "Achieved Second Honors distinction during the first semester of the first year.",
+    icon: Star,
+    gradient: "from-cyan-500 to-blue-500",
+  },
+
+  // --- Senior High School ---
+  {
+    id: "mayor-excellence",
+    type: "award",
+    title: "Mayor's Academic Excellence Award",
+    organization: "Municipality of Marilao, Bulacan",
+    period: "2024",
+    description: "Special recognition awarded by the former Mayor of Marilao upon graduating Senior High School.",
+    details: [
+      "Awarded during Grade 12 graduation",
+      "Recognized for academic performance and community potential"
+    ],
+    icon: Trophy,
+    gradient: "from-purple-500 to-pink-500",
+  },
+  {
     id: "honors-shs",
     type: "award",
     title: "With High Honors – Senior High School",
@@ -101,6 +123,26 @@ const timelineData: TimelineItem[] = [
     icon: Trophy,
     gradient: "from-yellow-500 to-amber-500",
   },
+  {
+    id: "barcelona-shs",
+    type: "education",
+    title: "Senior High School – STEM Strand",
+    organization: "Barcelona Academy",
+    location: "Marilao, Bulacan",
+    period: "2022 – 2024",
+    description:
+      "Completed Science, Technology, Engineering, and Mathematics (STEM) strand with consistent academic excellence.",
+    details: [
+      "Specialized in advanced mathematics and science subjects",
+      "Developed strong foundation in research and analytical thinking",
+      "Graduated with High Honors",
+    ],
+    highlight: "With High Honors",
+    icon: BookOpen,
+    gradient: "from-violet-500 to-purple-500",
+  },
+
+  // --- Junior High School ---
   {
     id: "honors-jhs",
     type: "award",
@@ -116,6 +158,23 @@ const timelineData: TimelineItem[] = [
     ],
     icon: Star,
     gradient: "from-yellow-500 to-amber-500",
+  },
+  {
+    id: "barcelona-jhs",
+    type: "education",
+    title: "Junior High School (Grades 7-10)",
+    organization: "Barcelona Academy",
+    location: "Marilao, Bulacan",
+    period: "2018 – 2022",
+    description: "Completed junior high school education with consistent academic honors throughout all grade levels.",
+    details: [
+      "Consistent With High Honors recipient",
+      "Developed early interest in technology and programming",
+      "Active participation in academic competitions",
+    ],
+    highlight: "Consistent High Honors",
+    icon: GraduationCap,
+    gradient: "from-emerald-500 to-teal-500",
   },
 ]
 
