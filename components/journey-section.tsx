@@ -67,16 +67,7 @@ const timelineData: TimelineItem[] = [
     icon: Briefcase,
     gradient: "from-orange-500 to-red-500",
   },
-  {
-    id: "nstp-lingkod",
-    type: "award",
-    title: "NSTP Lingkod Award",
-    organization: "De La Salle Lipa",
-    period: "June 5, 2025",
-    description: "Recognized for outstanding service and dedication to the National Service Training Program.",
-    icon: Award,
-    gradient: "from-green-500 to-emerald-500",
-  },
+  
   {
     id: "dlsl-dl-1y2s",
     type: "award",
@@ -86,6 +77,16 @@ const timelineData: TimelineItem[] = [
     description: "Achieved Second Honors distinction during the second semester of the first year.",
     icon: Star,
     gradient: "from-cyan-500 to-blue-500",
+  },
+  {
+    id: "nstp-lingkod",
+    type: "award",
+    title: "NSTP Lingkod Award",
+    organization: "De La Salle Lipa",
+    period: "June 5, 2025",
+    description: "Recognized for outstanding service and dedication to the National Service Training Program.",
+    icon: Award,
+    gradient: "from-green-500 to-emerald-500",
   },
   {
     id: "dlsl-dl-1y1s",
