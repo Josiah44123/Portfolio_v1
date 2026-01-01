@@ -78,12 +78,15 @@ export function ContactSection() {
               </a>
             ))}
           </div>
+          
           {/* Download CV Button */}
           <div className="text-center">
             <a
-              href="/assets/cv.pdf" // Replace with your actual CV URL (e.g., hosted in public/assets/cv.pdf)
-              download // Add this if you want to force download instead of opening in browser
-              className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:glow group"
+              href="/images/CV.pdf"
+              download="Josiah_Lamuel_Rosell_CV.pdf" // Forces download with this specific filename
+              target="_blank" // Fallback: opens in new tab if download fails
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:glow group cursor-pointer"
             >
               <Download className="w-5 h-5 group-hover:animate-bounce" />
               Download CV
