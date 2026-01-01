@@ -31,7 +31,7 @@ export function ProjectsSection() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-xl">
             <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">
-              Selected <span className="text-primary">Projects</span>
+              My <span className="text-primary">Projects</span>
             </h2>
             <p className="text-muted-foreground text-lg">
               A collection of technical solutions and digital experiences crafted with precision.
