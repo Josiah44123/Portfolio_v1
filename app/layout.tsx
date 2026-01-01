@@ -12,7 +12,25 @@ export const metadata: Metadata = {
   title: "Josiah Lamuel Rosell | Portfolio",
   description:
     "Computer Science student at De La Salle Lipa passionate about software development, digital solutions, and communication-focused technologies.",
-    generator: 'v0.app'
+  generator: 'v0.app',
+  // Add this icons block here
+  icons: {
+    icon: [
+      {
+        url: "/icon-light-32x32.png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/icon-dark-32x32.png",
+        media: "(prefers-color-scheme: dark)",
+      },
+      {
+        url: "/icon.svg",
+        type: "image/svg+xml",
+      },
+    ],
+    apple: "/apple-icon.png",
+  },
 }
 
 export default function RootLayout({
