@@ -13,23 +13,10 @@ export const metadata: Metadata = {
   description:
     "Computer Science student at De La Salle Lipa passionate about software development, digital solutions, and communication-focused technologies.",
   generator: 'v0.app',
-  // Add this icons block here
+  // Simplified icons configuration
   icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
+    icon: "/images/icon.svg",
+    apple: "/images/icon.svg",
   },
 }
 
