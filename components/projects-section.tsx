@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { ExternalLink, Github, Layers, Monitor, Database } from "lucide-react"
+import { ExternalLink, Github, Layers, Monitor, Database, Network } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const projects = [
@@ -22,10 +22,21 @@ const projects = [
       "A robust terminal-based banking simulation demonstrating core OOP principles. Features secure user authentication, polymorphic transaction handling, admin dashboards, and file-based data persistence.",
     tags: ["Java", "OOP", "File Handling", "CLI"],
     github: "https://github.com/Josiah44123/C2A-OOProg-Finals",
-    demo: "https://github.com/Josiah44123/C2A-OOProg-Finals", // Linked to repo as it is a CLI app
+    demo: "https://github.com/Josiah44123/C2A-OOProg-Finals",
     category: "Software",
     icon: <Database className="w-6 h-6" />,
-    color: "from-blue-600 to-cyan-500", 
+    color: "from-blue-600 to-cyan-500",
+  },
+  {
+    title: "Data Structures Visualizer",
+    description:
+      "An educational system building core data structures (BST, Linked Lists, Stacks, Queues) from scratch. Focuses on algorithmic efficiency and real-time visualization of data operations.",
+    tags: ["Java", "Algorithms", "Data Structures", "Visualization"],
+    github: "https://github.com/Josiah44123/C2A-Datastrc-Finals",
+    demo: "https://github.com/Josiah44123/C2A-Datastrc-Finals",
+    category: "Software",
+    icon: <Network className="w-6 h-6" />,
+    color: "from-violet-600 to-indigo-600",
   },
 ]
 
