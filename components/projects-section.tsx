@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { ExternalLink, Github, Layers, Monitor, Database, Network, Palette } from "lucide-react"
+import { ExternalLink, Github, Layers, Database, Network, Palette } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const projects = [
@@ -43,7 +43,8 @@ const projects = [
     description:
       "A mobile-first UI/UX project designed to balance productivity with personal wellness. Features an integrated task manager, health hub, and focus mode with Pomodoro timers.",
     tags: ["Figma", "UI/UX", "HCI", "Prototyping"],
-    github: "https://www.figma.com/proto/viCKZfz0pLVMijceZvLrFq/Group2_Elevate?node-id=1593-13388&p=f&t=Qf4S2YY6AqNiXae7-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1593%3A13379&show-proto-sidebar=1",
+    // Updated link for the Source button
+    github: "https://www.figma.com/proto/viCKZfz0pLVMijceZvLrFq/Group2_Elevate?node-id=1484-1170&p=f&t=Qf4S2YY6AqNiXae7-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1484%3A347&show-proto-sidebar=1",
     demo: "https://www.figma.com/proto/viCKZfz0pLVMijceZvLrFq/Group2_Elevate?node-id=1593-13388&p=f&t=Qf4S2YY6AqNiXae7-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1593%3A13379&show-proto-sidebar=1",
     category: "Design",
     icon: <Palette className="w-6 h-6" />,
@@ -122,13 +123,17 @@ export function ProjectsSection() {
                 </div>
 
                 <div className="flex items-center gap-4 mt-auto pt-4 border-t border-white/5">
+                  {/* Conditionally render Github icon based on category */}
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors"
+                    className={cn(
+                      "flex items-center text-sm font-medium hover:text-primary transition-colors",
+                      project.category !== "Design" ? "gap-2" : "",
+                    )}
                   >
-                    <Github className="w-4 h-4" /> Source
+                    {project.category !== "Design" && <Github className="w-4 h-4" />} Source
                   </a>
                   <a
                     href={project.demo}
