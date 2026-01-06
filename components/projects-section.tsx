@@ -67,7 +67,7 @@ export function ProjectsSection() {
               My <span className="text-primary">Projects</span>
             </h2>
             <p className="text-muted-foreground text-lg">
-              A collection of technical solutions and digital experiences crafted with precision.
+              A collection of technical solutions, programs and digital experiences crafted with precision.
             </p>
           </div>
 
