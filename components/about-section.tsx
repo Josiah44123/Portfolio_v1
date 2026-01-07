@@ -61,7 +61,7 @@ export function AboutSection() {
               </p>
 
               <p className="text-primary font-medium">
-                Open to internships, mentorships, and collaborations that create real-world impact through technology.
+                Open to internships, mentorships, and collaborations that create real-world impact through technology..
               </p>
             </div>
 
