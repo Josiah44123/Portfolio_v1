@@ -57,7 +57,7 @@ export function AboutSection() {
               <p className="mb-4 text-justify">
                 I believe technology isn&apos;t just about code — it&apos;s about creating tools that help people, tell
                 meaningful stories, and solve real problems. I carry a mindset of continuous learning, curiosity, and
-                intentional craftsmanship in everything I build.
+                purpose in everything I build.
               </p>
 
               <p className="text-primary font-medium">
