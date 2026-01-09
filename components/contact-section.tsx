@@ -89,7 +89,7 @@ export function ContactSection() {
               className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:glow group cursor-pointer"
             >
               <Download className="w-5 h-5 group-hover:animate-bounce" />
-              Download CV
+              Download  CV
             </a>
           </div>
         </div>
