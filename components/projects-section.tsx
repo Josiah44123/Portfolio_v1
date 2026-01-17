@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { ExternalLink, Github, Layers, Database, Network, Palette, Code, Gamepad2 } from "lucide-react"
+import { ExternalLink, Github, Layers, Database, Network, Palette, Code, Gamepad2, ChevronDown, ChevronUp } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const projects = [
@@ -10,8 +10,8 @@ const projects = [
     description:
       "A custom arcade game engine built with HTML5 Canvas and Next.js App Router. This project marks my first full integration of Supabase, utilizing it to engineer a secure, real-time leaderboard system via dedicated API routes.",
     tags: ["Next.js App Router", "Canvas API", "Supabase", "TypeScript"],
-    github: "https://github.com/Josiah44123/stacking-game", 
-    demo: "https://chickstack.vercel.app", 
+    github: "https://github.com/Josiah44123/stacking-game",
+    demo: "https://chickstack.vercel.app",
     category: "Web App",
     icon: <Gamepad2 className="w-6 h-6" />,
     color: "from-amber-400 to-orange-500",
@@ -32,8 +32,8 @@ const projects = [
     description:
       "An interactive quiz game featuring 'Classic' and 'Event' modes. Challenges developers to predict Java code outputs with dynamic question generation, real-time scoring, and IDE-inspired syntax highlighting.",
     tags: ["React 19", "Next.js 16", "TypeScript", "Tailwind CSS"],
-    github: "https://github.com/Josiah44123/java-output-game", 
-    demo: "https://java-output-game.vercel.app", 
+    github: "https://github.com/Josiah44123/java-output-game",
+    demo: "https://java-output-game.vercel.app",
     category: "Web App",
     icon: <Code className="w-6 h-6" />,
     color: "from-emerald-500 to-teal-500",
@@ -73,6 +73,89 @@ const projects = [
   },
 ]
 
+function ProjectCard({ project, idx }: { project: any; idx: number }) {
+  const [isExpanded, setIsExpanded] = useState(false)
+
+  return (
+    <div
+      className="group relative glass rounded-3xl overflow-hidden border border-white/5 hover:border-primary/30 transition-all duration-500 animate-fade-in-up flex flex-col"
+      style={{ animationDelay: `${idx * 100}ms` }}
+    >
+      <div className={cn("h-2 w-full bg-gradient-to-r", project.color)} />
+
+      <div className="p-8 flex flex-col flex-grow">
+        <div
+          className={cn(
+            "w-12 h-12 rounded-2xl flex items-center justify-center mb-6 bg-gradient-to-br transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-xl",
+            project.color
+          )}
+        >
+          {project.icon}
+        </div>
+
+        <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
+          {project.title}
+        </h3>
+
+        {/* 2. Interactive Description Section */}
+        <div 
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="mb-6 cursor-pointer group/desc"
+        >
+          <p
+            className={cn(
+              "text-muted-foreground transition-all duration-300",
+              isExpanded ? "line-clamp-none" : "line-clamp-3"
+            )}
+          >
+            {project.description}
+          </p>
+          <button className="text-xs font-medium text-primary/70 mt-2 flex items-center gap-1 group-hover/desc:text-primary transition-colors">
+            {isExpanded ? (
+               <>Show Less <ChevronUp className="w-3 h-3" /></>
+            ) : (
+               <>Read More <ChevronDown className="w-3 h-3" /></>
+            )}
+          </button>
+        </div>
+
+        <div className="flex flex-wrap gap-2 mb-8">
+          {project.tags.map((tag: string) => (
+            <span
+              key={tag}
+              className="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <div className="flex items-center gap-4 mt-auto pt-4 border-t border-white/5">
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(
+              "flex items-center text-sm font-medium hover:text-primary transition-colors",
+              project.category !== "Design" ? "gap-2" : ""
+            )}
+          >
+            {project.category !== "Design" && <Github className="w-4 h-4" />} Source
+          </a>
+          <a
+            href={project.demo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors"
+          >
+            <ExternalLink className="w-4 h-4" /> Live Demo
+          </a>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export function ProjectsSection() {
   const [filter, setFilter] = useState("All")
   const categories = ["All", "Web App", "Software", "Design"]
@@ -101,7 +184,7 @@ export function ProjectsSection() {
                   "px-5 py-2 rounded-full text-sm font-medium transition-all duration-300",
                   filter === cat
                     ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
-                    : "glass hover:bg-white/10",
+                    : "glass hover:bg-white/10"
                 )}
               >
                 {cat}
@@ -112,60 +195,8 @@ export function ProjectsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, idx) => (
-            <div
-              key={idx}
-              className="group relative glass rounded-3xl overflow-hidden border border-white/5 hover:border-primary/30 transition-all duration-500 animate-fade-in-up"
-              style={{ animationDelay: `${idx * 100}ms` }}
-            >
-              <div className={cn("h-2 w-full bg-gradient-to-r", project.color)} />
-
-              <div className="p-8">
-                <div
-                  className={cn(
-                    "w-12 h-12 rounded-2xl flex items-center justify-center mb-6 bg-gradient-to-br transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-xl",
-                    project.color,
-                  )}
-                >
-                  {project.icon}
-                </div>
-
-                <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">{project.title}</h3>
-                <p className="text-muted-foreground mb-6 line-clamp-3">{project.description}</p>
-
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="flex items-center gap-4 mt-auto pt-4 border-t border-white/5">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={cn(
-                      "flex items-center text-sm font-medium hover:text-primary transition-colors",
-                      project.category !== "Design" ? "gap-2" : "",
-                    )}
-                  >
-                    {project.category !== "Design" && <Github className="w-4 h-4" />} Source
-                  </a>
-                  <a
-                    href={project.demo}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors"
-                  >
-                    <ExternalLink className="w-4 h-4" /> Live Demo
-                  </a>
-                </div>
-              </div>
-            </div>
+            // 3. Render the extracted component
+            <ProjectCard key={idx} project={project} idx={idx} />
           ))}
         </div>
       </div>
