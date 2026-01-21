@@ -132,7 +132,7 @@ const timelineData: TimelineItem[] = [
     location: "Marilao, Bulacan",
     period: "2022 – 2024",
     description:
-      "Completed Science, Technology, Engineering, and Mathematics (STEM) strand with consistent academic excellence.",
+      "Completed Science, Technology, Engineering, and Mathematics strand with consistent academic excellence.",
     details: [
       "Specialized in advanced mathematics and science subjects",
       "Developed strong foundation in research and analytical thinking",
