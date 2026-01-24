@@ -55,7 +55,7 @@ export function AboutSection() {
             {/* This sits naturally below the Flex container above */}
             <div className="text-muted-foreground leading-relaxed text-lg">
               <p className="mb-4 text-justify">
-                I believe technology isn&apos;t just about code — it&apos;s about creating tools that help people, tell
+                I believe technology isn&apos;t just about code — it&apos;s about creating tools that can help people, tell
                 meaningful stories, and solve real problems. I carry a mindset of continuous learning, curiosity, and
                 purpose in everything I build.
               </p>
