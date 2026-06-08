@@ -13,8 +13,8 @@ const contactLinks = [
   {
     icon: Phone,
     label: "Call Me",
-    value: "+63 991 529 3929",
-    href: "tel:+639915293929", 
+    value: "+63 938 394 4834",
+    href: "tel:+639383944834", 
     color: "from-green-500 to-emerald-500",
   },
   {
