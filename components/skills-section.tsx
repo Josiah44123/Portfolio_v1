@@ -141,8 +141,7 @@ function SkillCard({
 export function SkillsSection() {
   const [activeTab, setActiveTab] = useState(0)
   const [mounted, setMounted] = useState(false)
-  
-  // Create static particles on mount only
+
   const particles = useMemo(() => {
     return Array.from({ length: 20 }).map((_, i) => ({
       id: i,
