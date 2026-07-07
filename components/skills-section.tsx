@@ -153,7 +153,7 @@ export function SkillsSection() {
       } as React.CSSProperties,
     }))
   }, [])
-
+// A
   useEffect(() => {
     setMounted(true)
   }, [])
