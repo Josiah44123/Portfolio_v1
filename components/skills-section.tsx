@@ -137,7 +137,7 @@ function SkillCard({
     </div>
   )
 }
-
+//Skills
 export function SkillsSection() {
   const [activeTab, setActiveTab] = useState(0)
   const [mounted, setMounted] = useState(false)
