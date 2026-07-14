@@ -1,3 +1,4 @@
+
 "use client"
 
 import { useState } from "react"
@@ -73,12 +74,13 @@ const projects = [
   },
 ]
 
-function ProjectCard({ project, idx }: { project: any; idx: number }) {
+function ProjectCard({ project, idx, onClick }: { project: any; idx: number; onClick: () => void }) {
   const [isExpanded, setIsExpanded] = useState(false)
 
   return (
     <div
-      className="group relative glass rounded-3xl overflow-hidden border border-white/5 hover:border-primary/30 transition-all duration-500 animate-fade-in-up flex flex-col"
+      onClick={onClick}
+      className="group relative glass rounded-3xl overflow-hidden border border-white/5 hover:border-white/20 transition-all duration-500 animate-fade-in-up flex flex-col cursor-pointer"
       style={{ animationDelay: `${idx * 100}ms` }}
     >
       <div className={cn("h-2 w-full bg-gradient-to-r", project.color)} />
@@ -99,7 +101,11 @@ function ProjectCard({ project, idx }: { project: any; idx: number }) {
 
         {/* 2. Interactive Description Section */}
         <div 
-          onClick={() => setIsExpanded(!isExpanded)}
+          onClick={(e) => {
+            e.stopPropagation()
+            setIsExpanded(!isExpanded)
+            onClick() 
+          }}
           className="mb-6 cursor-pointer group/desc"
         >
           <p
@@ -135,6 +141,7 @@ function ProjectCard({ project, idx }: { project: any; idx: number }) {
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
             className={cn(
               "flex items-center text-sm font-medium hover:text-primary transition-colors",
               project.category !== "Design" ? "gap-2" : ""
@@ -146,6 +153,7 @@ function ProjectCard({ project, idx }: { project: any; idx: number }) {
             href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
             className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors"
           >
             <ExternalLink className="w-4 h-4" /> Live Demo
@@ -158,12 +166,22 @@ function ProjectCard({ project, idx }: { project: any; idx: number }) {
 
 export function ProjectsSection() {
   const [filter, setFilter] = useState("All")
+  const [activeColor, setActiveColor] = useState<string | null>(null)
+  
   const categories = ["All", "Web App", "Software", "Design"]
 
   const filteredProjects = filter === "All" ? projects : projects.filter((p) => p.category === filter)
 
   return (
-    <section id="projects" className="py-24 relative overflow-hidden">
+    <section id="projects" className="py-24 relative overflow-hidden transition-colors duration-1000">
+      {/* Ambient background glow that shifts based on the clicked project */}
+      <div 
+        className={cn(
+          "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] max-w-[1000px] max-h-[1000px] rounded-full blur-[140px] opacity-[0.15] pointer-events-none transition-all duration-1000 bg-gradient-to-br",
+          activeColor ? activeColor : "from-transparent to-transparent"
+        )} 
+      />
+
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-xl">
@@ -195,11 +213,17 @@ export function ProjectsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, idx) => (
-            // 3. Render the extracted component
-            <ProjectCard key={idx} project={project} idx={idx} />
+            // 3. Render the extracted component with the new onClick prop
+            <ProjectCard 
+              key={project.title} 
+              project={project} 
+              idx={idx} 
+              onClick={() => setActiveColor(project.color)}
+            />
           ))}
         </div>
       </div>
     </section>
   )
 }
+
