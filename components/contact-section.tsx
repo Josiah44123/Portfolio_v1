@@ -1,4 +1,5 @@
 "use client"
+import { useState } from "react"
 import { useInView } from "@/hooks/use-in-view"
 import { Mail, Phone, Linkedin, Github, Download, ExternalLink } from "lucide-react"
 
@@ -35,6 +36,26 @@ const contactLinks = [
 
 export function ContactSection() {
   const { ref, isInView } = useInView()
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" })
+  const [submitted, setSubmitted] = useState(false)
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData(prev => ({ ...prev, [name]: value }))
+  }
+
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    
+    if (formData.name && formData.email && formData.message) {
+      alert(`Thank you for reaching out, ${formData.name}! I've received your message:\n\nEmail: ${formData.email}\nMessage: ${formData.message}\n\nI'll get back to you soon!`)
+      setFormData({ name: "", email: "", message: "" })
+      setSubmitted(true)
+      setTimeout(() => setSubmitted(false), 3000)
+    } else {
+      alert("Please fill in all fields before submitting!")
+    }
+  }
 
   return (
     <section id="contact" className="py-20 px-4 bg-secondary/30">
@@ -78,13 +99,64 @@ export function ContactSection() {
               </a>
             ))}
           </div>
+
+          <div className="glass rounded-xl p-8 mb-8 max-w-2xl">
+            <h3 className="text-xl font-bold mb-6">Send Me a Message</h3>
+            <form onSubmit={handleFormSubmit} className="space-y-4">
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium mb-2">Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder="Your name"
+                    className="w-full px-4 py-2 rounded-lg bg-background border border-white/10 focus:border-primary/50 focus:outline-none transition-colors"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium mb-2">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="your@email.com"
+                    className="w-full px-4 py-2 rounded-lg bg-background border border-white/10 focus:border-primary/50 focus:outline-none transition-colors"
+                  />
+                </div>
+              </div>
+              <div>
+                <label className="block text-sm font-medium mb-2">Message</label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  placeholder="Your message here..."
+                  rows={4}
+                  className="w-full px-4 py-2 rounded-lg bg-background border border-white/10 focus:border-primary/50 focus:outline-none transition-colors resize-none"
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:scale-105 transition-all duration-300"
+              >
+                Send Message
+              </button>
+              {submitted && (
+                <p className="text-center text-green-500 text-sm font-medium">
+                  Message submitted successfully! ✓
+                </p>
+              )}
+            </form>
+          </div>
           
-          {/* Download CV Button */}
           <div className="text-center">
             <a
               href="/images/CV.pdf"
-              download="Josiah_Lamuel_Rosell_CV.pdf" // Forces download with this specific filename
-              target="_blank" // Fallback: opens in new tab if download fails
+              download="Josiah_Lamuel_Rosell_CV.pdf"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:glow group cursor-pointer"
             >

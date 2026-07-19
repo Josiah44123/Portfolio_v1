@@ -141,7 +141,6 @@ export function HeroSection() {
       className="min-h-screen flex flex-col items-center justify-center relative px-4 overflow-hidden"
       onMouseMove={handleMouseMove}
     >
-      {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
           className="absolute w-[600px] h-[600px] rounded-full blur-3xl transition-all duration-300 ease-out"
@@ -178,7 +177,6 @@ export function HeroSection() {
         {mounted && floatingParticles.map((id) => <FloatingBinary key={id} id={id} mousePos={mousePos} />)}
       </div>
 
-      {/* Grid Pattern */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.02]"
         style={{
@@ -187,13 +185,11 @@ export function HeroSection() {
         }}
       />
 
-      {/* Decorative Corners */}
       <div className="absolute top-20 left-8 w-20 h-20 border-l-2 border-t-2 border-primary/20 rounded-tl-xl" />
       <div className="absolute top-20 right-8 w-20 h-20 border-r-2 border-t-2 border-primary/20 rounded-tr-xl" />
       <div className="absolute bottom-20 left-8 w-20 h-20 border-l-2 border-b-2 border-primary/20 rounded-bl-xl" />
       <div className="absolute bottom-20 right-8 w-20 h-20 border-r-2 border-b-2 border-primary/20 rounded-br-xl" />
 
-      {/* Left Sidebar - Social Links (RESTORED REAL LINKS) */}
       <div className="hidden lg:flex absolute left-8 top-1/2 -translate-y-1/2 flex-col gap-5 items-center">
         <div className="w-px h-24 bg-gradient-to-b from-transparent via-primary/50 to-transparent" />
         <a
@@ -221,7 +217,6 @@ export function HeroSection() {
         <div className="w-px h-24 bg-gradient-to-b from-transparent via-primary/50 to-transparent" />
       </div>
 
-      {/* Right Sidebar - Status */}
       <div className="hidden lg:flex absolute right-8 top-1/2 -translate-y-1/2 flex-col gap-4 items-end">
         <div className="flex items-center gap-3 text-sm text-muted-foreground glass px-4 py-2 rounded-xl">
           <span className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
@@ -230,7 +225,6 @@ export function HeroSection() {
         <div className="text-sm text-muted-foreground/60 font-mono glass px-4 py-2 rounded-xl">DLSL • BSCS</div>
       </div>
 
-      {/* Main Content - (UPDATED BUTTONS) */}
       <div
         className={`text-center relative z-10 transition-all duration-1000 ${
           mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
@@ -269,11 +263,10 @@ export function HeroSection() {
           Building solutions at the intersection of code, creativity, and purpose.
         </p>
 
-        {/* UPDATED BUTTON GROUP */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="/images/CV.pdf" // CHANGED: Pointing to file
-            download="Josiah_Lamuel_Rosell_CV.pdf" // ADDED: Forces download with name
+            href="/images/CV.pdf"
+            download="Josiah_Lamuel_Rosell_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="group relative px-8 py-4 bg-primary text-primary-foreground rounded-xl font-medium overflow-hidden transition-all duration-300 hover:scale-105 hover:glow flex items-center justify-center gap-2"
@@ -298,7 +291,6 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
       <a href="#about" className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 group">
         <span className="text-xs text-muted-foreground group-hover:text-primary transition-colors">
           Scroll to explore
