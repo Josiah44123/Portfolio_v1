@@ -68,7 +68,7 @@ export function Navbar() {
           >
             {/* --- UPDATED LOGIC HERE --- */}
             {!mounted ? (
-              <div className="w-5 h-5" /> // Empty placeholder to match server/client initial render
+              <div className="w-5 h-5" /> 
             ) : theme === "dark" ? (
               <Sun className="w-5 h-5 text-primary" />
             ) : (
