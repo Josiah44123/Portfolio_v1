@@ -259,43 +259,44 @@ function ProjectCard({ project, idx, onClick }: { project: any; idx: number; onC
       </div>
 
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title={project.title}>
-        <div className="space-y-6">
+        <div className="space-y-8">
           <div>
-            <h3 className="text-lg font-bold mb-2">Overview</h3>
-            <p className="text-muted-foreground">{project.details.overview}</p>
+            <p className="text-foreground/90 leading-relaxed">{project.details.overview}</p>
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-3">Key Features</h3>
-            <ul className="space-y-2">
+            <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Key Features</h3>
+            <ul className="space-y-3">
               {project.details.features.map((feature: string, i: number) => (
-                <li key={i} className="flex gap-3 text-muted-foreground">
-                  <span className="text-primary font-bold">•</span>
-                  {feature}
+                <li key={i} className="flex gap-3 items-start">
+                  <span className="text-primary mt-1 flex-shrink-0">→</span>
+                  <span className="text-foreground/80">{feature}</span>
                 </li>
               ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-bold mb-2">Technologies</h3>
+            <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Technologies</h3>
             <div className="flex flex-wrap gap-2">
               {project.details.technologies.map((tech: string, i: number) => (
-                <span key={i} className="px-3 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
+                <span key={i} className="px-3 py-1.5 rounded-full text-xs font-medium bg-primary/15 text-primary/90 border border-primary/30 hover:bg-primary/25 transition-colors">
                   {tech}
                 </span>
               ))}
             </div>
           </div>
 
-          <div>
-            <h3 className="text-lg font-bold mb-2">Challenge</h3>
-            <p className="text-muted-foreground">{project.details.challenges}</p>
-          </div>
+          <div className="space-y-6 pt-4 border-t border-border">
+            <div>
+              <h3 className="text-sm font-semibold text-foreground mb-2 uppercase tracking-wide">Challenge</h3>
+              <p className="text-foreground/80 leading-relaxed">{project.details.challenges}</p>
+            </div>
 
-          <div>
-            <h3 className="text-lg font-bold mb-2">Outcome</h3>
-            <p className="text-muted-foreground">{project.details.outcome}</p>
+            <div>
+              <h3 className="text-sm font-semibold text-foreground mb-2 uppercase tracking-wide">Outcome</h3>
+              <p className="text-foreground/80 leading-relaxed">{project.details.outcome}</p>
+            </div>
           </div>
         </div>
       </Modal>
