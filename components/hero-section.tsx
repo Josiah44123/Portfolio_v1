@@ -4,6 +4,13 @@ import type React from "react"
 import { useEffect, useState, useRef } from "react"
 import { ChevronDown, Github, Linkedin, Mail, Download } from "lucide-react"
 
+const TYPEWRITER_TEXTS = [
+  "Computer Science Undergraduate",
+  "Aspiring Software Developer",
+  "Tech Enthusiast",
+  "Lifelong Learner"
+]
+
 function TypeWriter({ texts, className }: { texts: string[]; className?: string }) {
   const [currentTextIndex, setCurrentTextIndex] = useState(0)
   const [currentText, setCurrentText] = useState("")
@@ -48,18 +55,43 @@ function FloatingBinary({ id, mousePos }: { id: number; mousePos: { x: number; y
   const char = useRef(Math.random() > 0.5 ? "1" : "0")
   const size = useRef(10 + Math.random() * 6)
 
-  const [pos, setPos] = useState({ x: initialX.current, y: initialY.current })
-  const [offset, setOffset] = useState({ x: 0, y: 0 })
+  // FIXED: Silently track the latest mouse position without triggering re-renders
+  const mouseRef = useRef(mousePos)
+  useEffect(() => {
+    mouseRef.current = mousePos
+  }, [mousePos])
+
+  // FIXED: Combine pos and offset into a single state to avoid double-rendering
+  const [state, setState] = useState({
+    pos: { x: initialX.current, y: initialY.current },
+    offset: { x: 0, y: 0 }
+  })
 
   useEffect(() => {
     const animate = () => {
-      setPos((prev) => {
-        let newY = prev.y - speed.current
+      setState((prev) => {
+        // 1. Calculate new base position
+        let newY = prev.pos.y - speed.current
         if (newY < -5) {
           newY = 105
           initialX.current = Math.random() * 100
         }
-        return { x: initialX.current, y: newY }
+        const newPos = { x: initialX.current, y: newY }
+
+        // 2. Calculate cursor attraction synchronously using the ref
+        const dx = mouseRef.current.x - newPos.x
+        const dy = mouseRef.current.y - newPos.y
+        const distance = Math.sqrt(dx * dx + dy * dy)
+        const attractionRadius = 15
+
+        let newOffset = { x: prev.offset.x * 0.9, y: prev.offset.y * 0.9 }
+        if (distance < attractionRadius && distance > 0) {
+          const force = ((attractionRadius - distance) / attractionRadius) * 8
+          newOffset = { x: (dx / distance) * force, y: (dy / distance) * force }
+        }
+
+        // Return a single unified state update
+        return { pos: newPos, offset: newOffset }
       })
     }
 
@@ -67,27 +99,12 @@ function FloatingBinary({ id, mousePos }: { id: number; mousePos: { x: number; y
     return () => clearInterval(interval)
   }, [])
 
-  // Cursor attraction effect
-  useEffect(() => {
-    const dx = mousePos.x - pos.x
-    const dy = mousePos.y - pos.y
-    const distance = Math.sqrt(dx * dx + dy * dy)
-
-    const attractionRadius = 15
-    if (distance < attractionRadius && distance > 0) {
-      const force = ((attractionRadius - distance) / attractionRadius) * 8
-      setOffset({ x: (dx / distance) * force, y: (dy / distance) * force })
-    } else {
-      setOffset((prev) => ({ x: prev.x * 0.9, y: prev.y * 0.9 }))
-    }
-  }, [mousePos, pos])
-
   return (
     <div
       className="absolute font-mono text-primary/30 pointer-events-none select-none"
       style={{
-        left: `${pos.x + offset.x}%`,
-        top: `${pos.y + offset.y}%`,
+        left: `${state.pos.x + state.offset.x}%`,
+        top: `${state.pos.y + state.offset.y}%`,
         fontSize: size.current,
         transform: "translate(-50%, -50%)",
         transition: "left 0.1s ease-out, top 0.1s ease-out",
@@ -243,7 +260,7 @@ export function HeroSection() {
 
         <div className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-4 h-8">
           <TypeWriter
-            texts={["Computer Science Undergraduate", "Aspiring Software Developer", "Tech Enthusiast", "Lifelong Learner"]}
+            texts={TYPEWRITER_TEXTS} // UPDATED REFERENCE
             className="font-medium"
           />
         </div>
