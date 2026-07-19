@@ -106,7 +106,6 @@ function ProjectCard({ project, idx, onClick }: { project: any; idx: number; onC
           {project.title}
         </h3>
 
-        {/* 2. Interactive Description Section */}
         <div 
           onClick={(e) => {
             e.stopPropagation()
@@ -171,9 +170,18 @@ function ProjectCard({ project, idx, onClick }: { project: any; idx: number; onC
   )
 }
 
+const backgroundColors = [
+  "from-amber-400 to-orange-500",
+  "from-orange-500 to-rose-500",
+  "from-emerald-500 to-teal-500",
+  "from-blue-600 to-cyan-500",
+  "from-violet-600 to-indigo-600",
+  "from-pink-500 to-purple-500",
+]
+
 export function ProjectsSection() {
   const [filter, setFilter] = useState("All")
-  const [activeColor, setActiveColor] = useState<string | null>(null)
+  const [activeColorIndex, setActiveColorIndex] = useState(0)
   
   const categories = ["All", "Web App", "Software", "Design"]
 
@@ -181,11 +189,10 @@ export function ProjectsSection() {
 
   return (
     <section id="projects" className="py-24 relative overflow-hidden transition-colors duration-1000">
-      {/* Ambient background glow that shifts based on the clicked project */}
       <div 
         className={cn(
           "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] max-w-[1000px] max-h-[1000px] rounded-full blur-[140px] opacity-[0.15] pointer-events-none transition-all duration-1000 bg-gradient-to-br",
-          activeColor ? activeColor : "from-transparent to-transparent"
+          backgroundColors[activeColorIndex]
         )} 
       />
 
@@ -220,12 +227,11 @@ export function ProjectsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, idx) => (
-            // 3. Render the extracted component with the new onClick prop
             <ProjectCard 
               key={project.title} 
               project={project} 
               idx={idx} 
-              onClick={() => setActiveColor(project.color)}
+              onClick={() => setActiveColorIndex((prev) => (prev + 1) % backgroundColors.length)}
             />
           ))}
         </div>

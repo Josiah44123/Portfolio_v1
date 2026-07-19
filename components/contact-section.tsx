@@ -100,7 +100,6 @@ export function ContactSection() {
             ))}
           </div>
 
-          {/* Contact Form */}
           <div className="glass rounded-xl p-8 mb-8 max-w-2xl">
             <h3 className="text-xl font-bold mb-6">Send Me a Message</h3>
             <form onSubmit={handleFormSubmit} className="space-y-4">
@@ -153,12 +152,11 @@ export function ContactSection() {
             </form>
           </div>
           
-          {/* Download CV Button */}
           <div className="text-center">
             <a
               href="/images/CV.pdf"
-              download="Josiah_Lamuel_Rosell_CV.pdf" // Forces download with this specific filename
-              target="_blank" // Fallback: opens in new tab if download fails
+              download="Josiah_Lamuel_Rosell_CV.pdf"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:glow group cursor-pointer"
             >

@@ -19,12 +19,10 @@ export function Navbar() {
   const { theme, setTheme } = useTheme()
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  
-  // --- ADDED THIS ---
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
-    setMounted(true) // Set to true after the component mounts on the client
+    setMounted(true)
     
     const handleScroll = () => {
       setScrolled(window.scrollY > 50)
@@ -45,7 +43,6 @@ export function Navbar() {
           JLR
         </a>
 
-        {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
             <a
@@ -60,15 +57,13 @@ export function Navbar() {
         </div>
 
         <div className="flex items-center gap-4">
-          {/* Theme Toggle */}
           <button
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
             className="p-2 rounded-full glass hover:glow-sm transition-all duration-300 min-w-[40px] min-h-[40px] flex items-center justify-center"
             aria-label="Toggle theme"
           >
-            {/* --- UPDATED LOGIC HERE --- */}
             {!mounted ? (
-              <div className="w-5 h-5" /> // Empty placeholder to match server/client initial render
+              <div className="w-5 h-5" />
             ) : theme === "dark" ? (
               <Sun className="w-5 h-5 text-primary" />
             ) : (
@@ -76,7 +71,6 @@ export function Navbar() {
             )}
           </button>
 
-          {/* Mobile Menu Toggle */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="md:hidden p-2 rounded-full glass"
@@ -87,7 +81,6 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Menu */}
       {mobileMenuOpen && (
         <div className="md:hidden glass mt-2 mx-4 rounded-xl p-4 animate-fade-in-up">
           {navItems.map((item) => (
