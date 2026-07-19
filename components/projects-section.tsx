@@ -95,7 +95,14 @@ function ProjectCard({ project, idx, onClick }: { project: any; idx: number; onC
           {project.icon}
         </div>
 
-        <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
+        <h3 
+          onClick={(e) => {
+            e.stopPropagation()
+            alert(`You selected: ${project.title}!\n\nCategory: ${project.category}\n\nThe portfolio background color has changed!`)
+            onClick()
+          }}
+          className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors cursor-pointer hover:underline"
+        >
           {project.title}
         </h3>
 
