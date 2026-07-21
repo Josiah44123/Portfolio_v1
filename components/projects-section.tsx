@@ -3,7 +3,6 @@
 
 import { useState } from "react"
 import { ExternalLink, Github, Layers, Database, Network, Palette, Code, Gamepad2, ChevronDown, ChevronUp } from "lucide-react"
-import { Modal } from "@/components/ui/modal"
 import { cn } from "@/lib/utils"
 
 const projects = [
@@ -151,11 +150,87 @@ const projects = [
       outcome: "Delivered a comprehensive design system with 50+ screens, interactive prototypes, and positive user testing feedback (4.6/5 average)."
     }
   },
+  {
+    title: "New Project",
+    description:
+      "Coming soon. Details about source and live demo will be added here.",
+    tags: ["TBD"],
+    github: "#",
+    demo: "#",
+    category: "Web App",
+    icon: <Code className="w-6 h-6" />,
+    color: "from-red-500 to-pink-500",
+    details: {
+      overview: "Project details coming soon.",
+      features: ["Feature 1", "Feature 2", "Feature 3"],
+      technologies: ["TBD"],
+      challenges: "To be updated.",
+      outcome: "To be updated."
+    }
+  },
 ]
 
 function ProjectCard({ project, idx, onClick }: { project: any; idx: number; onClick: () => void }) {
   const [isExpanded, setIsExpanded] = useState(false)
-  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const openProjectDetails = () => {
+    const detailsContent = `
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>${project.title} - Project Details</title>
+        <script src="https://cdn.tailwindcss.com"><\/script>
+        <style>
+          body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        </style>
+      </head>
+      <body class="bg-slate-950 text-white">
+        <div class="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+          <div class="max-w-2xl mx-auto">
+            <h1 class="text-4xl font-bold mb-8">${project.title}</h1>
+            
+            <div class="space-y-8">
+              <div>
+                <p class="text-gray-300 leading-relaxed">${project.details.overview}</p>
+              </div>
+
+              <div>
+                <h3 class="text-lg font-semibold mb-4 uppercase tracking-wide">Key Features</h3>
+                <ul class="space-y-3">
+                  ${project.details.features.map((f: string) => `<li class="flex gap-3"><span class="text-blue-400">→</span><span class="text-gray-300">${f}</span></li>`).join('')}
+                </ul>
+              </div>
+
+              <div>
+                <h3 class="text-lg font-semibold mb-4 uppercase tracking-wide">Technologies</h3>
+                <div class="flex flex-wrap gap-2">
+                  ${project.details.technologies.map((t: string) => `<span class="px-3 py-1.5 rounded-full text-xs font-medium bg-blue-500/20 text-blue-300 border border-blue-500/30">${t}</span>`).join('')}
+                </div>
+              </div>
+
+              <div class="space-y-6 pt-6 border-t border-gray-700">
+                <div>
+                  <h3 class="text-lg font-semibold mb-2 uppercase tracking-wide">Challenge</h3>
+                  <p class="text-gray-300 leading-relaxed">${project.details.challenges}</p>
+                </div>
+
+                <div>
+                  <h3 class="text-lg font-semibold mb-2 uppercase tracking-wide">Outcome</h3>
+                  <p class="text-gray-300 leading-relaxed">${project.details.outcome}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </body>
+      </html>
+    `
+    const blob = new Blob([detailsContent], { type: 'text/html' })
+    const url = URL.createObjectURL(blob)
+    window.open(url, '_blank', 'width=800,height=900')
+  }
 
   return (
     <div
@@ -226,7 +301,7 @@ function ProjectCard({ project, idx, onClick }: { project: any; idx: number; onC
           <button
             onClick={(e) => {
               e.stopPropagation()
-              setIsModalOpen(true)
+              openProjectDetails()
             }}
             className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors"
           >
@@ -257,49 +332,6 @@ function ProjectCard({ project, idx, onClick }: { project: any; idx: number; onC
           </a>
         </div>
       </div>
-
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title={project.title}>
-        <div className="space-y-8">
-          <div>
-            <p className="text-foreground/90 leading-relaxed">{project.details.overview}</p>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Key Features</h3>
-            <ul className="space-y-3">
-              {project.details.features.map((feature: string, i: number) => (
-                <li key={i} className="flex gap-3 items-start">
-                  <span className="text-primary mt-1 flex-shrink-0">→</span>
-                  <span className="text-foreground/80">{feature}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Technologies</h3>
-            <div className="flex flex-wrap gap-2">
-              {project.details.technologies.map((tech: string, i: number) => (
-                <span key={i} className="px-3 py-1.5 rounded-full text-xs font-medium bg-primary/15 text-primary/90 border border-primary/30 hover:bg-primary/25 transition-colors">
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="space-y-6 pt-4 border-t border-border">
-            <div>
-              <h3 className="text-sm font-semibold text-foreground mb-2 uppercase tracking-wide">Challenge</h3>
-              <p className="text-foreground/80 leading-relaxed">{project.details.challenges}</p>
-            </div>
-
-            <div>
-              <h3 className="text-sm font-semibold text-foreground mb-2 uppercase tracking-wide">Outcome</h3>
-              <p className="text-foreground/80 leading-relaxed">{project.details.outcome}</p>
-            </div>
-          </div>
-        </div>
-      </Modal>
     </div>
   )
 }
