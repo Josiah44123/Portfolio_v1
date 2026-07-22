@@ -171,18 +171,17 @@ const projects = [
 ]
 
 function ProjectCard({ project, idx, onClick }: { project: any; idx: number; onClick: () => void }) {
-  const [isExpanded, setIsExpanded] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   return (
     <div
       onClick={onClick}
-      className="group relative glass rounded-3xl overflow-hidden border border-white/5 hover:border-white/20 transition-all duration-500 animate-fade-in-up flex flex-col cursor-pointer"
+      className="group relative glass rounded-3xl overflow-hidden border border-white/5 hover:border-white/20 transition-all duration-500 animate-fade-in-up flex flex-col h-full cursor-pointer"
       style={{ animationDelay: `${idx * 100}ms` }}
     >
       <div className={cn("h-2 w-full bg-gradient-to-r", project.color)} />
 
-      <div className="p-8 flex flex-col flex-grow">
+      <div className="p-8 flex flex-col h-full">
         <div
           className={cn(
             "w-12 h-12 rounded-2xl flex items-center justify-center mb-6 bg-gradient-to-br transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-xl",
@@ -203,30 +202,9 @@ function ProjectCard({ project, idx, onClick }: { project: any; idx: number; onC
           {project.title}
         </h3>
 
-        <div 
-          onClick={(e) => {
-            e.stopPropagation()
-            setIsExpanded(!isExpanded)
-            onClick() 
-          }}
-          className="mb-6 cursor-pointer group/desc"
-        >
-          <p
-            className={cn(
-              "text-muted-foreground transition-all duration-300",
-              isExpanded ? "line-clamp-none" : "line-clamp-3"
-            )}
-          >
-            {project.description}
-          </p>
-          <button className="text-xs font-medium text-primary/70 mt-2 flex items-center gap-1 group-hover/desc:text-primary transition-colors">
-            {isExpanded ? (
-               <>Show Less <ChevronUp className="w-3 h-3" /></>
-            ) : (
-               <>Read More <ChevronDown className="w-3 h-3" /></>
-            )}
-          </button>
-        </div>
+        <p className="text-muted-foreground line-clamp-3 mb-6">
+          {project.description}
+        </p>
 
         <div className="flex flex-wrap gap-2 mb-8">
           {project.tags.map((tag: string) => (
@@ -276,9 +254,9 @@ function ProjectCard({ project, idx, onClick }: { project: any; idx: number; onC
       </div>
 
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
           <div 
-            className="absolute inset-0"
+            className="absolute inset-0 cursor-pointer"
             onClick={() => setIsModalOpen(false)}
             aria-hidden="true"
           />
@@ -397,7 +375,7 @@ export function ProjectsSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
           {filteredProjects.map((project, idx) => (
             <ProjectCard 
               key={project.title} 
