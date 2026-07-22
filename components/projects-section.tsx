@@ -170,9 +170,7 @@ const projects = [
   },
 ]
 
-function ProjectCard({ project, idx, onClick }: { project: any; idx: number; onClick: () => void }) {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-
+function ProjectCard({ project, idx, onClick, onLearnMore }: { project: any; idx: number; onClick: () => void; onLearnMore: (project: any) => void }) {
   return (
     <div
       onClick={onClick}
@@ -221,7 +219,7 @@ function ProjectCard({ project, idx, onClick }: { project: any; idx: number; onC
           <button
             onClick={(e) => {
               e.stopPropagation()
-              setIsModalOpen(true)
+              onLearnMore(project)
             }}
             className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors"
           >
@@ -252,70 +250,6 @@ function ProjectCard({ project, idx, onClick }: { project: any; idx: number; onC
           </a>
         </div>
       </div>
-
-      {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-          <div 
-            className="absolute inset-0 cursor-pointer"
-            onClick={() => setIsModalOpen(false)}
-            aria-hidden="true"
-          />
-          
-          <div className="relative w-full max-w-2xl bg-background border border-border rounded-xl shadow-xl overflow-hidden">
-            <div className="flex items-center justify-between px-6 py-5 border-b border-border/50 bg-background">
-              <h2 className="text-xl font-semibold text-foreground">{project.title}</h2>
-              <button
-                onClick={() => setIsModalOpen(false)}
-                className="p-1.5 text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg transition-colors"
-                aria-label="Close modal"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-            
-            <div className="overflow-y-auto max-h-[calc(100vh-180px)] px-6 py-6 space-y-8">
-              <div>
-                <p className="text-foreground/90 leading-relaxed">{project.details.overview}</p>
-              </div>
-
-              <div>
-                <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Key Features</h3>
-                <ul className="space-y-3">
-                  {project.details.features.map((feature: string, i: number) => (
-                    <li key={i} className="flex gap-3 items-start">
-                      <span className="text-primary mt-1 flex-shrink-0">→</span>
-                      <span className="text-foreground/80">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Technologies</h3>
-                <div className="flex flex-wrap gap-2">
-                  {project.details.technologies.map((tech: string, i: number) => (
-                    <span key={i} className="px-3 py-1.5 rounded-full text-xs font-medium bg-primary/15 text-primary/90 border border-primary/30 hover:bg-primary/25 transition-colors">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="space-y-6 pt-4 border-t border-border">
-                <div>
-                  <h3 className="text-sm font-semibold text-foreground mb-2 uppercase tracking-wide">Challenge</h3>
-                  <p className="text-foreground/80 leading-relaxed">{project.details.challenges}</p>
-                </div>
-
-                <div>
-                  <h3 className="text-sm font-semibold text-foreground mb-2 uppercase tracking-wide">Outcome</h3>
-                  <p className="text-foreground/80 leading-relaxed">{project.details.outcome}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   )
 }
@@ -332,6 +266,7 @@ const backgroundColors = [
 export function ProjectsSection() {
   const [filter, setFilter] = useState("All")
   const [activeColorIndex, setActiveColorIndex] = useState(0)
+  const [selectedProject, setSelectedProject] = useState<any>(null)
   
   const categories = ["All", "Web App", "Software", "Design"]
 
@@ -382,10 +317,75 @@ export function ProjectsSection() {
               project={project} 
               idx={idx} 
               onClick={() => setActiveColorIndex((prev) => (prev + 1) % backgroundColors.length)}
+              onLearnMore={setSelectedProject}
             />
           ))}
         </div>
       </div>
+
+      {selectedProject && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+          <div 
+            className="absolute inset-0 cursor-pointer"
+            onClick={() => setSelectedProject(null)}
+            aria-hidden="true"
+          />
+          
+          <div className="relative w-full max-w-2xl max-h-[80vh] bg-background border border-border rounded-xl shadow-xl overflow-hidden">
+            <div className="flex items-center justify-between px-6 py-5 border-b border-border/50 bg-background sticky top-0">
+              <h2 className="text-xl font-semibold text-foreground">{selectedProject.title}</h2>
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="p-1.5 text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg transition-colors"
+                aria-label="Close modal"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            
+            <div className="overflow-y-auto max-h-[calc(80vh-64px)] px-6 py-6 space-y-8">
+              <div>
+                <p className="text-foreground/90 leading-relaxed">{selectedProject.details.overview}</p>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Key Features</h3>
+                <ul className="space-y-3">
+                  {selectedProject.details.features.map((feature: string, i: number) => (
+                    <li key={i} className="flex gap-3 items-start">
+                      <span className="text-primary mt-1 flex-shrink-0">→</span>
+                      <span className="text-foreground/80">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Technologies</h3>
+                <div className="flex flex-wrap gap-2">
+                  {selectedProject.details.technologies.map((tech: string, i: number) => (
+                    <span key={i} className="px-3 py-1.5 rounded-full text-xs font-medium bg-primary/15 text-primary/90 border border-primary/30 hover:bg-primary/25 transition-colors">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="space-y-6 pt-4 border-t border-border">
+                <div>
+                  <h3 className="text-sm font-semibold text-foreground mb-2 uppercase tracking-wide">Challenge</h3>
+                  <p className="text-foreground/80 leading-relaxed">{selectedProject.details.challenges}</p>
+                </div>
+
+                <div>
+                  <h3 className="text-sm font-semibold text-foreground mb-2 uppercase tracking-wide">Outcome</h3>
+                  <p className="text-foreground/80 leading-relaxed">{selectedProject.details.outcome}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
