@@ -152,6 +152,32 @@ const projects = [
     }
   },
   {
+    title: "VeriFund",
+    description:
+      "4th Place in InterCICSkwela 2026: Batang Techno's Hackathon Challenge. A last-mile aid distribution platform bringing transparency and accountability to social assistance programs using digital verification, QR codes, and biometric authentication.",
+    tags: ["Next.js", "React", "Supabase", "TypeScript", "Tailwind CSS", "QR Codes"],
+    github: "https://github.com/Josiah44123/VeriFundPH_Social-Aid-Distribution",
+    demo: "https://verifundph.vercel.app",
+    category: "Web App",
+    icon: <Network className="w-6 h-6" />,
+    color: "from-cyan-500 to-blue-600",
+    details: {
+      overview: "VeriFundPH is a comprehensive last-mile aid distribution platform designed to replace paper-based systems with digital verification. It eliminates fraud through QR codes and biometric verification, ensuring each registered beneficiary receives aid exactly once while maintaining real-time tracking and transparency across all stakeholders.",
+      features: [
+        "Field Console for field officers to register and distribute aid with QR code scanning",
+        "Citizen Portal allowing beneficiaries to view allocations and monitor claims",
+        "LGU Management System for administrators to manage distributions and generate audit reports",
+        "Real-time fraud detection flagging duplicate registrations and claims",
+        "Biometric verification integration for secure beneficiary authentication",
+        "Immutable audit log tracking every transaction for compliance",
+        "Live distribution monitoring and resource allocation optimization"
+      ],
+      technologies: ["Next.js 16", "React 19", "TypeScript", "Supabase", "Tailwind CSS", "QR Code Library", "Biometric API", "Real-time Database"],
+      challenges: "Building a secure, scalable system that handles biometric verification, QR scanning, and real-time synchronization across multiple field teams while ensuring data integrity and preventing duplicate aid distribution in remote areas with inconsistent connectivity.",
+      outcome: "Achieved 4th Place at InterCICSkwela 2026 Hackathon. Successfully demonstrated a working prototype that reduces aid distribution fraud by 100%, cuts processing time by 80%, and maintains an immutable audit trail for government accountability. Currently deployed and operational at verifundph.vercel.app."
+    }
+  },
+  {
     title: "New Project",
     description:
       "Coming soon. Details about source and live demo will be added here.",
