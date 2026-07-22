@@ -160,7 +160,7 @@ const projects = [
     demo: "https://verifundph.vercel.app",
     category: "Web App",
     icon: <Network className="w-6 h-6" />,
-    color: "from-cyan-500 to-blue-600",
+    color: "from-amber-400 to-yellow-500",
     details: {
       overview: "VeriFundPH is a comprehensive last-mile aid distribution platform designed to replace paper-based systems with digital verification. It eliminates fraud through QR codes and biometric verification, ensuring each registered beneficiary receives aid exactly once while maintaining real-time tracking and transparency across all stakeholders.",
       features: [
@@ -178,21 +178,21 @@ const projects = [
     }
   },
   {
-    title: "New Project",
+    title: "More Coming Soon",
     description:
-      "Coming soon. Details about source and live demo will be added here.",
-    tags: ["TBD"],
+      "I'm actively working on more exciting projects. Stay tuned for upcoming releases featuring innovative solutions in web development, design, and emerging technologies.",
+    tags: ["In Progress", "Upcoming"],
     github: "#",
     demo: "#",
     category: "Web App",
     icon: <Code className="w-6 h-6" />,
-    color: "from-red-500 to-pink-500",
+    color: "from-purple-500 to-indigo-600",
     details: {
-      overview: "Project details coming soon.",
-      features: ["Feature 1", "Feature 2", "Feature 3"],
-      technologies: ["TBD"],
-      challenges: "To be updated.",
-      outcome: "To be updated."
+      overview: "Currently developing new projects that showcase advanced technologies and creative problem-solving. More details and live demos will be available soon.",
+      features: ["Full-stack web applications", "Real-time data solutions", "AI-powered features", "Mobile-responsive designs", "Enterprise scalability"],
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Modern Web APIs"],
+      challenges: "Balancing innovation with practical application to create solutions that solve real-world problems.",
+      outcome: "Projects in active development. Expected releases coming throughout 2026."
     }
   },
 ]
