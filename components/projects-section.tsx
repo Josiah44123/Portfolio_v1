@@ -3,6 +3,7 @@
 
 import { useState } from "react"
 import { ExternalLink, Github, Layers, Database, Network, Palette, Code, Gamepad2, ChevronDown, ChevronUp, X } from "lucide-react"
+import { useToast, ToastContainer } from "@/components/ui/toast"
 import { cn } from "@/lib/utils"
 
 const projects = [
@@ -192,7 +193,7 @@ function ProjectCard({ project, idx, onClick, onLearnMore }: { project: any; idx
         <h3 
           onClick={(e) => {
             e.stopPropagation()
-            alert(`You selected: ${project.title}!\n\nCategory: ${project.category}\n\nThe portfolio background color has changed!`)
+            addToast(`Selected: ${project.title} (${project.category}) — background color changed!`, "info")
             onClick()
           }}
           className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors cursor-pointer hover:underline"
@@ -267,6 +268,7 @@ export function ProjectsSection() {
   const [filter, setFilter] = useState("All")
   const [activeColorIndex, setActiveColorIndex] = useState(0)
   const [selectedProject, setSelectedProject] = useState<any>(null)
+  const { toasts, addToast, removeToast } = useToast()
   
   const categories = ["All", "Web App", "Software", "Design"]
 
@@ -386,6 +388,8 @@ export function ProjectsSection() {
           </div>
         </div>
       )}
+
+      <ToastContainer toasts={toasts} onRemove={removeToast} />
     </section>
   )
 }

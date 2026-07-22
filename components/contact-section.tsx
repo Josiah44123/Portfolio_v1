@@ -2,6 +2,7 @@
 import { useState } from "react"
 import { useInView } from "@/hooks/use-in-view"
 import { Mail, Phone, Linkedin, Github, Download, ExternalLink } from "lucide-react"
+import { useToast, ToastContainer } from "@/components/ui/toast"
 
 const contactLinks = [
   {
@@ -38,6 +39,7 @@ export function ContactSection() {
   const { ref, isInView } = useInView()
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
   const [submitted, setSubmitted] = useState(false)
+  const { toasts, addToast, removeToast } = useToast()
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -48,12 +50,12 @@ export function ContactSection() {
     e.preventDefault()
     
     if (formData.name && formData.email && formData.message) {
-      alert(`Thank you for reaching out, ${formData.name}! I've received your message:\n\nEmail: ${formData.email}\nMessage: ${formData.message}\n\nI'll get back to you soon!`)
+      addToast(`Thank you, ${formData.name}! I've received your message and will get back to you soon.`, "success", 5000)
       setFormData({ name: "", email: "", message: "" })
       setSubmitted(true)
       setTimeout(() => setSubmitted(false), 3000)
     } else {
-      alert("Please fill in all fields before submitting!")
+      addToast("Please fill in all fields before submitting!", "error")
     }
   }
 
@@ -166,6 +168,8 @@ export function ContactSection() {
           </div>
         </div>
       </div>
+
+      <ToastContainer toasts={toasts} onRemove={removeToast} />
     </section>
   )
 }
