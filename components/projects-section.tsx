@@ -2,8 +2,8 @@
 "use client"
 
 import { useState } from "react"
-import { ExternalLink, Github, Layers, Database, Network, Palette, Code, Gamepad2, ChevronDown, ChevronUp } from "lucide-react"
-import { Modal } from "@/components/ui/modal"
+import { ExternalLink, Github, Layers, Database, Network, Palette, Code, Gamepad2, ChevronDown, ChevronUp, X } from "lucide-react"
+import { useToast, ToastContainer } from "@/components/ui/toast"
 import { cn } from "@/lib/utils"
 
 const projects = [
@@ -151,21 +151,62 @@ const projects = [
       outcome: "Delivered a comprehensive design system with 50+ screens, interactive prototypes, and positive user testing feedback (4.6/5 average)."
     }
   },
+  {
+    title: "VeriFund",
+    description:
+      "4th Place in InterCICSkwela 2026: Batang Techno's Hackathon Challenge. A last-mile aid distribution platform bringing transparency and accountability to social assistance programs using digital verification, QR codes, and biometric authentication.",
+    tags: ["Next.js", "React", "Supabase", "TypeScript", "Tailwind CSS", "QR Codes"],
+    github: "https://github.com/Josiah44123/VeriFundPH_Social-Aid-Distribution",
+    demo: "https://verifundph.vercel.app",
+    category: "Web App",
+    icon: <Network className="w-6 h-6" />,
+    color: "from-amber-400 to-yellow-500",
+    details: {
+      overview: "VeriFundPH is a comprehensive last-mile aid distribution platform designed to replace paper-based systems with digital verification. It eliminates fraud through QR codes and biometric verification, ensuring each registered beneficiary receives aid exactly once while maintaining real-time tracking and transparency across all stakeholders.",
+      features: [
+        "Field Console for field officers to register and distribute aid with QR code scanning",
+        "Citizen Portal allowing beneficiaries to view allocations and monitor claims",
+        "LGU Management System for administrators to manage distributions and generate audit reports",
+        "Real-time fraud detection flagging duplicate registrations and claims",
+        "Biometric verification integration for secure beneficiary authentication",
+        "Immutable audit log tracking every transaction for compliance",
+        "Live distribution monitoring and resource allocation optimization"
+      ],
+      technologies: ["Next.js 16", "React 19", "TypeScript", "Supabase", "Tailwind CSS", "QR Code Library", "Biometric API", "Real-time Database"],
+      challenges: "Building a secure, scalable system that handles biometric verification, QR scanning, and real-time synchronization across multiple field teams while ensuring data integrity and preventing duplicate aid distribution in remote areas with inconsistent connectivity.",
+      outcome: "Achieved 4th Place at InterCICSkwela 2026 Hackathon. Successfully demonstrated a working prototype that reduces aid distribution fraud by 100%, cuts processing time by 80%, and maintains an immutable audit trail for government accountability. Currently deployed and operational at verifundph.vercel.app."
+    }
+  },
+  {
+    title: "More Coming Soon",
+    description:
+      "I'm actively working on more exciting projects. Stay tuned for upcoming releases featuring innovative solutions in web development, design, and emerging technologies.",
+    tags: ["In Progress", "Upcoming"],
+    github: "#",
+    demo: "#",
+    category: "Web App",
+    icon: <Code className="w-6 h-6" />,
+    color: "from-purple-500 to-indigo-600",
+    details: {
+      overview: "Currently developing new projects that showcase advanced technologies and creative problem-solving. More details and live demos will be available soon.",
+      features: ["Full-stack web applications", "Real-time data solutions", "AI-powered features", "Mobile-responsive designs", "Enterprise scalability"],
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Modern Web APIs"],
+      challenges: "Balancing innovation with practical application to create solutions that solve real-world problems.",
+      outcome: "Projects in active development. Expected releases coming throughout 2026."
+    }
+  },
 ]
 
-function ProjectCard({ project, idx, onClick }: { project: any; idx: number; onClick: () => void }) {
-  const [isExpanded, setIsExpanded] = useState(false)
-  const [isModalOpen, setIsModalOpen] = useState(false)
-
+function ProjectCard({ project, idx, onClick, onLearnMore }: { project: any; idx: number; onClick: () => void; onLearnMore: (project: any) => void }) {
   return (
     <div
       onClick={onClick}
-      className="group relative glass rounded-3xl overflow-hidden border border-white/5 hover:border-white/20 transition-all duration-500 animate-fade-in-up flex flex-col cursor-pointer"
+      className="group relative glass rounded-3xl overflow-hidden border border-white/5 hover:border-white/20 transition-all duration-500 animate-fade-in-up flex flex-col h-full cursor-pointer"
       style={{ animationDelay: `${idx * 100}ms` }}
     >
       <div className={cn("h-2 w-full bg-gradient-to-r", project.color)} />
 
-      <div className="p-8 flex flex-col flex-grow">
+      <div className="p-8 flex flex-col h-full">
         <div
           className={cn(
             "w-12 h-12 rounded-2xl flex items-center justify-center mb-6 bg-gradient-to-br transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-xl",
@@ -178,7 +219,7 @@ function ProjectCard({ project, idx, onClick }: { project: any; idx: number; onC
         <h3 
           onClick={(e) => {
             e.stopPropagation()
-            alert(`You selected: ${project.title}!\n\nCategory: ${project.category}\n\nThe portfolio background color has changed!`)
+            addToast(`Selected: ${project.title} (${project.category}) — background color changed!`, "info")
             onClick()
           }}
           className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors cursor-pointer hover:underline"
@@ -186,30 +227,9 @@ function ProjectCard({ project, idx, onClick }: { project: any; idx: number; onC
           {project.title}
         </h3>
 
-        <div 
-          onClick={(e) => {
-            e.stopPropagation()
-            setIsExpanded(!isExpanded)
-            onClick() 
-          }}
-          className="mb-6 cursor-pointer group/desc"
-        >
-          <p
-            className={cn(
-              "text-muted-foreground transition-all duration-300",
-              isExpanded ? "line-clamp-none" : "line-clamp-3"
-            )}
-          >
-            {project.description}
-          </p>
-          <button className="text-xs font-medium text-primary/70 mt-2 flex items-center gap-1 group-hover/desc:text-primary transition-colors">
-            {isExpanded ? (
-               <>Show Less <ChevronUp className="w-3 h-3" /></>
-            ) : (
-               <>Read More <ChevronDown className="w-3 h-3" /></>
-            )}
-          </button>
-        </div>
+        <p className="text-muted-foreground line-clamp-3 mb-6">
+          {project.description}
+        </p>
 
         <div className="flex flex-wrap gap-2 mb-8">
           {project.tags.map((tag: string) => (
@@ -226,7 +246,7 @@ function ProjectCard({ project, idx, onClick }: { project: any; idx: number; onC
           <button
             onClick={(e) => {
               e.stopPropagation()
-              setIsModalOpen(true)
+              onLearnMore(project)
             }}
             className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors"
           >
@@ -257,49 +277,6 @@ function ProjectCard({ project, idx, onClick }: { project: any; idx: number; onC
           </a>
         </div>
       </div>
-
-      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} title={project.title}>
-        <div className="space-y-8">
-          <div>
-            <p className="text-foreground/90 leading-relaxed">{project.details.overview}</p>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Key Features</h3>
-            <ul className="space-y-3">
-              {project.details.features.map((feature: string, i: number) => (
-                <li key={i} className="flex gap-3 items-start">
-                  <span className="text-primary mt-1 flex-shrink-0">→</span>
-                  <span className="text-foreground/80">{feature}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Technologies</h3>
-            <div className="flex flex-wrap gap-2">
-              {project.details.technologies.map((tech: string, i: number) => (
-                <span key={i} className="px-3 py-1.5 rounded-full text-xs font-medium bg-primary/15 text-primary/90 border border-primary/30 hover:bg-primary/25 transition-colors">
-                  {tech}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          <div className="space-y-6 pt-4 border-t border-border">
-            <div>
-              <h3 className="text-sm font-semibold text-foreground mb-2 uppercase tracking-wide">Challenge</h3>
-              <p className="text-foreground/80 leading-relaxed">{project.details.challenges}</p>
-            </div>
-
-            <div>
-              <h3 className="text-sm font-semibold text-foreground mb-2 uppercase tracking-wide">Outcome</h3>
-              <p className="text-foreground/80 leading-relaxed">{project.details.outcome}</p>
-            </div>
-          </div>
-        </div>
-      </Modal>
     </div>
   )
 }
@@ -316,6 +293,8 @@ const backgroundColors = [
 export function ProjectsSection() {
   const [filter, setFilter] = useState("All")
   const [activeColorIndex, setActiveColorIndex] = useState(0)
+  const [selectedProject, setSelectedProject] = useState<any>(null)
+  const { toasts, addToast, removeToast } = useToast()
   
   const categories = ["All", "Web App", "Software", "Design"]
 
@@ -359,17 +338,84 @@ export function ProjectsSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
           {filteredProjects.map((project, idx) => (
             <ProjectCard 
               key={project.title} 
               project={project} 
               idx={idx} 
               onClick={() => setActiveColorIndex((prev) => (prev + 1) % backgroundColors.length)}
+              onLearnMore={setSelectedProject}
             />
           ))}
         </div>
       </div>
+
+      {selectedProject && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+          <div 
+            className="absolute inset-0 cursor-pointer"
+            onClick={() => setSelectedProject(null)}
+            aria-hidden="true"
+          />
+          
+          <div className="relative w-full max-w-2xl max-h-[80vh] bg-background border border-border rounded-xl shadow-xl overflow-hidden">
+            <div className="flex items-center justify-between px-6 py-5 border-b border-border/50 bg-background sticky top-0">
+              <h2 className="text-xl font-semibold text-foreground">{selectedProject.title}</h2>
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="p-1.5 text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg transition-colors"
+                aria-label="Close modal"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            
+            <div className="overflow-y-auto max-h-[calc(80vh-64px)] px-6 py-6 space-y-8">
+              <div>
+                <p className="text-foreground/90 leading-relaxed">{selectedProject.details.overview}</p>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Key Features</h3>
+                <ul className="space-y-3">
+                  {selectedProject.details.features.map((feature: string, i: number) => (
+                    <li key={i} className="flex gap-3 items-start">
+                      <span className="text-primary mt-1 flex-shrink-0">→</span>
+                      <span className="text-foreground/80">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Technologies</h3>
+                <div className="flex flex-wrap gap-2">
+                  {selectedProject.details.technologies.map((tech: string, i: number) => (
+                    <span key={i} className="px-3 py-1.5 rounded-full text-xs font-medium bg-primary/15 text-primary/90 border border-primary/30 hover:bg-primary/25 transition-colors">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="space-y-6 pt-4 border-t border-border">
+                <div>
+                  <h3 className="text-sm font-semibold text-foreground mb-2 uppercase tracking-wide">Challenge</h3>
+                  <p className="text-foreground/80 leading-relaxed">{selectedProject.details.challenges}</p>
+                </div>
+
+                <div>
+                  <h3 className="text-sm font-semibold text-foreground mb-2 uppercase tracking-wide">Outcome</h3>
+                  <p className="text-foreground/80 leading-relaxed">{selectedProject.details.outcome}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <ToastContainer toasts={toasts} onRemove={removeToast} />
     </section>
   )
 }

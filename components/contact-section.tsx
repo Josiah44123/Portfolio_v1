@@ -2,6 +2,7 @@
 import { useState } from "react"
 import { useInView } from "@/hooks/use-in-view"
 import { Mail, Phone, Linkedin, Github, Download, ExternalLink } from "lucide-react"
+import { useToast, ToastContainer } from "@/components/ui/toast"
 
 const contactLinks = [
   {
@@ -38,6 +39,7 @@ export function ContactSection() {
   const { ref, isInView } = useInView()
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
   const [submitted, setSubmitted] = useState(false)
+  const { toasts, addToast, removeToast } = useToast()
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -48,12 +50,12 @@ export function ContactSection() {
     e.preventDefault()
     
     if (formData.name && formData.email && formData.message) {
-      alert(`Thank you for reaching out, ${formData.name}! I've received your message:\n\nEmail: ${formData.email}\nMessage: ${formData.message}\n\nI'll get back to you soon!`)
+      addToast(`Thank you, ${formData.name}! I've received your message and will get back to you soon.`, "success", 5000)
       setFormData({ name: "", email: "", message: "" })
       setSubmitted(true)
       setTimeout(() => setSubmitted(false), 3000)
     } else {
-      alert("Please fill in all fields before submitting!")
+      addToast("Please fill in all fields before submitting!", "error")
     }
   }
 
@@ -66,14 +68,16 @@ export function ContactSection() {
             isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-2 flex items-center gap-3">
-            <span className="text-primary">📬</span> Get In Touch!
-          </h2>
-          <div className="w-20 h-1 bg-primary rounded-full mb-4" />
-          <p className="text-muted-foreground mb-8 max-w-2xl">
-            I&apos;m always open to discussing about new opportunities, collaborations, or just having a chat regarding
-            technology and innovation.
-          </p>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-2 flex items-center justify-center gap-3">
+              <span className="text-primary">📬</span> Get In Touch!
+            </h2>
+            <div className="w-20 h-1 bg-primary rounded-full mb-4 mx-auto" />
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              I&apos;m always open to discussing about new opportunities, collaborations, or just having a chat regarding
+              technology and innovation.
+            </p>
+          </div>
           <div className="grid sm:grid-cols-2 gap-4 mb-8">
             {contactLinks.map((link, index) => (
               <a
@@ -100,8 +104,8 @@ export function ContactSection() {
             ))}
           </div>
 
-          <div className="glass rounded-xl p-8 mb-8 max-w-2xl">
-            <h3 className="text-xl font-bold mb-6">Send Me a Message</h3>
+          <div className="glass rounded-xl p-8 mb-8 max-w-2xl mx-auto">
+            <h3 className="text-xl font-bold mb-6 text-center">Send Me a Message</h3>
             <form onSubmit={handleFormSubmit} className="space-y-4">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
@@ -166,6 +170,8 @@ export function ContactSection() {
           </div>
         </div>
       </div>
+
+      <ToastContainer toasts={toasts} onRemove={removeToast} />
     </section>
   )
 }

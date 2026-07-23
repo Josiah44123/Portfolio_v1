@@ -12,26 +12,26 @@ export function Modal({ isOpen, onClose, title, children }: ModalProps) {
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
       <div 
-        className="absolute inset-0 bg-black/60 backdrop-blur-md transition-opacity"
+        className="absolute inset-0"
         onClick={onClose}
         aria-hidden="true"
       />
       
-      <div className="relative w-full max-w-2xl bg-card border border-border rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-300">
-        <div className="flex items-center justify-between px-8 py-6 border-b border-border bg-card">
-          <h2 className="text-2xl font-bold text-foreground">{title}</h2>
+      <div className="relative w-full max-w-2xl bg-background border border-border rounded-xl shadow-xl overflow-hidden">
+        <div className="flex items-center justify-between px-6 py-5 border-b border-border/50 bg-background">
+          <h2 className="text-xl font-semibold text-foreground">{title}</h2>
           <button
             onClick={onClose}
-            className="p-2 text-muted-foreground hover:text-foreground hover:bg-secondary/50 rounded-lg transition-all duration-200"
+            className="p-1.5 text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg transition-colors"
             aria-label="Close modal"
           >
             <X className="w-5 h-5" />
           </button>
         </div>
         
-        <div className="overflow-y-auto max-h-[calc(100vh-200px)] px-8 py-8">
+        <div className="overflow-y-auto max-h-[calc(100vh-180px)] px-6 py-6">
           {children}
         </div>
       </div>
