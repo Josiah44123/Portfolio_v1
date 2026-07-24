@@ -200,8 +200,7 @@ const projects = [
 function ProjectCard({ project, idx, onClick, onLearnMore }: { project: any; idx: number; onClick: () => void; onLearnMore: (project: any) => void }) {
   return (
     <div
-      onClick={onClick}
-      className="group relative glass rounded-3xl overflow-hidden border border-white/5 hover:border-white/20 transition-all duration-500 animate-fade-in-up flex flex-col h-full cursor-pointer"
+      className="group relative glass rounded-3xl overflow-hidden border border-white/5 hover:border-white/20 transition-all duration-500 animate-fade-in-up flex flex-col h-full"
       style={{ animationDelay: `${idx * 100}ms` }}
     >
       <div className={cn("h-2 w-full bg-gradient-to-r", project.color)} />
