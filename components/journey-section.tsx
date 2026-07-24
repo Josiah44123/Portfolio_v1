@@ -50,14 +50,32 @@ const timelineData: TimelineItem[] = [
     gradient: "from-blue-500 to-indigo-500",
   },
   {
-    id: "jpcs",
+    id: "jpcs-president",
+    type: "experience",
+    title: "Executive President",
+    organization: "Junior Philippine Computer Society (DLSL Chapter)",
+    location: "De La Salle Lipa",
+    period: "Apr 2026 – Present",
+    description:
+      "Serving as the President for the 2026-2027 academic year, leading the university's premier computer science organization.",
+    details: [
+      "Leads the strategic direction and overall management of the organization",
+      "Finalized major officer reorganizations and appointments for the upcoming term",
+      "Works closely with internal and external officials",
+      "Coordinates with other university organizations and industry partners",
+    ],
+    icon: Briefcase,
+    gradient: "from-rose-500 to-pink-600",
+  },
+  {
+    id: "jpcs-project-head",
     type: "experience",
     title: "Project Head for External Affairs",
     organization: "Junior Philippine Computer Society (DLSL Chapter)",
     location: "De La Salle Lipa",
-    period: "Jun 2025 – Present",
+    period: "Jun 2025 – Apr 2026",
     description:
-      "Leading external  and organizational communication for the university's premier computer science organization.",
+      "Leading external and organizational communication for the university's premier computer science organization.",
     details: [
       "Leads external organizational communication for projects and events",
       "Applies project management for events, collaborations, and planning",
@@ -67,7 +85,6 @@ const timelineData: TimelineItem[] = [
     icon: Briefcase,
     gradient: "from-orange-500 to-red-500",
   },
-  
   {
     id: "dlsl-dl-1y2s",
     type: "award",
@@ -196,7 +213,6 @@ export function JourneySection() {
 
   return (
     <section id="journey" className="py-20 px-4 bg-secondary/30 relative overflow-hidden">
-      {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
@@ -205,26 +221,23 @@ export function JourneySection() {
       <div className="container mx-auto max-w-5xl relative z-10">
         <div
           ref={ref}
-          className={`transition-all duration-700 ${
-            isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-          }`}
+          className={`transition-all duration-700 ${isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-2 flex items-center gap-3">
             <span className="text-primary">🚀</span> My Journey
           </h2>
           <div className="w-20 h-1 bg-primary rounded-full mb-8" />
 
-          {/* Tabs */}
           <div className="flex flex-wrap gap-2 mb-8">
             {tabs.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center gap-2 px-5 py-3 rounded-xl font-medium transition-all duration-300 ${
-                  activeTab === tab.id
-                    ? "bg-primary text-primary-foreground shadow-lg shadow-primary/25"
-                    : "glass hover:bg-primary/10"
-                }`}
+                className={`flex items-center gap-2 px-5 py-3 rounded-xl font-medium transition-all duration-300 ${activeTab === tab.id
+                  ? "bg-primary text-primary-foreground shadow-lg shadow-primary/25"
+                  : "glass hover:bg-primary/10"
+                  }`}
               >
                 <tab.icon className="w-5 h-5" />
                 {tab.label}
@@ -232,31 +245,25 @@ export function JourneySection() {
             ))}
           </div>
 
-          {/* Timeline */}
           <div className="relative">
-            {/* Timeline line */}
             <div className="absolute left-6 md:left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-accent to-primary/20" />
 
             <div className="space-y-6">
               {filteredItems.map((item, index) => (
                 <div
                   key={item.id}
-                  className={`relative pl-16 md:pl-20 transition-all duration-500 ${
-                    isInView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
-                  }`}
+                  className={`relative pl-16 md:pl-20 transition-all duration-500 ${isInView ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"
+                    }`}
                   style={{ transitionDelay: `${index * 150}ms` }}
                 >
-                  {/* Timeline dot */}
                   <div
                     className={`absolute left-4 md:left-6 top-6 w-4 h-4 rounded-full bg-gradient-to-r ${item.gradient} shadow-lg animate-pulse-glow`}
                   />
 
-                  {/* Card */}
                   <div
                     onClick={() => setExpandedItem(expandedItem === item.id ? null : item.id)}
-                    className={`glass rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 ${
-                      expandedItem === item.id ? "border-primary/50 shadow-lg shadow-primary/10" : ""
-                    }`}
+                    className={`glass rounded-2xl p-6 cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 ${expandedItem === item.id ? "border-primary/50 shadow-lg shadow-primary/10" : ""
+                      }`}
                   >
                     <div className="flex items-start gap-4">
                       <div className={`p-3 rounded-xl bg-gradient-to-r ${item.gradient} bg-opacity-20 flex-shrink-0`}>
@@ -289,12 +296,10 @@ export function JourneySection() {
 
                         {item.description && <p className="text-muted-foreground mb-3">{item.description}</p>}
 
-                        {/* Expandable details */}
                         {item.details && (
                           <div
-                            className={`overflow-hidden transition-all duration-300 ${
-                              expandedItem === item.id ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
-                            }`}
+                            className={`overflow-hidden transition-all duration-300 ${expandedItem === item.id ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
+                              }`}
                           >
                             <div className="pt-4 border-t border-border/50">
                               <ul className="space-y-2">

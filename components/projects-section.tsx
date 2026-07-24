@@ -8,6 +8,31 @@ import { cn } from "@/lib/utils"
 
 const projects = [
   {
+    title: "VeriFund",
+    description:
+      "4th Place in InterCICSkwela 2026: Batang Techno's Hackathon Challenge. A last-mile aid distribution platform bringing transparency and accountability to social assistance programs using digital verification, QR codes, and biometric authentication.",
+    tags: ["Next.js", "React", "Supabase", "TypeScript", "Tailwind CSS", "QR Codes"],
+    github: "https://github.com/Josiah44123/VeriFundPH_Social-Aid-Distribution",
+    demo: "https://verifundph.vercel.app",
+    category: "Web App",
+    icon: <Network className="w-6 h-6" />,
+    color: "from-amber-400 to-yellow-500",
+    details: {
+      overview: "VeriFundPH is a comprehensive last-mile aid distribution platform designed to replace paper-based systems with digital verification. It eliminates fraud through QR codes and biometric verification, ensuring each registered beneficiary receives aid exactly once while maintaining real-time tracking and transparency across all stakeholders.",
+      features: [
+        "Field Console for field officers to register and distribute aid with QR code scanning",
+        "Citizen Portal allowing beneficiaries to view allocations and monitor claims",
+        "LGU Management System for administrators to manage distributions and generate audit reports",
+        "Real-time fraud detection flagging duplicate registrations and claims",
+        "Biometric verification integration for secure beneficiary authentication",
+        "Immutable audit log tracking every transaction for compliance",
+        "Live distribution monitoring and resource allocation optimization"
+      ],
+      technologies: ["Next.js 16", "React 19", "TypeScript", "Supabase", "Tailwind CSS", "QR Code Library", "Biometric API", "Real-time Database"],
+      challenges: "Building a secure, scalable system that handles biometric verification, QR scanning, and real-time synchronization across multiple field teams while ensuring data integrity and preventing duplicate aid distribution in remote areas with inconsistent connectivity.",
+      outcome: "Achieved 4th Place at InterCICSkwela 2026 Hackathon. Successfully demonstrated a working prototype that reduces aid distribution fraud by 100%, cuts processing time by 80%, and maintains an immutable audit trail for government accountability. Currently deployed and operational at verifundph.vercel.app."
+    }
+  }, {
     title: "Chick Stacker",
     description:
       "A custom game engine built with HTML5 Canvas and Next.js App Router. This project marks my first full integration of Supabase, utilizing it to engineer a secure, real-time leaderboard system via dedicated API routes.",
@@ -151,32 +176,7 @@ const projects = [
       outcome: "Delivered a comprehensive design system with 50+ screens, interactive prototypes, and positive user testing feedback (4.6/5 average)."
     }
   },
-  {
-    title: "VeriFund",
-    description:
-      "4th Place in InterCICSkwela 2026: Batang Techno's Hackathon Challenge. A last-mile aid distribution platform bringing transparency and accountability to social assistance programs using digital verification, QR codes, and biometric authentication.",
-    tags: ["Next.js", "React", "Supabase", "TypeScript", "Tailwind CSS", "QR Codes"],
-    github: "https://github.com/Josiah44123/VeriFundPH_Social-Aid-Distribution",
-    demo: "https://verifundph.vercel.app",
-    category: "Web App",
-    icon: <Network className="w-6 h-6" />,
-    color: "from-amber-400 to-yellow-500",
-    details: {
-      overview: "VeriFundPH is a comprehensive last-mile aid distribution platform designed to replace paper-based systems with digital verification. It eliminates fraud through QR codes and biometric verification, ensuring each registered beneficiary receives aid exactly once while maintaining real-time tracking and transparency across all stakeholders.",
-      features: [
-        "Field Console for field officers to register and distribute aid with QR code scanning",
-        "Citizen Portal allowing beneficiaries to view allocations and monitor claims",
-        "LGU Management System for administrators to manage distributions and generate audit reports",
-        "Real-time fraud detection flagging duplicate registrations and claims",
-        "Biometric verification integration for secure beneficiary authentication",
-        "Immutable audit log tracking every transaction for compliance",
-        "Live distribution monitoring and resource allocation optimization"
-      ],
-      technologies: ["Next.js 16", "React 19", "TypeScript", "Supabase", "Tailwind CSS", "QR Code Library", "Biometric API", "Real-time Database"],
-      challenges: "Building a secure, scalable system that handles biometric verification, QR scanning, and real-time synchronization across multiple field teams while ensuring data integrity and preventing duplicate aid distribution in remote areas with inconsistent connectivity.",
-      outcome: "Achieved 4th Place at InterCICSkwela 2026 Hackathon. Successfully demonstrated a working prototype that reduces aid distribution fraud by 100%, cuts processing time by 80%, and maintains an immutable audit trail for government accountability. Currently deployed and operational at verifundph.vercel.app."
-    }
-  },
+
   {
     title: "More Coming Soon",
     description:
@@ -215,7 +215,7 @@ function ProjectCard({ project, idx, onClick, onLearnMore, addToast }: { project
           {project.icon}
         </div>
 
-        <h3 
+        <h3
           onClick={(e) => {
             e.stopPropagation()
             onClick()
@@ -293,18 +293,18 @@ export function ProjectsSection() {
   const [activeColorIndex, setActiveColorIndex] = useState(0)
   const [selectedProject, setSelectedProject] = useState<any>(null)
   const { toasts, addToast, removeToast } = useToast()
-  
+
   const categories = ["All", "Web App", "Software", "Design"]
 
   const filteredProjects = filter === "All" ? projects : projects.filter((p) => p.category === filter)
 
   return (
     <section id="projects" className="py-24 relative overflow-hidden transition-colors duration-1000">
-      <div 
+      <div
         className={cn(
           "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] max-w-[1000px] max-h-[1000px] rounded-full blur-[140px] opacity-[0.15] pointer-events-none transition-all duration-1000 bg-gradient-to-br",
           backgroundColors[activeColorIndex]
-        )} 
+        )}
       />
 
       <div className="container mx-auto px-4 relative z-10">
@@ -338,10 +338,10 @@ export function ProjectsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
           {filteredProjects.map((project, idx) => (
-            <ProjectCard 
-              key={project.title} 
-              project={project} 
-              idx={idx} 
+            <ProjectCard
+              key={project.title}
+              project={project}
+              idx={idx}
               onClick={() => setActiveColorIndex((prev) => (prev + 1) % backgroundColors.length)}
               onLearnMore={setSelectedProject}
               addToast={addToast}
@@ -352,12 +352,12 @@ export function ProjectsSection() {
 
       {selectedProject && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
-          <div 
+          <div
             className="absolute inset-0 cursor-pointer"
             onClick={() => setSelectedProject(null)}
             aria-hidden="true"
           />
-          
+
           <div className="relative w-full max-w-2xl max-h-[80vh] bg-background border border-border rounded-xl shadow-xl overflow-hidden">
             <div className="flex items-center justify-between px-6 py-5 border-b border-border/50 bg-background sticky top-0">
               <h2 className="text-xl font-semibold text-foreground">{selectedProject.title}</h2>
@@ -369,7 +369,7 @@ export function ProjectsSection() {
                 <X className="w-5 h-5" />
               </button>
             </div>
-            
+
             <div className="overflow-y-auto max-h-[calc(80vh-64px)] px-6 py-6 space-y-8">
               <div>
                 <p className="text-foreground/90 leading-relaxed">{selectedProject.details.overview}</p>
