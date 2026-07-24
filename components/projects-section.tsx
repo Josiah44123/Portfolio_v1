@@ -197,11 +197,10 @@ const projects = [
   },
 ]
 
-function ProjectCard({ project, idx, onClick, onLearnMore }: { project: any; idx: number; onClick: () => void; onLearnMore: (project: any) => void }) {
+function ProjectCard({ project, idx, onClick, onLearnMore, addToast }: { project: any; idx: number; onClick: () => void; onLearnMore: (project: any) => void; addToast: (message: string, type: string) => void }) {
   return (
     <div
-      onClick={onClick}
-      className="group relative glass rounded-3xl overflow-hidden border border-white/5 hover:border-white/20 transition-all duration-500 animate-fade-in-up flex flex-col h-full cursor-pointer"
+      className="group relative glass rounded-3xl overflow-hidden border border-white/5 hover:border-white/20 transition-all duration-500 animate-fade-in-up flex flex-col h-full"
       style={{ animationDelay: `${idx * 100}ms` }}
     >
       <div className={cn("h-2 w-full bg-gradient-to-r", project.color)} />
@@ -219,7 +218,6 @@ function ProjectCard({ project, idx, onClick, onLearnMore }: { project: any; idx
         <h3 
           onClick={(e) => {
             e.stopPropagation()
-            addToast(`Selected: ${project.title} (${project.category}) — background color changed!`, "info")
             onClick()
           }}
           className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors cursor-pointer hover:underline"
@@ -346,6 +344,7 @@ export function ProjectsSection() {
               idx={idx} 
               onClick={() => setActiveColorIndex((prev) => (prev + 1) % backgroundColors.length)}
               onLearnMore={setSelectedProject}
+              addToast={addToast}
             />
           ))}
         </div>
