@@ -218,7 +218,6 @@ function ProjectCard({ project, idx, onClick, onLearnMore, addToast }: { project
         <h3 
           onClick={(e) => {
             e.stopPropagation()
-            addToast(`Selected: ${project.title} (${project.category}) — background color changed!`, "info")
             onClick()
           }}
           className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors cursor-pointer hover:underline"
