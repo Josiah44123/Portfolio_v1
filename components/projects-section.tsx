@@ -197,7 +197,7 @@ const projects = [
   },
 ]
 
-function ProjectCard({ project, idx, onClick, onLearnMore }: { project: any; idx: number; onClick: () => void; onLearnMore: (project: any) => void }) {
+function ProjectCard({ project, idx, onClick, onLearnMore, addToast }: { project: any; idx: number; onClick: () => void; onLearnMore: (project: any) => void; addToast: (message: string, type: string) => void }) {
   return (
     <div
       className="group relative glass rounded-3xl overflow-hidden border border-white/5 hover:border-white/20 transition-all duration-500 animate-fade-in-up flex flex-col h-full"
@@ -345,6 +345,7 @@ export function ProjectsSection() {
               idx={idx} 
               onClick={() => setActiveColorIndex((prev) => (prev + 1) % backgroundColors.length)}
               onLearnMore={setSelectedProject}
+              addToast={addToast}
             />
           ))}
         </div>
