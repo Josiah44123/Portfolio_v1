@@ -1,4 +1,3 @@
-
 "use client"
 
 import { useState } from "react"
@@ -7,6 +6,7 @@ import { useToast, ToastContainer } from "@/components/ui/toast"
 import { cn } from "@/lib/utils"
 
 const projects = [
+
   {
     title: "VeriFund",
     description:
@@ -17,6 +17,7 @@ const projects = [
     category: "Web App",
     icon: <Network className="w-6 h-6" />,
     color: "from-amber-400 to-yellow-500",
+    image: "/images/verifund.jpg",
     details: {
       overview: "VeriFundPH is a comprehensive last-mile aid distribution platform designed to replace paper-based systems with digital verification. It eliminates fraud through QR codes and biometric verification, ensuring each registered beneficiary receives aid exactly once while maintaining real-time tracking and transparency across all stakeholders.",
       features: [
@@ -32,7 +33,8 @@ const projects = [
       challenges: "Building a secure, scalable system that handles biometric verification, QR scanning, and real-time synchronization across multiple field teams while ensuring data integrity and preventing duplicate aid distribution in remote areas with inconsistent connectivity.",
       outcome: "Achieved 4th Place at InterCICSkwela 2026 Hackathon. Successfully demonstrated a working prototype that reduces aid distribution fraud by 100%, cuts processing time by 80%, and maintains an immutable audit trail for government accountability. Currently deployed and operational at verifundph.vercel.app."
     }
-  }, {
+  },
+  {
     title: "Chick Stacker",
     description:
       "A custom game engine built with HTML5 Canvas and Next.js App Router. This project marks my first full integration of Supabase, utilizing it to engineer a secure, real-time leaderboard system via dedicated API routes.",
@@ -42,6 +44,7 @@ const projects = [
     category: "Web App",
     icon: <Gamepad2 className="w-6 h-6" />,
     color: "from-amber-400 to-orange-500",
+    image: "/images/chicks.jpg",
     details: {
       overview: "A fun, addictive stacking game where you build towers by placing chicks strategically. The game features responsive controls, smooth animations, and an engaging leaderboard system.",
       features: [
@@ -57,30 +60,6 @@ const projects = [
     }
   },
   {
-    title: "Productivity Hub",
-    description:
-      "A high-performance personal dashboard featuring real-time task tracking, dynamic progress visualization, and integrated resource management tools.",
-    tags: ["React", "Node.js", "Tailwind CSS"],
-    github: "https://github.com/Josiah44123/v1productivity-app",
-    demo: "https://personalizedproductivityhub.vercel.app",
-    category: "Web App",
-    icon: <Layers className="w-6 h-6" />,
-    color: "from-orange-500 to-rose-500",
-    details: {
-      overview: "A comprehensive productivity dashboard designed for personal task management and progress tracking. Features real-time updates, beautiful visualizations, and an intuitive interface.",
-      features: [
-        "Real-time task tracking with instant updates",
-        "Dynamic progress bars and completion visualizations",
-        "Resource management and time allocation tools",
-        "Customizable workflows and task categories",
-        "Data persistence with cloud sync"
-      ],
-      technologies: ["React 19", "Node.js", "Tailwind CSS", "Express.js", "MongoDB"],
-      challenges: "Creating a performant dashboard that handles real-time updates without lag while maintaining a clean, intuitive UI.",
-      outcome: "Delivered a fully functional productivity tool with 50+ active users and 4.8/5 user satisfaction rating."
-    }
-  },
-  {
     title: "Java Output Challenge",
     description:
       "An interactive quiz game featuring 'Classic' and 'Event' modes. Challenges developers to predict Java code outputs with dynamic question generation, real-time scoring, and IDE-inspired syntax highlighting.",
@@ -90,6 +69,7 @@ const projects = [
     category: "Web App",
     icon: <Code className="w-6 h-6" />,
     color: "from-emerald-500 to-teal-500",
+    image: "/images/java.jpg",
     details: {
       overview: "An educational game that helps Java developers practice code output prediction. Features multiple difficulty levels, detailed explanations, and a competitive leaderboard.",
       features: [
@@ -105,6 +85,82 @@ const projects = [
     }
   },
   {
+    title: "AnimoSpace",
+    description:
+      "A Digital Twin Platform for the Mabini Building featuring real-time occupancy tracking, intelligent lab booking, streamlined equipment management, and unified facility oversight.",
+    tags: ["Digital Twin", "Smart Campus", "Facility Management", "Analytics"],
+    github: "#",
+    demo: "#",
+    category: "Web App",
+    icon: <Layers className="w-6 h-6" />,
+    color: "from-green-500 to-emerald-600",
+    image: "/images/animospace.jpg",
+    details: {
+      overview: "AnimoSpace brings the Mabini Building into the digital age. It serves as a Smart Campus Hub that provides real-time occupancy tracking across 6 floors and 72 classrooms, managing facilities and equipment for over 2,500 active users through a unified platform.",
+      features: [
+        "Interactive Digital Twin with real-time color-coded floor maps for occupancy and maintenance status",
+        "Lab Facilities & Booking with an admin approval workflow and automated email notifications",
+        "Equipment Management system featuring digital borrowing slips and multi-day ledgers",
+        "Integrated Maintenance Ticketing for reporting issues with real-time status updates",
+        "Lost & Found Hub with smart matching and location-based tracking",
+        "Role-specific Analytics & Dashboards tailored for students, admins, lab assistants, and maintenance staff"
+      ],
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Real-time Database"],
+      challenges: "Digitizing a complex physical environment and creating a cohesive system that handles the overlapping needs of different campus stakeholders, from lab assistants managing equipment prep to maintenance staff scheduling cleanings.",
+      outcome: "Transformed Mabini Building into a smart facility, streamlining equipment requisitions, improving room utilization, and providing actionable insights and full audit logs for campus administrators."
+    }
+  },
+  {
+    title: "Elevate",
+    description:
+      "A mobile-first UI/UX project designed to balance productivity with personal wellness. Features an integrated task manager, health hub, and focus mode with Pomodoro timers.",
+    tags: ["Figma", "UI/UX", "HCI", "Prototyping"],
+    github: "https://www.figma.com/proto/viCKZfz0pLVMijceZvLrFq/Group2_Elevate?node-id=1484-1170&p=f&t=Qf4S2YY6AqNiXae7-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1484%3A347&show-proto-sidebar=1",
+    demo: "https://www.figma.com/proto/viCKZfz0pLVMijceZvLrFq/Group2_Elevate?node-id=1593-13388&p=f&t=Qf4S2YY6AqNiXae7-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1593%3A13379&show-proto-sidebar=1",
+    category: "Design",
+    icon: <Palette className="w-6 h-6" />,
+    color: "from-pink-500 to-purple-500",
+    image: "/images/elevate.jpg",
+    details: {
+      overview: "A holistic wellness and productivity app designed with user-centered design principles. Balances task management with mental health and wellness features.",
+      features: [
+        "Integrated task manager with smart prioritization",
+        "Health hub with wellness tracking",
+        "Focus mode with customizable Pomodoro timers",
+        "Mobile-first responsive design",
+        "Dark mode support for eye comfort"
+      ],
+      technologies: ["Figma", "UI/UX Design", "Human-Computer Interaction", "Prototyping", "User Research"],
+      challenges: "Designing an interface that balances multiple features (productivity, wellness, health) without overwhelming users or sacrificing usability.",
+      outcome: "Delivered a comprehensive design system with 50+ screens, interactive prototypes, and positive user testing feedback (4.6/5 average)."
+    }
+  },
+  {
+    title: "Productivity Hub",
+    description:
+      "A high-performance personal dashboard featuring real-time task tracking, dynamic progress visualization, and integrated resource management tools.",
+    tags: ["React", "Node.js", "Tailwind CSS"],
+    github: "https://github.com/Josiah44123/v1productivity-app",
+    demo: "https://personalizedproductivityhub.vercel.app",
+    category: "Web App",
+    icon: <Layers className="w-6 h-6" />,
+    color: "from-orange-500 to-rose-500",
+    image: "/images/productivity.jpg",
+    details: {
+      overview: "A comprehensive productivity dashboard designed for personal task management and progress tracking. Features real-time updates, beautiful visualizations, and an intuitive interface.",
+      features: [
+        "Real-time task tracking with instant updates",
+        "Dynamic progress bars and completion visualizations",
+        "Resource management and time allocation tools",
+        "Customizable workflows and task categories",
+        "Data persistence with cloud sync"
+      ],
+      technologies: ["React 19", "Node.js", "Tailwind CSS", "Express.js", "MongoDB"],
+      challenges: "Creating a performant dashboard that handles real-time updates without lag while maintaining a clean, intuitive UI.",
+      outcome: "Delivered a fully functional productivity tool with 50+ active users and 4.8/5 user satisfaction rating."
+    }
+  },
+  {
     title: "Advanced Banking System",
     description:
       "A robust terminal-based banking simulation demonstrating core OOP principles. Features secure user authentication, polymorphic transaction handling, admin dashboards, and file-based data persistence.",
@@ -114,6 +170,7 @@ const projects = [
     category: "Software",
     icon: <Database className="w-6 h-6" />,
     color: "from-blue-600 to-cyan-500",
+    image: "https://placehold.co/600x400/1f2937/f3f4f6?text=Banking+System",
     details: {
       overview: "A comprehensive banking system demonstrating advanced OOP principles including polymorphism, encapsulation, and inheritance. Includes admin and customer interfaces.",
       features: [
@@ -138,6 +195,7 @@ const projects = [
     category: "Software",
     icon: <Network className="w-6 h-6" />,
     color: "from-violet-600 to-indigo-600",
+    image: "https://placehold.co/600x400/1f2937/f3f4f6?text=DS+Visualizer",
     details: {
       overview: "An educational tool for learning data structures through implementation and visualization. Includes hands-on experience building BST, Linked Lists, Stacks, and Queues from scratch.",
       features: [
@@ -153,31 +211,6 @@ const projects = [
     }
   },
   {
-    title: "Elevate",
-    description:
-      "A mobile-first UI/UX project designed to balance productivity with personal wellness. Features an integrated task manager, health hub, and focus mode with Pomodoro timers.",
-    tags: ["Figma", "UI/UX", "HCI", "Prototyping"],
-    github: "https://www.figma.com/proto/viCKZfz0pLVMijceZvLrFq/Group2_Elevate?node-id=1484-1170&p=f&t=Qf4S2YY6AqNiXae7-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1484%3A347&show-proto-sidebar=1",
-    demo: "https://www.figma.com/proto/viCKZfz0pLVMijceZvLrFq/Group2_Elevate?node-id=1593-13388&p=f&t=Qf4S2YY6AqNiXae7-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1593%3A13379&show-proto-sidebar=1",
-    category: "Design",
-    icon: <Palette className="w-6 h-6" />,
-    color: "from-pink-500 to-purple-500",
-    details: {
-      overview: "A holistic wellness and productivity app designed with user-centered design principles. Balances task management with mental health and wellness features.",
-      features: [
-        "Integrated task manager with smart prioritization",
-        "Health hub with wellness tracking",
-        "Focus mode with customizable Pomodoro timers",
-        "Mobile-first responsive design",
-        "Dark mode support for eye comfort"
-      ],
-      technologies: ["Figma", "UI/UX Design", "Human-Computer Interaction", "Prototyping", "User Research"],
-      challenges: "Designing an interface that balances multiple features (productivity, wellness, health) without overwhelming users or sacrificing usability.",
-      outcome: "Delivered a comprehensive design system with 50+ screens, interactive prototypes, and positive user testing feedback (4.6/5 average)."
-    }
-  },
-
-  {
     title: "More Coming Soon",
     description:
       "I'm actively working on more exciting projects. Stay tuned for upcoming releases featuring innovative solutions in web development, design, and emerging technologies.",
@@ -187,6 +220,7 @@ const projects = [
     category: "Web App",
     icon: <Code className="w-6 h-6" />,
     color: "from-purple-500 to-indigo-600",
+    image: "https://placehold.co/600x400/1f2937/f3f4f6?text=Coming+Soon",
     details: {
       overview: "Currently developing new projects that showcase advanced technologies and creative problem-solving. More details and live demos will be available soon.",
       features: ["Full-stack web applications", "Real-time data solutions", "AI-powered features", "Mobile-responsive designs", "Enterprise scalability"],
@@ -203,9 +237,21 @@ function ProjectCard({ project, idx, onClick, onLearnMore, addToast }: { project
       className="group relative glass rounded-3xl overflow-hidden border border-white/5 hover:border-white/20 transition-all duration-500 animate-fade-in-up flex flex-col h-full"
       style={{ animationDelay: `${idx * 100}ms` }}
     >
-      <div className={cn("h-2 w-full bg-gradient-to-r", project.color)} />
+      {/* Top Gradient Line */}
+      <div className={cn("h-2 w-full bg-gradient-to-r shrink-0", project.color)} />
 
-      <div className="p-8 flex flex-col h-full">
+      {/* Image Placeholder */}
+      <div className="w-full h-48 bg-white/5 relative overflow-hidden shrink-0 border-b border-white/5">
+        <img
+          src={project.image}
+          alt={`${project.title} preview`}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+          loading="lazy"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="p-8 flex flex-col h-full flex-grow">
         <div
           className={cn(
             "w-12 h-12 rounded-2xl flex items-center justify-center mb-6 bg-gradient-to-br transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-xl",
@@ -358,8 +404,8 @@ export function ProjectsSection() {
             aria-hidden="true"
           />
 
-          <div className="relative w-full max-w-2xl max-h-[80vh] bg-background border border-border rounded-xl shadow-xl overflow-hidden">
-            <div className="flex items-center justify-between px-6 py-5 border-b border-border/50 bg-background sticky top-0">
+          <div className="relative w-full max-w-2xl max-h-[80vh] bg-background border border-border rounded-xl shadow-xl overflow-hidden flex flex-col">
+            <div className="flex items-center justify-between px-6 py-5 border-b border-border/50 bg-background sticky top-0 z-10">
               <h2 className="text-xl font-semibold text-foreground">{selectedProject.title}</h2>
               <button
                 onClick={() => setSelectedProject(null)}
@@ -370,7 +416,15 @@ export function ProjectsSection() {
               </button>
             </div>
 
-            <div className="overflow-y-auto max-h-[calc(80vh-64px)] px-6 py-6 space-y-8">
+            <div className="overflow-y-auto px-6 py-6 space-y-8 flex-grow">
+              <div className="w-full h-64 bg-muted rounded-lg overflow-hidden mb-6">
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
               <div>
                 <p className="text-foreground/90 leading-relaxed">{selectedProject.details.overview}</p>
               </div>
@@ -418,4 +472,3 @@ export function ProjectsSection() {
     </section>
   )
 }
-
