@@ -7,6 +7,32 @@ import { cn } from "@/lib/utils"
 
 const projects = [
   {
+    title: "AnimoSpace",
+    description:
+      "A Digital Twin Platform for the Mabini Building featuring real-time occupancy tracking, intelligent lab booking, streamlined equipment management, and unified facility oversight.",
+    tags: ["Digital Twin", "Smart Campus", "Facility Management", "Analytics"],
+    github: "#",
+    demo: "#",
+    category: "Web App",
+    icon: <Layers className="w-6 h-6" />,
+    color: "from-green-500 to-emerald-600",
+    image: "/images/animospace.jpg",
+    details: {
+      overview: "AnimoSpace brings the Mabini Building into the digital age. It serves as a Smart Campus Hub that provides real-time occupancy tracking across 6 floors and 72 classrooms, managing facilities and equipment for over 2,500 active users through a unified platform.",
+      features: [
+        "Interactive Digital Twin with real-time color-coded floor maps for occupancy and maintenance status",
+        "Lab Facilities & Booking with an admin approval workflow and automated email notifications",
+        "Equipment Management system featuring digital borrowing slips and multi-day ledgers",
+        "Integrated Maintenance Ticketing for reporting issues with real-time status updates",
+        "Lost & Found Hub with smart matching and location-based tracking",
+        "Role-specific Analytics & Dashboards tailored for students, admins, lab assistants, and maintenance staff"
+      ],
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Real-time Database"],
+      challenges: "Digitizing a complex physical environment and creating a cohesive system that handles the overlapping needs of different campus stakeholders, from lab assistants managing equipment prep to maintenance staff scheduling cleanings.",
+      outcome: "Transformed Mabini Building into a smart facility, streamlining equipment requisitions, improving room utilization, and providing actionable insights and full audit logs for campus administrators."
+    }
+  },
+  {
     title: "VeriFund",
     description:
       "4th Place in InterCICSkwela 2026: Batang Techno's Hackathon Challenge. A last-mile aid distribution platform bringing transparency and accountability to social assistance programs using digital verification, QR codes, and biometric authentication.",
@@ -32,7 +58,8 @@ const projects = [
       challenges: "Building a secure, scalable system that handles biometric verification, QR scanning, and real-time synchronization across multiple field teams while ensuring data integrity and preventing duplicate aid distribution in remote areas with inconsistent connectivity.",
       outcome: "Achieved 4th Place at InterCICSkwela 2026 Hackathon. Successfully demonstrated a working prototype that reduces aid distribution fraud by 100%, cuts processing time by 80%, and maintains an immutable audit trail for government accountability. Currently deployed and operational at verifundph.vercel.app."
     }
-  }, {
+  },
+  {
     title: "Chick Stacker",
     description:
       "A custom game engine built with HTML5 Canvas and Next.js App Router. This project marks my first full integration of Supabase, utilizing it to engineer a secure, real-time leaderboard system via dedicated API routes.",
@@ -92,7 +119,7 @@ const projects = [
     category: "Design",
     icon: <Palette className="w-6 h-6" />,
     color: "from-pink-500 to-purple-500",
-    image: "https://placehold.co/600x400/1f2937/f3f4f6?text=Elevate+App",
+    image: "/images/elevate.jpg",
     details: {
       overview: "A holistic wellness and productivity app designed with user-centered design principles. Balances task management with mental health and wellness features.",
       features: [
@@ -107,7 +134,6 @@ const projects = [
       outcome: "Delivered a comprehensive design system with 50+ screens, interactive prototypes, and positive user testing feedback (4.6/5 average)."
     }
   },
-
   {
     title: "Productivity Hub",
     description:
@@ -133,7 +159,6 @@ const projects = [
       outcome: "Delivered a fully functional productivity tool with 50+ active users and 4.8/5 user satisfaction rating."
     }
   },
-
   {
     title: "Advanced Banking System",
     description:
@@ -184,7 +209,6 @@ const projects = [
       outcome: "Built a comprehensive system demonstrating deep understanding of data structures with optimized implementations for each type."
     }
   },
-  
   {
     title: "More Coming Soon",
     description:
