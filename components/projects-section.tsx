@@ -16,7 +16,7 @@ const projects = [
     category: "Web App",
     icon: <Network className="w-6 h-6" />,
     color: "from-amber-400 to-yellow-500",
-    image: "https://placehold.co/600x400/1f2937/f3f4f6?text=VeriFund+Preview",
+    image: "/images/VeriFund.png",
     details: {
       overview: "VeriFundPH is a comprehensive last-mile aid distribution platform designed to replace paper-based systems with digital verification. It eliminates fraud through QR codes and biometric verification, ensuring each registered beneficiary receives aid exactly once while maintaining real-time tracking and transparency across all stakeholders.",
       features: [
@@ -391,13 +391,13 @@ export function ProjectsSection() {
 
             <div className="overflow-y-auto px-6 py-6 space-y-8 flex-grow">
               <div className="w-full h-64 bg-muted rounded-lg overflow-hidden mb-6">
-                <img 
-                  src={selectedProject.image} 
-                  alt={selectedProject.title} 
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
                   className="w-full h-full object-cover"
                 />
               </div>
-              
+
               <div>
                 <p className="text-foreground/90 leading-relaxed">{selectedProject.details.overview}</p>
               </div>
