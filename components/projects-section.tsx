@@ -67,7 +67,7 @@ const projects = [
     category: "Web App",
     icon: <Layers className="w-6 h-6" />,
     color: "from-orange-500 to-rose-500",
-    image: "https://placehold.co/600x400/1f2937/f3f4f6?text=Productivity+Hub",
+    image: "/images/productivity.jpg",
     details: {
       overview: "A comprehensive productivity dashboard designed for personal task management and progress tracking. Features real-time updates, beautiful visualizations, and an intuitive interface.",
       features: [
