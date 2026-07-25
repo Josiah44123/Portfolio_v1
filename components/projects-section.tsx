@@ -92,7 +92,7 @@ const projects = [
     category: "Web App",
     icon: <Code className="w-6 h-6" />,
     color: "from-emerald-500 to-teal-500",
-    image: "https://placehold.co/600x400/1f2937/f3f4f6?text=Java+Challenge",
+    image: "/images/image.png",
     details: {
       overview: "An educational game that helps Java developers practice code output prediction. Features multiple difficulty levels, detailed explanations, and a competitive leaderboard.",
       features: [
