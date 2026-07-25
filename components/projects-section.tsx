@@ -326,6 +326,7 @@ function ProjectCard({ project, idx, onClick, onLearnMore, addToast }: { project
 }
 
 const backgroundColors = [
+  "bg-background",
   "bg-amber-400",
   "bg-orange-500",
   "bg-emerald-500",
