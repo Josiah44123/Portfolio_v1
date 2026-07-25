@@ -83,6 +83,32 @@ const projects = [
     }
   },
   {
+    title: "Elevate",
+    description:
+      "A mobile-first UI/UX project designed to balance productivity with personal wellness. Features an integrated task manager, health hub, and focus mode with Pomodoro timers.",
+    tags: ["Figma", "UI/UX", "HCI", "Prototyping"],
+    github: "https://www.figma.com/proto/viCKZfz0pLVMijceZvLrFq/Group2_Elevate?node-id=1484-1170&p=f&t=Qf4S2YY6AqNiXae7-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1484%3A347&show-proto-sidebar=1",
+    demo: "https://www.figma.com/proto/viCKZfz0pLVMijceZvLrFq/Group2_Elevate?node-id=1593-13388&p=f&t=Qf4S2YY6AqNiXae7-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1593%3A13379&show-proto-sidebar=1",
+    category: "Design",
+    icon: <Palette className="w-6 h-6" />,
+    color: "from-pink-500 to-purple-500",
+    image: "https://placehold.co/600x400/1f2937/f3f4f6?text=Elevate+App",
+    details: {
+      overview: "A holistic wellness and productivity app designed with user-centered design principles. Balances task management with mental health and wellness features.",
+      features: [
+        "Integrated task manager with smart prioritization",
+        "Health hub with wellness tracking",
+        "Focus mode with customizable Pomodoro timers",
+        "Mobile-first responsive design",
+        "Dark mode support for eye comfort"
+      ],
+      technologies: ["Figma", "UI/UX Design", "Human-Computer Interaction", "Prototyping", "User Research"],
+      challenges: "Designing an interface that balances multiple features (productivity, wellness, health) without overwhelming users or sacrificing usability.",
+      outcome: "Delivered a comprehensive design system with 50+ screens, interactive prototypes, and positive user testing feedback (4.6/5 average)."
+    }
+  },
+
+  {
     title: "Productivity Hub",
     description:
       "A high-performance personal dashboard featuring real-time task tracking, dynamic progress visualization, and integrated resource management tools.",
@@ -158,32 +184,7 @@ const projects = [
       outcome: "Built a comprehensive system demonstrating deep understanding of data structures with optimized implementations for each type."
     }
   },
-  {
-    title: "Elevate",
-    description:
-      "A mobile-first UI/UX project designed to balance productivity with personal wellness. Features an integrated task manager, health hub, and focus mode with Pomodoro timers.",
-    tags: ["Figma", "UI/UX", "HCI", "Prototyping"],
-    github: "https://www.figma.com/proto/viCKZfz0pLVMijceZvLrFq/Group2_Elevate?node-id=1484-1170&p=f&t=Qf4S2YY6AqNiXae7-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1484%3A347&show-proto-sidebar=1",
-    demo: "https://www.figma.com/proto/viCKZfz0pLVMijceZvLrFq/Group2_Elevate?node-id=1593-13388&p=f&t=Qf4S2YY6AqNiXae7-0&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=1593%3A13379&show-proto-sidebar=1",
-    category: "Design",
-    icon: <Palette className="w-6 h-6" />,
-    color: "from-pink-500 to-purple-500",
-    image: "https://placehold.co/600x400/1f2937/f3f4f6?text=Elevate+App",
-    details: {
-      overview: "A holistic wellness and productivity app designed with user-centered design principles. Balances task management with mental health and wellness features.",
-      features: [
-        "Integrated task manager with smart prioritization",
-        "Health hub with wellness tracking",
-        "Focus mode with customizable Pomodoro timers",
-        "Mobile-first responsive design",
-        "Dark mode support for eye comfort"
-      ],
-      technologies: ["Figma", "UI/UX Design", "Human-Computer Interaction", "Prototyping", "User Research"],
-      challenges: "Designing an interface that balances multiple features (productivity, wellness, health) without overwhelming users or sacrificing usability.",
-      outcome: "Delivered a comprehensive design system with 50+ screens, interactive prototypes, and positive user testing feedback (4.6/5 average)."
-    }
-  },
-
+  
   {
     title: "More Coming Soon",
     description:
