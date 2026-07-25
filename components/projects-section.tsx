@@ -42,7 +42,7 @@ const projects = [
     category: "Web App",
     icon: <Gamepad2 className="w-6 h-6" />,
     color: "from-amber-400 to-orange-500",
-    image: "https://placehold.co/600x400/1f2937/f3f4f6?text=Chick+Stacker",
+    image: "/images/verifund.jpg",
     details: {
       overview: "A fun, addictive stacking game where you build towers by placing chicks strategically. The game features responsive controls, smooth animations, and an engaging leaderboard system.",
       features: [
