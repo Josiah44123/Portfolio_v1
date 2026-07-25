@@ -326,12 +326,12 @@ function ProjectCard({ project, idx, onClick, onLearnMore, addToast }: { project
 }
 
 const backgroundColors = [
-  "from-amber-400 to-orange-500",
-  "from-orange-500 to-rose-500",
-  "from-emerald-500 to-teal-500",
-  "from-blue-600 to-cyan-500",
-  "from-violet-600 to-indigo-600",
-  "from-pink-500 to-purple-500",
+  "bg-amber-400",
+  "bg-orange-500",
+  "bg-emerald-500",
+  "bg-blue-600",
+  "bg-violet-600",
+  "bg-pink-500",
 ]
 
 export function ProjectsSection() {
@@ -348,7 +348,7 @@ export function ProjectsSection() {
     <section id="projects" className="py-24 relative overflow-hidden transition-colors duration-1000">
       <div
         className={cn(
-          "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] max-w-[1000px] max-h-[1000px] rounded-full blur-[140px] opacity-[0.15] pointer-events-none transition-all duration-1000 bg-gradient-to-br",
+          "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] max-w-[1000px] max-h-[1000px] rounded-full blur-[140px] opacity-[0.15] pointer-events-none transition-all duration-1000",
           backgroundColors[activeColorIndex]
         )}
       />
