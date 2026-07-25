@@ -359,10 +359,10 @@ export function ProjectsSection() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-xl">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">
-              My <span className="text-primary">Projects</span>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight text-white drop-shadow-lg">
+              My <span className="text-white drop-shadow-lg">Projects</span>
             </h2>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-white text-lg drop-shadow-lg">
               A collection of technical solutions, programs and digital experiences crafted with precision.
             </p>
           </div>
