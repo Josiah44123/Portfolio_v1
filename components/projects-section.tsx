@@ -326,12 +326,13 @@ function ProjectCard({ project, idx, onClick, onLearnMore, addToast }: { project
 }
 
 const backgroundColors = [
-  "from-amber-400 to-orange-500",
-  "from-orange-500 to-rose-500",
-  "from-emerald-500 to-teal-500",
-  "from-blue-600 to-cyan-500",
-  "from-violet-600 to-indigo-600",
-  "from-pink-500 to-purple-500",
+  "bg-background",
+  "bg-amber-400",
+  "bg-orange-500",
+  "bg-emerald-500",
+  "bg-blue-600",
+  "bg-violet-600",
+  "bg-pink-500",
 ]
 
 export function ProjectsSection() {
@@ -345,21 +346,24 @@ export function ProjectsSection() {
   const filteredProjects = filter === "All" ? projects : projects.filter((p) => p.category === filter)
 
   return (
-    <section id="projects" className="py-24 relative overflow-hidden transition-colors duration-1000">
+    <section 
+      id="projects" 
+      className={cn(
+        "py-24 relative overflow-hidden transition-colors duration-1000",
+        backgroundColors[activeColorIndex]
+      )}
+    >
       <div
-        className={cn(
-          "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] max-w-[1000px] max-h-[1000px] rounded-full blur-[140px] opacity-[0.15] pointer-events-none transition-all duration-1000 bg-gradient-to-br",
-          backgroundColors[activeColorIndex]
-        )}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] max-w-[1000px] max-h-[1000px] rounded-full blur-[140px] opacity-[0.15] pointer-events-none transition-all duration-1000"
       />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-xl">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">
-              My <span className="text-primary">Projects</span>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight text-white drop-shadow-lg">
+              My <span className="text-white drop-shadow-lg">Projects</span>
             </h2>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-white text-lg drop-shadow-lg">
               A collection of technical solutions, programs and digital experiences crafted with precision.
             </p>
           </div>
