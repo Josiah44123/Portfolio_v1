@@ -16,7 +16,7 @@ const projects = [
     category: "Web App",
     icon: <Network className="w-6 h-6" />,
     color: "from-amber-400 to-yellow-500",
-    image: "/images/verifund.png",
+    image: "/images/verifund.jpg",
     details: {
       overview: "VeriFundPH is a comprehensive last-mile aid distribution platform designed to replace paper-based systems with digital verification. It eliminates fraud through QR codes and biometric verification, ensuring each registered beneficiary receives aid exactly once while maintaining real-time tracking and transparency across all stakeholders.",
       features: [
@@ -92,7 +92,7 @@ const projects = [
     category: "Web App",
     icon: <Code className="w-6 h-6" />,
     color: "from-emerald-500 to-teal-500",
-    image: "/images/image.png",
+    image: "/images/java.jpg",
     details: {
       overview: "An educational game that helps Java developers practice code output prediction. Features multiple difficulty levels, detailed explanations, and a competitive leaderboard.",
       features: [
