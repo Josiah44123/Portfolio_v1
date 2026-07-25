@@ -1,4 +1,3 @@
-
 "use client"
 
 import { useState } from "react"
@@ -17,6 +16,7 @@ const projects = [
     category: "Web App",
     icon: <Network className="w-6 h-6" />,
     color: "from-amber-400 to-yellow-500",
+    image: "https://placehold.co/600x400/1f2937/f3f4f6?text=VeriFund+Preview",
     details: {
       overview: "VeriFundPH is a comprehensive last-mile aid distribution platform designed to replace paper-based systems with digital verification. It eliminates fraud through QR codes and biometric verification, ensuring each registered beneficiary receives aid exactly once while maintaining real-time tracking and transparency across all stakeholders.",
       features: [
@@ -42,6 +42,7 @@ const projects = [
     category: "Web App",
     icon: <Gamepad2 className="w-6 h-6" />,
     color: "from-amber-400 to-orange-500",
+    image: "https://placehold.co/600x400/1f2937/f3f4f6?text=Chick+Stacker",
     details: {
       overview: "A fun, addictive stacking game where you build towers by placing chicks strategically. The game features responsive controls, smooth animations, and an engaging leaderboard system.",
       features: [
@@ -66,6 +67,7 @@ const projects = [
     category: "Web App",
     icon: <Layers className="w-6 h-6" />,
     color: "from-orange-500 to-rose-500",
+    image: "https://placehold.co/600x400/1f2937/f3f4f6?text=Productivity+Hub",
     details: {
       overview: "A comprehensive productivity dashboard designed for personal task management and progress tracking. Features real-time updates, beautiful visualizations, and an intuitive interface.",
       features: [
@@ -90,6 +92,7 @@ const projects = [
     category: "Web App",
     icon: <Code className="w-6 h-6" />,
     color: "from-emerald-500 to-teal-500",
+    image: "https://placehold.co/600x400/1f2937/f3f4f6?text=Java+Challenge",
     details: {
       overview: "An educational game that helps Java developers practice code output prediction. Features multiple difficulty levels, detailed explanations, and a competitive leaderboard.",
       features: [
@@ -114,6 +117,7 @@ const projects = [
     category: "Software",
     icon: <Database className="w-6 h-6" />,
     color: "from-blue-600 to-cyan-500",
+    image: "https://placehold.co/600x400/1f2937/f3f4f6?text=Banking+System",
     details: {
       overview: "A comprehensive banking system demonstrating advanced OOP principles including polymorphism, encapsulation, and inheritance. Includes admin and customer interfaces.",
       features: [
@@ -138,6 +142,7 @@ const projects = [
     category: "Software",
     icon: <Network className="w-6 h-6" />,
     color: "from-violet-600 to-indigo-600",
+    image: "https://placehold.co/600x400/1f2937/f3f4f6?text=DS+Visualizer",
     details: {
       overview: "An educational tool for learning data structures through implementation and visualization. Includes hands-on experience building BST, Linked Lists, Stacks, and Queues from scratch.",
       features: [
@@ -162,6 +167,7 @@ const projects = [
     category: "Design",
     icon: <Palette className="w-6 h-6" />,
     color: "from-pink-500 to-purple-500",
+    image: "https://placehold.co/600x400/1f2937/f3f4f6?text=Elevate+App",
     details: {
       overview: "A holistic wellness and productivity app designed with user-centered design principles. Balances task management with mental health and wellness features.",
       features: [
@@ -187,6 +193,7 @@ const projects = [
     category: "Web App",
     icon: <Code className="w-6 h-6" />,
     color: "from-purple-500 to-indigo-600",
+    image: "https://placehold.co/600x400/1f2937/f3f4f6?text=Coming+Soon",
     details: {
       overview: "Currently developing new projects that showcase advanced technologies and creative problem-solving. More details and live demos will be available soon.",
       features: ["Full-stack web applications", "Real-time data solutions", "AI-powered features", "Mobile-responsive designs", "Enterprise scalability"],
@@ -203,9 +210,21 @@ function ProjectCard({ project, idx, onClick, onLearnMore, addToast }: { project
       className="group relative glass rounded-3xl overflow-hidden border border-white/5 hover:border-white/20 transition-all duration-500 animate-fade-in-up flex flex-col h-full"
       style={{ animationDelay: `${idx * 100}ms` }}
     >
-      <div className={cn("h-2 w-full bg-gradient-to-r", project.color)} />
+      {/* Top Gradient Line */}
+      <div className={cn("h-2 w-full bg-gradient-to-r shrink-0", project.color)} />
 
-      <div className="p-8 flex flex-col h-full">
+      {/* Image Placeholder */}
+      <div className="w-full h-48 bg-white/5 relative overflow-hidden shrink-0 border-b border-white/5">
+        <img
+          src={project.image}
+          alt={`${project.title} preview`}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+          loading="lazy"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="p-8 flex flex-col h-full flex-grow">
         <div
           className={cn(
             "w-12 h-12 rounded-2xl flex items-center justify-center mb-6 bg-gradient-to-br transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-xl",
@@ -358,8 +377,8 @@ export function ProjectsSection() {
             aria-hidden="true"
           />
 
-          <div className="relative w-full max-w-2xl max-h-[80vh] bg-background border border-border rounded-xl shadow-xl overflow-hidden">
-            <div className="flex items-center justify-between px-6 py-5 border-b border-border/50 bg-background sticky top-0">
+          <div className="relative w-full max-w-2xl max-h-[80vh] bg-background border border-border rounded-xl shadow-xl overflow-hidden flex flex-col">
+            <div className="flex items-center justify-between px-6 py-5 border-b border-border/50 bg-background sticky top-0 z-10">
               <h2 className="text-xl font-semibold text-foreground">{selectedProject.title}</h2>
               <button
                 onClick={() => setSelectedProject(null)}
@@ -370,7 +389,15 @@ export function ProjectsSection() {
               </button>
             </div>
 
-            <div className="overflow-y-auto max-h-[calc(80vh-64px)] px-6 py-6 space-y-8">
+            <div className="overflow-y-auto px-6 py-6 space-y-8 flex-grow">
+              <div className="w-full h-64 bg-muted rounded-lg overflow-hidden mb-6">
+                <img 
+                  src={selectedProject.image} 
+                  alt={selectedProject.title} 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
               <div>
                 <p className="text-foreground/90 leading-relaxed">{selectedProject.details.overview}</p>
               </div>
@@ -418,4 +445,3 @@ export function ProjectsSection() {
     </section>
   )
 }
-
