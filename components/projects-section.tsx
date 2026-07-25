@@ -58,31 +58,6 @@ const projects = [
     }
   },
   {
-    title: "Productivity Hub",
-    description:
-      "A high-performance personal dashboard featuring real-time task tracking, dynamic progress visualization, and integrated resource management tools.",
-    tags: ["React", "Node.js", "Tailwind CSS"],
-    github: "https://github.com/Josiah44123/v1productivity-app",
-    demo: "https://personalizedproductivityhub.vercel.app",
-    category: "Web App",
-    icon: <Layers className="w-6 h-6" />,
-    color: "from-orange-500 to-rose-500",
-    image: "/images/productivity.jpg",
-    details: {
-      overview: "A comprehensive productivity dashboard designed for personal task management and progress tracking. Features real-time updates, beautiful visualizations, and an intuitive interface.",
-      features: [
-        "Real-time task tracking with instant updates",
-        "Dynamic progress bars and completion visualizations",
-        "Resource management and time allocation tools",
-        "Customizable workflows and task categories",
-        "Data persistence with cloud sync"
-      ],
-      technologies: ["React 19", "Node.js", "Tailwind CSS", "Express.js", "MongoDB"],
-      challenges: "Creating a performant dashboard that handles real-time updates without lag while maintaining a clean, intuitive UI.",
-      outcome: "Delivered a fully functional productivity tool with 50+ active users and 4.8/5 user satisfaction rating."
-    }
-  },
-  {
     title: "Java Output Challenge",
     description:
       "An interactive quiz game featuring 'Classic' and 'Event' modes. Challenges developers to predict Java code outputs with dynamic question generation, real-time scoring, and IDE-inspired syntax highlighting.",
@@ -107,6 +82,32 @@ const projects = [
       outcome: "Launched with 200+ questions and serves 1000+ monthly users seeking Java interview preparation."
     }
   },
+  {
+    title: "Productivity Hub",
+    description:
+      "A high-performance personal dashboard featuring real-time task tracking, dynamic progress visualization, and integrated resource management tools.",
+    tags: ["React", "Node.js", "Tailwind CSS"],
+    github: "https://github.com/Josiah44123/v1productivity-app",
+    demo: "https://personalizedproductivityhub.vercel.app",
+    category: "Web App",
+    icon: <Layers className="w-6 h-6" />,
+    color: "from-orange-500 to-rose-500",
+    image: "/images/productivity.jpg",
+    details: {
+      overview: "A comprehensive productivity dashboard designed for personal task management and progress tracking. Features real-time updates, beautiful visualizations, and an intuitive interface.",
+      features: [
+        "Real-time task tracking with instant updates",
+        "Dynamic progress bars and completion visualizations",
+        "Resource management and time allocation tools",
+        "Customizable workflows and task categories",
+        "Data persistence with cloud sync"
+      ],
+      technologies: ["React 19", "Node.js", "Tailwind CSS", "Express.js", "MongoDB"],
+      challenges: "Creating a performant dashboard that handles real-time updates without lag while maintaining a clean, intuitive UI.",
+      outcome: "Delivered a fully functional productivity tool with 50+ active users and 4.8/5 user satisfaction rating."
+    }
+  },
+
   {
     title: "Advanced Banking System",
     description:
