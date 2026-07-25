@@ -6,32 +6,7 @@ import { useToast, ToastContainer } from "@/components/ui/toast"
 import { cn } from "@/lib/utils"
 
 const projects = [
-  {
-    title: "AnimoSpace",
-    description:
-      "A Digital Twin Platform for the Mabini Building featuring real-time occupancy tracking, intelligent lab booking, streamlined equipment management, and unified facility oversight.",
-    tags: ["Digital Twin", "Smart Campus", "Facility Management", "Analytics"],
-    github: "#",
-    demo: "#",
-    category: "Web App",
-    icon: <Layers className="w-6 h-6" />,
-    color: "from-green-500 to-emerald-600",
-    image: "/images/animospace.jpg",
-    details: {
-      overview: "AnimoSpace brings the Mabini Building into the digital age. It serves as a Smart Campus Hub that provides real-time occupancy tracking across 6 floors and 72 classrooms, managing facilities and equipment for over 2,500 active users through a unified platform.",
-      features: [
-        "Interactive Digital Twin with real-time color-coded floor maps for occupancy and maintenance status",
-        "Lab Facilities & Booking with an admin approval workflow and automated email notifications",
-        "Equipment Management system featuring digital borrowing slips and multi-day ledgers",
-        "Integrated Maintenance Ticketing for reporting issues with real-time status updates",
-        "Lost & Found Hub with smart matching and location-based tracking",
-        "Role-specific Analytics & Dashboards tailored for students, admins, lab assistants, and maintenance staff"
-      ],
-      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Real-time Database"],
-      challenges: "Digitizing a complex physical environment and creating a cohesive system that handles the overlapping needs of different campus stakeholders, from lab assistants managing equipment prep to maintenance staff scheduling cleanings.",
-      outcome: "Transformed Mabini Building into a smart facility, streamlining equipment requisitions, improving room utilization, and providing actionable insights and full audit logs for campus administrators."
-    }
-  },
+
   {
     title: "VeriFund",
     description:
@@ -107,6 +82,32 @@ const projects = [
       technologies: ["React 19", "Next.js 16", "TypeScript", "Tailwind CSS", "Framer Motion"],
       challenges: "Creating a robust question generation system that provides varied, accurate Java code challenges while maintaining engaging gameplay.",
       outcome: "Launched with 200+ questions and serves 1000+ monthly users seeking Java interview preparation."
+    }
+  },
+  {
+    title: "AnimoSpace",
+    description:
+      "A Digital Twin Platform for the Mabini Building featuring real-time occupancy tracking, intelligent lab booking, streamlined equipment management, and unified facility oversight.",
+    tags: ["Digital Twin", "Smart Campus", "Facility Management", "Analytics"],
+    github: "#",
+    demo: "#",
+    category: "Web App",
+    icon: <Layers className="w-6 h-6" />,
+    color: "from-green-500 to-emerald-600",
+    image: "/images/animospace.jpg",
+    details: {
+      overview: "AnimoSpace brings the Mabini Building into the digital age. It serves as a Smart Campus Hub that provides real-time occupancy tracking across 6 floors and 72 classrooms, managing facilities and equipment for over 2,500 active users through a unified platform.",
+      features: [
+        "Interactive Digital Twin with real-time color-coded floor maps for occupancy and maintenance status",
+        "Lab Facilities & Booking with an admin approval workflow and automated email notifications",
+        "Equipment Management system featuring digital borrowing slips and multi-day ledgers",
+        "Integrated Maintenance Ticketing for reporting issues with real-time status updates",
+        "Lost & Found Hub with smart matching and location-based tracking",
+        "Role-specific Analytics & Dashboards tailored for students, admins, lab assistants, and maintenance staff"
+      ],
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Real-time Database"],
+      challenges: "Digitizing a complex physical environment and creating a cohesive system that handles the overlapping needs of different campus stakeholders, from lab assistants managing equipment prep to maintenance staff scheduling cleanings.",
+      outcome: "Transformed Mabini Building into a smart facility, streamlining equipment requisitions, improving room utilization, and providing actionable insights and full audit logs for campus administrators."
     }
   },
   {
