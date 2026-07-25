@@ -345,12 +345,15 @@ export function ProjectsSection() {
   const filteredProjects = filter === "All" ? projects : projects.filter((p) => p.category === filter)
 
   return (
-    <section id="projects" className="py-24 relative overflow-hidden transition-colors duration-1000">
+    <section 
+      id="projects" 
+      className={cn(
+        "py-24 relative overflow-hidden transition-colors duration-1000",
+        backgroundColors[activeColorIndex]
+      )}
+    >
       <div
-        className={cn(
-          "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] max-w-[1000px] max-h-[1000px] rounded-full blur-[140px] opacity-[0.15] pointer-events-none transition-all duration-1000",
-          backgroundColors[activeColorIndex]
-        )}
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] max-w-[1000px] max-h-[1000px] rounded-full blur-[140px] opacity-[0.15] pointer-events-none transition-all duration-1000"
       />
 
       <div className="container mx-auto px-4 relative z-10">
