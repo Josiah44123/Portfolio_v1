@@ -42,7 +42,7 @@ const projects = [
     category: "Web App",
     icon: <Gamepad2 className="w-6 h-6" />,
     color: "from-amber-400 to-orange-500",
-    image: "/images/verifund.jpg",
+    image: "/images/chicks.jpg",
     details: {
       overview: "A fun, addictive stacking game where you build towers by placing chicks strategically. The game features responsive controls, smooth animations, and an engaging leaderboard system.",
       features: [
