@@ -159,7 +159,6 @@
   }
 }
 
-/* Added floating animation for particles */
 @keyframes float {
   0%,
   100% {
@@ -178,7 +177,6 @@
   }
 }
 
-/* Added cursor blink animation for typing effect */
 @keyframes blink {
   0%,
   50% {
@@ -190,7 +188,6 @@
   }
 }
 
-/* Added shimmer animation for skill bars */
 @keyframes shimmer {
   0% {
     transform: translateX(-100%);
@@ -216,7 +213,6 @@
   animation: blink 1s step-end infinite;
 }
 
-/* Added shimmer animation class */
 .animate-shimmer {
   animation: shimmer 1.5s ease-in-out infinite;
 }
