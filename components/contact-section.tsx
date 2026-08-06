@@ -38,25 +38,49 @@ const contactLinks = [
 export function ContactSection() {
   const { ref, isInView } = useInView()
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
+  const [errors, setErrors] = useState<string[]>([])
   const [submitted, setSubmitted] = useState(false)
   const { toasts, addToast, removeToast } = useToast()
 
+  const validateForm = () => {
+    const nextErrors: string[] = []
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
+
+    if (!formData.name.trim()) nextErrors.push("Please enter your name.")
+    if (!emailPattern.test(formData.email.trim())) nextErrors.push("Please enter a valid email address.")
+    if (!formData.message.trim()) nextErrors.push("Please enter a message.")
+
+    return nextErrors
+  }
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
+    const nextFormData = { ...formData, [name]: value }
+    setFormData(nextFormData)
+    setSubmitted(false)
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
+    const nextErrors = [
+      !nextFormData.name.trim() ? "Please enter your name." : "",
+      !emailPattern.test(nextFormData.email.trim()) ? "Please enter a valid email address." : "",
+      !nextFormData.message.trim() ? "Please enter a message." : "",
+    ].filter(Boolean)
+
+    setErrors(nextErrors)
   }
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    
-    if (formData.name && formData.email && formData.message) {
-      addToast(`Thank you, ${formData.name}! I've received your message and will get back to you soon.`, "success", 5000)
-      setFormData({ name: "", email: "", message: "" })
-      setSubmitted(true)
-      setTimeout(() => setSubmitted(false), 3000)
-    } else {
-      addToast("Please fill in all fields before submitting!", "error")
-    }
+    const nextErrors = validateForm()
+    setErrors(nextErrors)
+
+    if (nextErrors.length > 0) return
+
+    addToast(`Thank you, ${formData.name.trim()}! I've received your message and will get back to you soon.`, "success", 5000)
+    setFormData({ name: "", email: "", message: "" })
+    setErrors([])
+    setSubmitted(true)
+    setTimeout(() => setSubmitted(false), 3000)
   }
 
   return (
@@ -106,7 +130,19 @@ export function ContactSection() {
 
           <div className="glass rounded-xl p-8 mb-8 max-w-2xl mx-auto">
             <h3 className="text-xl font-bold mb-6 text-center">Send Me a Message</h3>
-            <form onSubmit={handleFormSubmit} className="space-y-4">
+            <form onSubmit={handleFormSubmit} className="space-y-4" noValidate>
+              {errors.length > 0 && (
+                <div
+                  role="alert"
+                  aria-live="polite"
+                  className="rounded-lg border border-destructive/50 bg-destructive/10 px-4 py-3 text-center text-sm font-semibold text-destructive"
+                >
+                  <p>Please review the following:</p>
+                  <ul className="mt-1 flex flex-col gap-1">
+                    {errors.map((error) => <li key={error}>{error}</li>)}
+                  </ul>
+                </div>
+              )}
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium mb-2">Name</label>

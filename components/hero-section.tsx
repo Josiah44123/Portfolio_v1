@@ -55,13 +55,11 @@ function FloatingBinary({ id, mousePos }: { id: number; mousePos: { x: number; y
   const char = useRef(Math.random() > 0.5 ? "1" : "0")
   const size = useRef(10 + Math.random() * 6)
 
-  // FIXED: Silently track the latest mouse position without triggering re-renders
   const mouseRef = useRef(mousePos)
   useEffect(() => {
     mouseRef.current = mousePos
   }, [mousePos])
 
-  // FIXED: Combine pos and offset into a single state to avoid double-rendering
   const [state, setState] = useState({
     pos: { x: initialX.current, y: initialY.current },
     offset: { x: 0, y: 0 }
@@ -70,7 +68,6 @@ function FloatingBinary({ id, mousePos }: { id: number; mousePos: { x: number; y
   useEffect(() => {
     const animate = () => {
       setState((prev) => {
-        // 1. Calculate new base position
         let newY = prev.pos.y - speed.current
         if (newY < -5) {
           newY = 105
@@ -78,7 +75,6 @@ function FloatingBinary({ id, mousePos }: { id: number; mousePos: { x: number; y
         }
         const newPos = { x: initialX.current, y: newY }
 
-        // 2. Calculate cursor attraction synchronously using the ref
         const dx = mouseRef.current.x - newPos.x
         const dy = mouseRef.current.y - newPos.y
         const distance = Math.sqrt(dx * dx + dy * dy)
@@ -90,7 +86,6 @@ function FloatingBinary({ id, mousePos }: { id: number; mousePos: { x: number; y
           newOffset = { x: (dx / distance) * force, y: (dy / distance) * force }
         }
 
-        // Return a single unified state update
         return { pos: newPos, offset: newOffset }
       })
     }
@@ -254,7 +249,7 @@ export function HeroSection() {
 
         <div className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-4 h-8">
           <TypeWriter
-            texts={TYPEWRITER_TEXTS} // UPDATED REFERENCE
+            texts={TYPEWRITER_TEXTS}
             className="font-medium"
           />
         </div>

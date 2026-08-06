@@ -20,13 +20,10 @@ export function AboutSection() {
           </h2>
           <div className="w-20 h-1 bg-primary rounded-full mb-8" />
 
-          {/* MAIN CARD CONTAINER */}
           <div className="glass rounded-2xl p-6 md:p-8">
             
-            {/* --- BLOCK 1: TOP ROW (Photo + First Paragraph) --- */}
             <div className="flex flex-col md:flex-row gap-8 items-start mb-6">
               
-              {/* Photo Column */}
               <div className="flex-shrink-0 mx-auto md:mx-0">
                 <div className="w-40 h-40 md:w-48 md:h-48 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 border-2 border-dashed border-primary/40 flex items-center justify-center overflow-hidden group hover:border-primary/60 transition-colors">
                   <img
@@ -49,7 +46,6 @@ export function AboutSection() {
               </div>
             </div>
 
-            {/* --- BLOCK 2: BOTTOM ROW (Rest of the content) --- */}
           
             <div className="text-muted-foreground leading-relaxed text-lg">
               <p className="mb-4 text-justify">
@@ -65,7 +61,6 @@ export function AboutSection() {
 
           </div>
 
-          {/* Values Cards */}
           <div className="grid md:grid-cols-3 gap-4 mt-8">
             {[
               {

@@ -126,7 +126,6 @@
   }
 }
 
-/* Custom animations and glassmorphism utilities */
 @layer utilities {
   .glass {
     @apply bg-card/60 backdrop-blur-xl border border-border/50;

@@ -35,7 +35,7 @@ export const useToast = () => {
 
 export function ToastContainer({ toasts, onRemove }: { toasts: Toast[]; onRemove: (id: string) => void }) {
   return (
-    <div className="fixed bottom-4 right-4 z-40 flex flex-col gap-3">
+    <div className="fixed inset-x-4 top-1/2 z-40 flex -translate-y-1/2 flex-col items-center gap-3 pointer-events-none">
       {toasts.map(toast => (
         <Toast key={toast.id} toast={toast} onRemove={onRemove} />
       ))}
@@ -59,7 +59,7 @@ function Toast({ toast, onRemove }: { toast: Toast; onRemove: (id: string) => vo
 
   return (
     <div
-      className={`${bgColor} border rounded-lg px-4 py-3 flex items-start gap-3 min-w-72 max-w-md backdrop-blur-sm transition-all duration-300 ${
+      className={`${bgColor} pointer-events-auto border rounded-lg px-4 py-3 flex items-start gap-3 min-w-72 max-w-md backdrop-blur-sm transition-all duration-300 ${
         isExiting ? "opacity-0 translate-x-full" : "opacity-100 translate-x-0"
       }`}
     >

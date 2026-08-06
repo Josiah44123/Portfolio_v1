@@ -17,7 +17,7 @@ export function ExperienceSection() {
     {
       role: "President",
       organization: "Junior Philippine Computer Society (DLSL Chapter)",
-      duration: "Present", // Update with your starting date if needed (e.g., "Jun 2026 – Present")
+      duration: "Present",
       responsibilities: [
         "Provides overall leadership, strategic direction, and vision for the student chapter",
         "Oversees executive officers, organizational committees, and general assemblies",
@@ -51,12 +51,9 @@ export function ExperienceSection() {
           </h2>
           <div className="w-20 h-1 bg-primary rounded-full mb-8" />
 
-          {/* Timeline Wrapper */}
           <div className="relative">
-            {/* Vertical timeline spine */}
             <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-border md:left-1/2 md:-translate-x-1/2" />
 
-            {/* Experience Items */}
             <div className="space-y-12">
               {experiences.map((exp, index) => {
                 const isEven = index % 2 === 0
@@ -67,10 +64,8 @@ export function ExperienceSection() {
                       isEven ? "md:justify-start" : "md:justify-end"
                     }`}
                   >
-                    {/* Timeline dot */}
                     <div className="absolute left-6 md:left-1/2 -translate-x-[7px] top-8 w-4 h-4 bg-primary rounded-full border-4 border-background z-10 animate-pulse-glow" />
 
-                    {/* Content Card */}
                     <div
                       className={`glass rounded-2xl p-6 md:p-8 ml-12 md:ml-0 md:w-[calc(50%-2rem)] hover:-translate-y-1 transition-all duration-300 group hover:border-primary/50`}
                     >

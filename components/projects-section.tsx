@@ -231,16 +231,14 @@ const projects = [
   },
 ]
 
-function ProjectCard({ project, idx, onClick, onLearnMore, addToast }: { project: any; idx: number; onClick: () => void; onLearnMore: (project: any) => void; addToast: (message: string, type: string) => void }) {
+function ProjectCard({ project, idx, onLearnMore }: { project: any; idx: number; onLearnMore: (project: any) => void }) {
   return (
     <div
       className="group relative glass rounded-3xl overflow-hidden border border-white/5 hover:border-white/20 transition-all duration-500 animate-fade-in-up flex flex-col h-full"
       style={{ animationDelay: `${idx * 100}ms` }}
     >
-      {/* Top Gradient Line */}
       <div className={cn("h-2 w-full bg-gradient-to-r shrink-0", project.color)} />
 
-      {/* Image Placeholder */}
       <div className="w-full h-48 bg-white/5 relative overflow-hidden shrink-0 border-b border-white/5">
         <img
           src={project.image}
@@ -250,7 +248,6 @@ function ProjectCard({ project, idx, onClick, onLearnMore, addToast }: { project
         />
       </div>
 
-      {/* Content */}
       <div className="p-8 flex flex-col h-full flex-grow">
         <div
           className={cn(
@@ -264,7 +261,7 @@ function ProjectCard({ project, idx, onClick, onLearnMore, addToast }: { project
         <h3
           onClick={(e) => {
             e.stopPropagation()
-            onClick()
+            onLearnMore(project)
           }}
           className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors cursor-pointer hover:underline"
         >
@@ -325,21 +322,10 @@ function ProjectCard({ project, idx, onClick, onLearnMore, addToast }: { project
   )
 }
 
-const backgroundColors = [
-  "bg-background",
-  "bg-amber-400",
-  "bg-orange-500",
-  "bg-emerald-500",
-  "bg-blue-600",
-  "bg-violet-600",
-  "bg-pink-500",
-]
-
 export function ProjectsSection() {
   const [filter, setFilter] = useState("All")
-  const [activeColorIndex, setActiveColorIndex] = useState(0)
   const [selectedProject, setSelectedProject] = useState<any>(null)
-  const { toasts, addToast, removeToast } = useToast()
+  const { toasts, removeToast } = useToast()
 
   const categories = ["All", "Web App", "Software", "Design"]
 
@@ -348,13 +334,10 @@ export function ProjectsSection() {
   return (
     <section 
       id="projects" 
-      className={cn(
-        "py-24 relative overflow-hidden transition-colors duration-1000",
-        backgroundColors[activeColorIndex]
-      )}
+      className="py-24 relative overflow-hidden bg-background"
     >
       <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] max-w-[1000px] max-h-[1000px] rounded-full blur-[140px] opacity-[0.15] pointer-events-none transition-all duration-1000"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] max-w-[1000px] max-h-[1000px] rounded-full blur-[140px] opacity-[0.15] pointer-events-none"
       />
 
       <div className="container mx-auto px-4 relative z-10">
@@ -392,9 +375,7 @@ export function ProjectsSection() {
               key={project.title}
               project={project}
               idx={idx}
-              onClick={() => setActiveColorIndex((prev) => (prev + 1) % backgroundColors.length)}
               onLearnMore={setSelectedProject}
-              addToast={addToast}
             />
           ))}
         </div>
