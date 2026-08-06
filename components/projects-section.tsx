@@ -239,7 +239,7 @@ function ProjectCard({ project, idx, onLearnMore }: { project: any; idx: number;
     >
       <div className={cn("h-2 w-full bg-gradient-to-r shrink-0", project.color)} />
 
-      <div className="w-full h-48 bg-white/5 relative overflow-hidden shrink-0 border-b border-white/5">
+      <div className="w-full h-64 md:h-72 bg-white/5 relative overflow-hidden shrink-0 border-b border-white/5">
         <img
           src={project.image}
           alt={`${project.title} preview`}
