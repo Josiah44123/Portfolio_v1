@@ -50,6 +50,23 @@ const timelineData: TimelineItem[] = [
     gradient: "from-blue-500 to-indigo-500",
   },
   {
+    id: "jpcs-president",
+    type: "experience",
+    title: "Exectutive President",
+    organization: "Junior Philippine Computer Society (DLSL Chapter)",
+    location: "De La Salle Lipa",
+    period: "Present",
+    description:
+      "Provides overall leadership, strategic direction, and vision for the student chapter.",
+    details: [
+      "Oversees executive officers, organizational committees, and general assemblies",
+      "Represents the organization in official school-wide and national events",
+      "Fosters student community growth and professional development in IT/CS fields",
+    ],
+    icon: Briefcase,
+    gradient: "from-blue-600 to-violet-600",
+  },
+  {
     id: "jpcs",
     type: "experience",
     title: "Project Head for External Affairs",
@@ -57,7 +74,7 @@ const timelineData: TimelineItem[] = [
     location: "De La Salle Lipa",
     period: "Jun 2025 – Present",
     description:
-      "Leading external  and organizational communication for the university's premier computer science organization.",
+      "Leading external and organizational communication for the university's premier computer science organization.",
     details: [
       "Leads external organizational communication for projects and events",
       "Applies project management for events, collaborations, and planning",
@@ -67,7 +84,6 @@ const timelineData: TimelineItem[] = [
     icon: Briefcase,
     gradient: "from-orange-500 to-red-500",
   },
-  
   {
     id: "dlsl-dl-1y2s",
     type: "award",

@@ -1,11 +1,21 @@
-
 "use client"
 
 import { useState } from "react"
-import { ExternalLink, Github, Layers, Database, Network, Palette, Code, Gamepad2, ChevronDown, ChevronUp } from "lucide-react"
+import { ExternalLink, Github, Layers, Database, Network, Palette, Code, Gamepad2, ChevronDown, ChevronUp, Shield } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 const projects = [
+  {
+    title: "VeriFund PH",
+    description:
+      "4th Place in the InterCICSkwela 2026: Batang Techno’s Hackathon Challenge (April 10, 2026). VeriFund is a last-mile aid distribution platform designed to bring transparency, accountability, and efficiency to social assistance programs. By replacing paper lists with digital verification, the system ensures that each registered beneficiary receives aid once, tracked in real time via QR codes and biometric verification. Field officers use the Field Console to register and distribute aid, while citizens access their Citizen Portal to view allocations and claims. LGU administrators manage and monitor distributions through a live Management System, flagging duplicates and generating audit-ready reports. Built on a robust tech stack, VeriFundPH secures every transaction in an immutable audit log. It reduces fraud, saves resources, and restores trust — one verified identity at a time.",
+    tags: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
+    github: "https://github.com/Josiah44123/VeriFundPH_Social-Aid-Distribution",
+    demo: "https://verifundph.vercel.app",
+    category: "Web App",
+    icon: <Shield className="w-6 h-6" />,
+    color: "from-emerald-400 to-green-600",
+  },
   {
     title: "Chick Stacker",
     description:
@@ -99,7 +109,6 @@ function ProjectCard({ project, idx, onClick }: { project: any; idx: number; onC
           {project.title}
         </h3>
 
-        {/* 2. Interactive Description Section */}
         <div 
           onClick={(e) => {
             e.stopPropagation()
@@ -174,7 +183,6 @@ export function ProjectsSection() {
 
   return (
     <section id="projects" className="py-24 relative overflow-hidden transition-colors duration-1000">
-      {/* Ambient background glow that shifts based on the clicked project */}
       <div 
         className={cn(
           "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] max-w-[1000px] max-h-[1000px] rounded-full blur-[140px] opacity-[0.15] pointer-events-none transition-all duration-1000 bg-gradient-to-br",
@@ -213,7 +221,6 @@ export function ProjectsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, idx) => (
-            // 3. Render the extracted component with the new onClick prop
             <ProjectCard 
               key={project.title} 
               project={project} 
@@ -226,4 +233,3 @@ export function ProjectsSection() {
     </section>
   )
 }
-
