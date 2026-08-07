@@ -1,12 +1,8 @@
 "use client"
 
 import { useState } from "react"
-<<<<<<< HEAD
-import { ExternalLink, Github, Layers, Database, Network, Palette, Code, Gamepad2, ChevronDown, ChevronUp, Shield } from "lucide-react"
-=======
-import { ExternalLink, Github, Layers, Database, Network, Palette, Code, Gamepad2, ChevronDown, ChevronUp, X } from "lucide-react"
+import { ExternalLink, Github, Layers, Database, Network, Palette, Code, Gamepad2, ChevronDown, ChevronUp, Shield, X } from "lucide-react"
 import { useToast, ToastContainer } from "@/components/ui/toast"
->>>>>>> 2b6e0d7d90f8b1a10f1529d1cfdea1ca807d34f4
 import { cn } from "@/lib/utils"
 
 const projects = [
@@ -283,36 +279,9 @@ function ProjectCard({ project, idx, onLearnMore }: { project: any; idx: number;
           {project.title}
         </h3>
 
-<<<<<<< HEAD
-        <div 
-          onClick={(e) => {
-            e.stopPropagation()
-            setIsExpanded(!isExpanded)
-            onClick() 
-          }}
-          className="mb-6 cursor-pointer group/desc"
-        >
-          <p
-            className={cn(
-              "text-muted-foreground transition-all duration-300",
-              isExpanded ? "line-clamp-none" : "line-clamp-3"
-            )}
-          >
-            {project.description}
-          </p>
-          <button className="text-xs font-medium text-primary/70 mt-2 flex items-center gap-1 group-hover/desc:text-primary transition-colors">
-            {isExpanded ? (
-               <>Show Less <ChevronUp className="w-3 h-3" /></>
-            ) : (
-               <>Read More <ChevronDown className="w-3 h-3" /></>
-            )}
-          </button>
-        </div>
-=======
         <p className="text-muted-foreground line-clamp-3 mb-6">
           {project.description}
         </p>
->>>>>>> 2b6e0d7d90f8b1a10f1529d1cfdea1ca807d34f4
 
         <div className="flex flex-wrap gap-2 mb-8">
           {project.tags.map((tag: string) => (
@@ -374,21 +343,8 @@ export function ProjectsSection() {
   const filteredProjects = filter === "All" ? projects : projects.filter((p) => p.category === filter)
 
   return (
-<<<<<<< HEAD
-    <section id="projects" className="py-24 relative overflow-hidden transition-colors duration-1000">
-      <div 
-        className={cn(
-          "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] max-w-[1000px] max-h-[1000px] rounded-full blur-[140px] opacity-[0.15] pointer-events-none transition-all duration-1000 bg-gradient-to-br",
-          activeColor ? activeColor : "from-transparent to-transparent"
-        )} 
-=======
-    <section 
-      id="projects" 
-      className="py-24 relative overflow-hidden bg-background"
-    >
-      <div
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] max-w-[1000px] max-h-[1000px] rounded-full blur-[140px] opacity-[0.15] pointer-events-none"
->>>>>>> 2b6e0d7d90f8b1a10f1529d1cfdea1ca807d34f4
+    <section id="projects" className="py-24 relative overflow-hidden bg-background">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] max-w-[1000px] max-h-[1000px] rounded-full blur-[140px] opacity-[0.15] pointer-events-none"
       />
 
       <div className="container mx-auto px-4 relative z-10">
@@ -422,19 +378,11 @@ export function ProjectsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
           {filteredProjects.map((project, idx) => (
-<<<<<<< HEAD
-            <ProjectCard 
-              key={project.title} 
-              project={project} 
-              idx={idx} 
-              onClick={() => setActiveColor(project.color)}
-=======
             <ProjectCard
               key={project.title}
               project={project}
               idx={idx}
               onLearnMore={setSelectedProject}
->>>>>>> 2b6e0d7d90f8b1a10f1529d1cfdea1ca807d34f4
             />
           ))}
         </div>
@@ -515,8 +463,4 @@ export function ProjectsSection() {
       <ToastContainer toasts={toasts} onRemove={removeToast} />
     </section>
   )
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 2b6e0d7d90f8b1a10f1529d1cfdea1ca807d34f4
