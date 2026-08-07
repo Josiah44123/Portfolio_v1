@@ -20,7 +20,6 @@ import {
   Cpu,
 } from "lucide-react"
 
-// --- Data ---
 const skillCategories = [
   {
     name: "Technical",
@@ -103,7 +102,6 @@ function SkillCard({
         show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
       }`}
     >
-      {/* Header */}
       <div className="flex items-center gap-4 mb-4">
         <div
           className={`p-2.5 rounded-lg bg-gradient-to-br ${gradient} text-white shadow-lg group-hover:scale-110 transition-transform duration-300`}
@@ -118,17 +116,14 @@ function SkillCard({
         </div>
       </div>
 
-      {/* Progress Bar */}
       <div className="h-2 bg-secondary/50 rounded-full overflow-hidden relative">
         <div
           className={`h-full bg-gradient-to-r ${gradient} rounded-full transition-all duration-1000 ease-out relative`}
           style={{ width: show ? `${level}%` : "0%" }}
         >
-          {/* Shimmer Effect */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:animate-shimmer" />
         </div>
         
-        {/* Glow under the bar */}
         <div
           className={`absolute top-0 left-0 h-full w-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-500 bg-gradient-to-r ${gradient}`}
           style={{ width: `${level}%` }}
@@ -160,7 +155,6 @@ export function SkillsSection() {
 
   return (
     <section id="skills" className="py-24 px-4 relative overflow-hidden bg-background">
-      {/* CSS-based Background Animation */}
       <style jsx global>{`
         @keyframes float-up {
           0% { transform: translateY(110vh); opacity: 0; }
@@ -182,7 +176,6 @@ export function SkillsSection() {
         }
       `}</style>
 
-      {/* Background Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {mounted && particles.map((p) => <BinaryParticle key={p.id} style={p.style} />)}
       </div>
@@ -203,7 +196,6 @@ export function SkillsSection() {
           </p>
         </div>
 
-        {/* Tab Navigation (Pill Style) */}
         <div className="flex flex-wrap justify-center gap-2 mb-12">
           <div className="bg-secondary/50 p-1.5 rounded-2xl inline-flex flex-wrap justify-center gap-2 backdrop-blur-sm border border-border/50">
             {skillCategories.map((category, index) => {
@@ -227,12 +219,11 @@ export function SkillsSection() {
           </div>
         </div>
 
-        {/* Skills Grid */}
         <div className="min-h-[400px]">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
             {skillCategories[activeTab].skills.map((skill, index) => (
               <SkillCard
-                key={`${activeTab}-${skill.name}`} // Force re-render on tab change for animation
+                key={`${activeTab}-${skill.name}`}
                 index={index}
                 {...skill}
               />

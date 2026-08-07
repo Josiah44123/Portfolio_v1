@@ -38,25 +38,40 @@ const contactLinks = [
 export function ContactSection() {
   const { ref, isInView } = useInView()
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
+  const [errors, setErrors] = useState({ name: "", email: "", message: "" })
   const [submitted, setSubmitted] = useState(false)
   const { toasts, addToast, removeToast } = useToast()
 
+  const validateForm = (values = formData) => {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
+
+    return {
+      name: values.name.trim() ? "" : "Please enter your name.",
+      email: emailPattern.test(values.email.trim()) ? "" : "Please enter a valid email address.",
+      message: values.message.trim() ? "" : "Please enter a message.",
+    }
+  }
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
+    const nextFormData = { ...formData, [name]: value }
+    setFormData(nextFormData)
+    setSubmitted(false)
+    setErrors(validateForm(nextFormData))
   }
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    
-    if (formData.name && formData.email && formData.message) {
-      addToast(`Thank you, ${formData.name}! I've received your message and will get back to you soon.`, "success", 5000)
-      setFormData({ name: "", email: "", message: "" })
-      setSubmitted(true)
-      setTimeout(() => setSubmitted(false), 3000)
-    } else {
-      addToast("Please fill in all fields before submitting!", "error")
-    }
+    const nextErrors = validateForm()
+    setErrors(nextErrors)
+
+    if (Object.values(nextErrors).some(Boolean)) return
+
+    addToast(`Thank you, ${formData.name.trim()}! I've received your message and will get back to you soon.`, "success", 5000)
+    setFormData({ name: "", email: "", message: "" })
+    setErrors({ name: "", email: "", message: "" })
+    setSubmitted(true)
+    setTimeout(() => setSubmitted(false), 3000)
   }
 
   return (
@@ -106,41 +121,53 @@ export function ContactSection() {
 
           <div className="glass rounded-xl p-8 mb-8 max-w-2xl mx-auto">
             <h3 className="text-xl font-bold mb-6 text-center">Send Me a Message</h3>
-            <form onSubmit={handleFormSubmit} className="space-y-4">
+            <form onSubmit={handleFormSubmit} className="space-y-4" noValidate>
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium mb-2">Name</label>
+                  <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
                   <input
+                    id="name"
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
                     placeholder="Your name"
+                    aria-invalid={Boolean(errors.name)}
+                    aria-describedby={errors.name ? "name-error" : undefined}
                     className="w-full px-4 py-2 rounded-lg bg-background border border-white/10 focus:border-primary/50 focus:outline-none transition-colors"
                   />
+                  {errors.name && <p id="name-error" role="alert" className="mt-2 text-sm font-medium text-destructive">{errors.name}</p>}
                 </div>
                 <div>
-                  <label className="block text-sm font-medium mb-2">Email</label>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
                   <input
+                    id="email"
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
                     placeholder="your@email.com"
+                    aria-invalid={Boolean(errors.email)}
+                    aria-describedby={errors.email ? "email-error" : undefined}
                     className="w-full px-4 py-2 rounded-lg bg-background border border-white/10 focus:border-primary/50 focus:outline-none transition-colors"
                   />
+                  {errors.email && <p id="email-error" role="alert" className="mt-2 text-sm font-medium text-destructive">{errors.email}</p>}
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium mb-2">Message</label>
+                <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
                 <textarea
+                  id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
                   placeholder="Your message here..."
                   rows={4}
+                  aria-invalid={Boolean(errors.message)}
+                  aria-describedby={errors.message ? "message-error" : undefined}
                   className="w-full px-4 py-2 rounded-lg bg-background border border-white/10 focus:border-primary/50 focus:outline-none transition-colors resize-none"
                 />
+                {errors.message && <p id="message-error" role="alert" className="mt-2 text-sm font-medium text-destructive">{errors.message}</p>}
               </div>
               <button
                 type="submit"

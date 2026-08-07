@@ -21,7 +21,6 @@ interface TimelineItem {
 }
 
 const timelineData: TimelineItem[] = [
-  // --- College / Current ---
   {
     id: "dlsl",
     type: "education",
@@ -116,7 +115,6 @@ const timelineData: TimelineItem[] = [
     gradient: "from-cyan-500 to-blue-500",
   },
 
-  // --- Senior High School ---
   {
     id: "mayor-excellence",
     type: "award",
@@ -160,7 +158,6 @@ const timelineData: TimelineItem[] = [
     gradient: "from-violet-500 to-purple-500",
   },
 
-  // --- Junior High School ---
   {
     id: "honors-jhs",
     type: "award",

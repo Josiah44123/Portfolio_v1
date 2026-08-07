@@ -20,8 +20,6 @@ import {
 type Category = "Project Management" | "Internet of Things (IoT)" | "Data & AI" | "Development" | "Business & Management"
 
 const certifications = [
-  // --- GENERAL ---
-  // --- PROJECT MANAGEMENT ---
   {
     title: "Project Management Foundations",
     issuer: "LinkedIn Learning",
@@ -46,7 +44,6 @@ const certifications = [
     category: "Project Management",  
   },
 
-  // --- IOT ---
   {
     title: "Introduction to IoT and Digital Transformation",
     issuer: "Cisco Networking Academy",
@@ -59,7 +56,6 @@ const certifications = [
     category: "Internet of Things (IoT)",  
   },
 
-  // --- DATA & AI ---
   {
     title: "Introduction to SQL",
     issuer: "DataCamp",
@@ -106,7 +102,6 @@ const certifications = [
     category: "Data & AI",
   },
 
-  // --- DEVELOPMENT ---
   {
     title: "DLSL – Java Programming 1",
     issuer: "CodeChum",
@@ -119,7 +114,6 @@ const certifications = [
     category: "Development",
   },
 
-  // --- BUSINESS & MANAGEMENT ---
   {
     title: "Google Ads Creative Certification",
     issuer: "Google Skillshop",
@@ -197,7 +191,6 @@ export function CertificationsSection() {
 
           <div className="space-y-12">
             {(Object.entries(categories) as [Category, typeof certifications][]).map(([categoryName, items], catIndex) => (
-              // Prevent rendering empty categories just in case
               items.length > 0 && (
                 <div key={categoryName} className="space-y-6">
                   <h3 className="text-xl font-semibold flex items-center gap-2 text-muted-foreground/80">
