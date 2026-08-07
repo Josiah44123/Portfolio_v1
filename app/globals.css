@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -127,7 +126,6 @@
   }
 }
 
-/* Custom animations and glassmorphism utilities */
 @layer utilities {
   .glass {
     @apply bg-card/60 backdrop-blur-xl border border-border/50;
@@ -161,7 +159,6 @@
   }
 }
 
-/* Added floating animation for particles */
 @keyframes float {
   0%,
   100% {
@@ -180,7 +177,6 @@
   }
 }
 
-/* Added cursor blink animation for typing effect */
 @keyframes blink {
   0%,
   50% {
@@ -192,7 +188,6 @@
   }
 }
 
-/* Added shimmer animation for skill bars */
 @keyframes shimmer {
   0% {
     transform: translateX(-100%);
@@ -218,7 +213,6 @@
   animation: blink 1s step-end infinite;
 }
 
-/* Added shimmer animation class */
 .animate-shimmer {
   animation: shimmer 1.5s ease-in-out infinite;
 }

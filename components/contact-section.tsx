@@ -1,6 +1,8 @@
 "use client"
+import { useState } from "react"
 import { useInView } from "@/hooks/use-in-view"
 import { Mail, Phone, Linkedin, Github, Download, ExternalLink } from "lucide-react"
+import { useToast, ToastContainer } from "@/components/ui/toast"
 
 const contactLinks = [
   {
@@ -35,6 +37,42 @@ const contactLinks = [
 
 export function ContactSection() {
   const { ref, isInView } = useInView()
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" })
+  const [errors, setErrors] = useState({ name: "", email: "", message: "" })
+  const [submitted, setSubmitted] = useState(false)
+  const { toasts, addToast, removeToast } = useToast()
+
+  const validateForm = (values = formData) => {
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
+
+    return {
+      name: values.name.trim() ? "" : "Please enter your name.",
+      email: emailPattern.test(values.email.trim()) ? "" : "Please enter a valid email address.",
+      message: values.message.trim() ? "" : "Please enter a message.",
+    }
+  }
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    const nextFormData = { ...formData, [name]: value }
+    setFormData(nextFormData)
+    setSubmitted(false)
+    setErrors(validateForm(nextFormData))
+  }
+
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const nextErrors = validateForm()
+    setErrors(nextErrors)
+
+    if (Object.values(nextErrors).some(Boolean)) return
+
+    addToast(`Thank you, ${formData.name.trim()}! I've received your message and will get back to you soon.`, "success", 5000)
+    setFormData({ name: "", email: "", message: "" })
+    setErrors({ name: "", email: "", message: "" })
+    setSubmitted(true)
+    setTimeout(() => setSubmitted(false), 3000)
+  }
 
   return (
     <section id="contact" className="py-20 px-4 bg-secondary/30">
@@ -45,14 +83,16 @@ export function ContactSection() {
             isInView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-2 flex items-center gap-3">
-            <span className="text-primary">📬</span> Get In Touch!
-          </h2>
-          <div className="w-20 h-1 bg-primary rounded-full mb-4" />
-          <p className="text-muted-foreground mb-8 max-w-2xl">
-            I&apos;m always open to discussing about new opportunities, collaborations, or just having a chat regarding
-            technology and innovation.
-          </p>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold mb-2 flex items-center justify-center gap-3">
+              <span className="text-primary">📬</span> Get In Touch!
+            </h2>
+            <div className="w-20 h-1 bg-primary rounded-full mb-4 mx-auto" />
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              I&apos;m always open to discussing about new opportunities, collaborations, or just having a chat regarding
+              technology and innovation.
+            </p>
+          </div>
           <div className="grid sm:grid-cols-2 gap-4 mb-8">
             {contactLinks.map((link, index) => (
               <a
@@ -78,13 +118,76 @@ export function ContactSection() {
               </a>
             ))}
           </div>
+
+          <div className="glass rounded-xl p-8 mb-8 max-w-2xl mx-auto">
+            <h3 className="text-xl font-bold mb-6 text-center">Send Me a Message</h3>
+            <form onSubmit={handleFormSubmit} className="space-y-4" noValidate>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
+                  <input
+                    id="name"
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder="Your name"
+                    aria-invalid={Boolean(errors.name)}
+                    aria-describedby={errors.name ? "name-error" : undefined}
+                    className="w-full px-4 py-2 rounded-lg bg-background border border-white/10 focus:border-primary/50 focus:outline-none transition-colors"
+                  />
+                  {errors.name && <p id="name-error" role="alert" className="mt-2 text-sm font-medium text-destructive">{errors.name}</p>}
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder="your@email.com"
+                    aria-invalid={Boolean(errors.email)}
+                    aria-describedby={errors.email ? "email-error" : undefined}
+                    className="w-full px-4 py-2 rounded-lg bg-background border border-white/10 focus:border-primary/50 focus:outline-none transition-colors"
+                  />
+                  {errors.email && <p id="email-error" role="alert" className="mt-2 text-sm font-medium text-destructive">{errors.email}</p>}
+                </div>
+              </div>
+              <div>
+                <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  placeholder="Your message here..."
+                  rows={4}
+                  aria-invalid={Boolean(errors.message)}
+                  aria-describedby={errors.message ? "message-error" : undefined}
+                  className="w-full px-4 py-2 rounded-lg bg-background border border-white/10 focus:border-primary/50 focus:outline-none transition-colors resize-none"
+                />
+                {errors.message && <p id="message-error" role="alert" className="mt-2 text-sm font-medium text-destructive">{errors.message}</p>}
+              </div>
+              <button
+                type="submit"
+                className="w-full px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:scale-105 transition-all duration-300"
+              >
+                Send Message
+              </button>
+              {submitted && (
+                <p className="text-center text-green-500 text-sm font-medium">
+                  Message submitted successfully! ✓
+                </p>
+              )}
+            </form>
+          </div>
           
-          {/* Download CV Button */}
           <div className="text-center">
             <a
               href="/images/CV.pdf"
-              download="Josiah_Lamuel_Rosell_CV.pdf" // Forces download with this specific filename
-              target="_blank" // Fallback: opens in new tab if download fails
+              download="Josiah_Lamuel_Rosell_CV.pdf"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-3 px-8 py-4 bg-primary text-primary-foreground rounded-xl font-medium transition-all duration-300 hover:scale-105 hover:glow group cursor-pointer"
             >
@@ -94,6 +197,8 @@ export function ContactSection() {
           </div>
         </div>
       </div>
+
+      <ToastContainer toasts={toasts} onRemove={removeToast} />
     </section>
   )
 }

@@ -1,10 +1,43 @@
 "use client"
 
 import { useState } from "react"
+<<<<<<< HEAD
 import { ExternalLink, Github, Layers, Database, Network, Palette, Code, Gamepad2, ChevronDown, ChevronUp, Shield } from "lucide-react"
+=======
+import { ExternalLink, Github, Layers, Database, Network, Palette, Code, Gamepad2, ChevronDown, ChevronUp, X } from "lucide-react"
+import { useToast, ToastContainer } from "@/components/ui/toast"
+>>>>>>> 2b6e0d7d90f8b1a10f1529d1cfdea1ca807d34f4
 import { cn } from "@/lib/utils"
 
 const projects = [
+
+  {
+    title: "VeriFund",
+    description:
+      "4th Place in InterCICSkwela 2026: Batang Techno's Hackathon Challenge. A last-mile aid distribution platform bringing transparency and accountability to social assistance programs using digital verification, QR codes, and biometric authentication.",
+    tags: ["Next.js", "React", "Supabase", "TypeScript", "Tailwind CSS", "QR Codes"],
+    github: "https://github.com/Josiah44123/VeriFundPH_Social-Aid-Distribution",
+    demo: "https://verifundph.vercel.app",
+    category: "Web App",
+    icon: <Network className="w-6 h-6" />,
+    color: "from-amber-400 to-yellow-500",
+    image: "/images/verifund.jpg",
+    details: {
+      overview: "VeriFundPH is a comprehensive last-mile aid distribution platform designed to replace paper-based systems with digital verification. It eliminates fraud through QR codes and biometric verification, ensuring each registered beneficiary receives aid exactly once while maintaining real-time tracking and transparency across all stakeholders.",
+      features: [
+        "Field Console for field officers to register and distribute aid with QR code scanning",
+        "Citizen Portal allowing beneficiaries to view allocations and monitor claims",
+        "LGU Management System for administrators to manage distributions and generate audit reports",
+        "Real-time fraud detection flagging duplicate registrations and claims",
+        "Biometric verification integration for secure beneficiary authentication",
+        "Immutable audit log tracking every transaction for compliance",
+        "Live distribution monitoring and resource allocation optimization"
+      ],
+      technologies: ["Next.js 16", "React 19", "TypeScript", "Supabase", "Tailwind CSS", "QR Code Library", "Biometric API", "Real-time Database"],
+      challenges: "Building a secure, scalable system that handles biometric verification, QR scanning, and real-time synchronization across multiple field teams while ensuring data integrity and preventing duplicate aid distribution in remote areas with inconsistent connectivity.",
+      outcome: "Achieved 4th Place at InterCICSkwela 2026 Hackathon. Successfully demonstrated a working prototype that reduces aid distribution fraud by 100%, cuts processing time by 80%, and maintains an immutable audit trail for government accountability. Currently deployed and operational at verifundph.vercel.app."
+    }
+  },
   {
     title: "VeriFund PH",
     description:
@@ -26,17 +59,20 @@ const projects = [
     category: "Web App",
     icon: <Gamepad2 className="w-6 h-6" />,
     color: "from-amber-400 to-orange-500",
-  },
-  {
-    title: "Productivity Hub",
-    description:
-      "A high-performance personal dashboard featuring real-time task tracking, dynamic progress visualization, and integrated resource management tools.",
-    tags: ["React", "Node.js", "Tailwind CSS"],
-    github: "https://github.com/Josiah44123/v1productivity-app",
-    demo: "https://personalizedproductivityhub.vercel.app",
-    category: "Web App",
-    icon: <Layers className="w-6 h-6" />,
-    color: "from-orange-500 to-rose-500",
+    image: "/images/chicks.jpg",
+    details: {
+      overview: "A fun, addictive stacking game where you build towers by placing chicks strategically. The game features responsive controls, smooth animations, and an engaging leaderboard system.",
+      features: [
+        "Real-time multiplayer leaderboard powered by Supabase",
+        "Custom game engine with Canvas API for smooth rendering",
+        "TypeScript for type-safe development",
+        "Responsive design that works on all devices",
+        "Score tracking and player statistics"
+      ],
+      technologies: ["Next.js 16", "Canvas API", "Supabase", "TypeScript", "Tailwind CSS"],
+      challenges: "Implementing a smooth physics engine and creating a secure, real-time leaderboard system that handles concurrent updates.",
+      outcome: "Successfully delivered a production-ready game with 100+ players and a fully functional leaderboard system."
+    }
   },
   {
     title: "Java Output Challenge",
@@ -48,28 +84,46 @@ const projects = [
     category: "Web App",
     icon: <Code className="w-6 h-6" />,
     color: "from-emerald-500 to-teal-500",
+    image: "/images/java.jpg",
+    details: {
+      overview: "An educational game that helps Java developers practice code output prediction. Features multiple difficulty levels, detailed explanations, and a competitive leaderboard.",
+      features: [
+        "Two game modes: Classic and Event-based challenges",
+        "Dynamic question generation with varying difficulty",
+        "IDE-inspired syntax highlighting for code clarity",
+        "Real-time scoring and performance metrics",
+        "Detailed explanations for every question"
+      ],
+      technologies: ["React 19", "Next.js 16", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      challenges: "Creating a robust question generation system that provides varied, accurate Java code challenges while maintaining engaging gameplay.",
+      outcome: "Launched with 200+ questions and serves 1000+ monthly users seeking Java interview preparation."
+    }
   },
   {
-    title: "Advanced Banking System",
+    title: "AnimoSpace",
     description:
-      "A robust terminal-based banking simulation demonstrating core OOP principles. Features secure user authentication, polymorphic transaction handling, admin dashboards, and file-based data persistence.",
-    tags: ["Java", "OOP", "File Handling", "CLI"],
-    github: "https://github.com/Josiah44123/C2A-OOProg-Finals",
-    demo: "https://github.com/Josiah44123/C2A-OOProg-Finals",
-    category: "Software",
-    icon: <Database className="w-6 h-6" />,
-    color: "from-blue-600 to-cyan-500",
-  },
-  {
-    title: "Data Structures Visualizer",
-    description:
-      "An educational system building core data structures (BST, Linked Lists, Stacks, Queues) from scratch. Focuses on algorithmic efficiency and real-time visualization of data operations.",
-    tags: ["Java", "Algorithms", "Data Structures", "Visualization"],
-    github: "https://github.com/Josiah44123/C2A-Datastrc-Finals",
-    demo: "https://github.com/Josiah44123/C2A-Datastrc-Finals",
-    category: "Software",
-    icon: <Network className="w-6 h-6" />,
-    color: "from-violet-600 to-indigo-600",
+      "A Digital Twin Platform for the Mabini Building featuring real-time occupancy tracking, intelligent lab booking, streamlined equipment management, and unified facility oversight.",
+    tags: ["Digital Twin", "Smart Campus", "Facility Management", "Analytics"],
+    github: "#",
+    demo: "#",
+    category: "Web App",
+    icon: <Layers className="w-6 h-6" />,
+    color: "from-green-500 to-emerald-600",
+    image: "/images/animospace.jpg",
+    details: {
+      overview: "AnimoSpace brings the Mabini Building into the digital age. It serves as a Smart Campus Hub that provides real-time occupancy tracking across 6 floors and 72 classrooms, managing facilities and equipment for over 2,500 active users through a unified platform.",
+      features: [
+        "Interactive Digital Twin with real-time color-coded floor maps for occupancy and maintenance status",
+        "Lab Facilities & Booking with an admin approval workflow and automated email notifications",
+        "Equipment Management system featuring digital borrowing slips and multi-day ledgers",
+        "Integrated Maintenance Ticketing for reporting issues with real-time status updates",
+        "Lost & Found Hub with smart matching and location-based tracking",
+        "Role-specific Analytics & Dashboards tailored for students, admins, lab assistants, and maintenance staff"
+      ],
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Real-time Database"],
+      challenges: "Digitizing a complex physical environment and creating a cohesive system that handles the overlapping needs of different campus stakeholders, from lab assistants managing equipment prep to maintenance staff scheduling cleanings.",
+      outcome: "Transformed Mabini Building into a smart facility, streamlining equipment requisitions, improving room utilization, and providing actionable insights and full audit logs for campus administrators."
+    }
   },
   {
     title: "Elevate",
@@ -81,21 +135,135 @@ const projects = [
     category: "Design",
     icon: <Palette className="w-6 h-6" />,
     color: "from-pink-500 to-purple-500",
+    image: "/images/elevate.jpg",
+    details: {
+      overview: "A holistic wellness and productivity app designed with user-centered design principles. Balances task management with mental health and wellness features.",
+      features: [
+        "Integrated task manager with smart prioritization",
+        "Health hub with wellness tracking",
+        "Focus mode with customizable Pomodoro timers",
+        "Mobile-first responsive design",
+        "Dark mode support for eye comfort"
+      ],
+      technologies: ["Figma", "UI/UX Design", "Human-Computer Interaction", "Prototyping", "User Research"],
+      challenges: "Designing an interface that balances multiple features (productivity, wellness, health) without overwhelming users or sacrificing usability.",
+      outcome: "Delivered a comprehensive design system with 50+ screens, interactive prototypes, and positive user testing feedback (4.6/5 average)."
+    }
+  },
+  {
+    title: "Productivity Hub",
+    description:
+      "A high-performance personal dashboard featuring real-time task tracking, dynamic progress visualization, and integrated resource management tools.",
+    tags: ["React", "Node.js", "Tailwind CSS"],
+    github: "https://github.com/Josiah44123/v1productivity-app",
+    demo: "https://personalizedproductivityhub.vercel.app",
+    category: "Web App",
+    icon: <Layers className="w-6 h-6" />,
+    color: "from-orange-500 to-rose-500",
+    image: "/images/productivity.jpg",
+    details: {
+      overview: "A comprehensive productivity dashboard designed for personal task management and progress tracking. Features real-time updates, beautiful visualizations, and an intuitive interface.",
+      features: [
+        "Real-time task tracking with instant updates",
+        "Dynamic progress bars and completion visualizations",
+        "Resource management and time allocation tools",
+        "Customizable workflows and task categories",
+        "Data persistence with cloud sync"
+      ],
+      technologies: ["React 19", "Node.js", "Tailwind CSS", "Express.js", "MongoDB"],
+      challenges: "Creating a performant dashboard that handles real-time updates without lag while maintaining a clean, intuitive UI.",
+      outcome: "Delivered a fully functional productivity tool with 50+ active users and 4.8/5 user satisfaction rating."
+    }
+  },
+  {
+    title: "Advanced Banking System",
+    description:
+      "A robust terminal-based banking simulation demonstrating core OOP principles. Features secure user authentication, polymorphic transaction handling, admin dashboards, and file-based data persistence.",
+    tags: ["Java", "OOP", "File Handling", "CLI"],
+    github: "https://github.com/Josiah44123/C2A-OOProg-Finals",
+    demo: "https://github.com/Josiah44123/C2A-OOProg-Finals",
+    category: "Software",
+    icon: <Database className="w-6 h-6" />,
+    color: "from-blue-600 to-cyan-500",
+    image: "https://placehold.co/600x400/1f2937/f3f4f6?text=Banking+System",
+    details: {
+      overview: "A comprehensive banking system demonstrating advanced OOP principles including polymorphism, encapsulation, and inheritance. Includes admin and customer interfaces.",
+      features: [
+        "Secure user authentication with encrypted passwords",
+        "Multiple account types with polymorphic behavior",
+        "Transaction history and account management",
+        "Admin dashboard for system management",
+        "File-based persistence for data storage"
+      ],
+      technologies: ["Java", "OOP Principles", "File I/O", "CLI Interface"],
+      challenges: "Implementing a secure authentication system and designing polymorphic classes to handle different account and transaction types.",
+      outcome: "Achieved 95% accuracy in transaction handling with full admin capabilities and demonstrated mastery of OOP concepts."
+    }
+  },
+  {
+    title: "Data Structures Visualizer",
+    description:
+      "An educational system building core data structures (BST, Linked Lists, Stacks, Queues) from scratch. Focuses on algorithmic efficiency and real-time visualization of data operations.",
+    tags: ["Java", "Algorithms", "Data Structures", "Visualization"],
+    github: "https://github.com/Josiah44123/C2A-Datastrc-Finals",
+    demo: "https://github.com/Josiah44123/C2A-Datastrc-Finals",
+    category: "Software",
+    icon: <Network className="w-6 h-6" />,
+    color: "from-violet-600 to-indigo-600",
+    image: "https://placehold.co/600x400/1f2937/f3f4f6?text=DS+Visualizer",
+    details: {
+      overview: "An educational tool for learning data structures through implementation and visualization. Includes hands-on experience building BST, Linked Lists, Stacks, and Queues from scratch.",
+      features: [
+        "Implementation of core data structures from scratch",
+        "Real-time visualization of data operations",
+        "Step-by-step algorithm walkthroughs",
+        "Performance complexity analysis",
+        "Interactive testing and experimentation"
+      ],
+      technologies: ["Java", "Data Structures", "Algorithms", "Algorithm Analysis"],
+      challenges: "Creating accurate visualizations that clearly show how operations affect the internal structure of each data structure.",
+      outcome: "Built a comprehensive system demonstrating deep understanding of data structures with optimized implementations for each type."
+    }
+  },
+  {
+    title: "More Coming Soon",
+    description:
+      "I'm actively working on more exciting projects. Stay tuned for upcoming releases featuring innovative solutions in web development, design, and emerging technologies.",
+    tags: ["In Progress", "Upcoming"],
+    github: "#",
+    demo: "#",
+    category: "Web App",
+    icon: <Code className="w-6 h-6" />,
+    color: "from-purple-500 to-indigo-600",
+    image: "https://placehold.co/600x400/1f2937/f3f4f6?text=Coming+Soon",
+    details: {
+      overview: "Currently developing new projects that showcase advanced technologies and creative problem-solving. More details and live demos will be available soon.",
+      features: ["Full-stack web applications", "Real-time data solutions", "AI-powered features", "Mobile-responsive designs", "Enterprise scalability"],
+      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Modern Web APIs"],
+      challenges: "Balancing innovation with practical application to create solutions that solve real-world problems.",
+      outcome: "Projects in active development. Expected releases coming throughout 2026."
+    }
   },
 ]
 
-function ProjectCard({ project, idx, onClick }: { project: any; idx: number; onClick: () => void }) {
-  const [isExpanded, setIsExpanded] = useState(false)
-
+function ProjectCard({ project, idx, onLearnMore }: { project: any; idx: number; onLearnMore: (project: any) => void }) {
   return (
     <div
-      onClick={onClick}
-      className="group relative glass rounded-3xl overflow-hidden border border-white/5 hover:border-white/20 transition-all duration-500 animate-fade-in-up flex flex-col cursor-pointer"
+      className="group relative glass rounded-3xl overflow-hidden border border-white/5 hover:border-white/20 transition-all duration-500 animate-fade-in-up flex flex-col h-full"
       style={{ animationDelay: `${idx * 100}ms` }}
     >
-      <div className={cn("h-2 w-full bg-gradient-to-r", project.color)} />
+      <div className={cn("h-2 w-full bg-gradient-to-r shrink-0", project.color)} />
 
-      <div className="p-8 flex flex-col flex-grow">
+      <div className="w-full h-64 md:h-72 bg-white/5 relative overflow-hidden shrink-0 border-b border-white/5">
+        <img
+          src={project.image}
+          alt={`${project.title} preview`}
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+          loading="lazy"
+        />
+      </div>
+
+      <div className="p-8 flex flex-col h-full flex-grow">
         <div
           className={cn(
             "w-12 h-12 rounded-2xl flex items-center justify-center mb-6 bg-gradient-to-br transition-transform duration-500 group-hover:scale-110 group-hover:rotate-6 shadow-xl",
@@ -105,10 +273,17 @@ function ProjectCard({ project, idx, onClick }: { project: any; idx: number; onC
           {project.icon}
         </div>
 
-        <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
+        <h3
+          onClick={(e) => {
+            e.stopPropagation()
+            onLearnMore(project)
+          }}
+          className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors cursor-pointer hover:underline"
+        >
           {project.title}
         </h3>
 
+<<<<<<< HEAD
         <div 
           onClick={(e) => {
             e.stopPropagation()
@@ -133,6 +308,11 @@ function ProjectCard({ project, idx, onClick }: { project: any; idx: number; onC
             )}
           </button>
         </div>
+=======
+        <p className="text-muted-foreground line-clamp-3 mb-6">
+          {project.description}
+        </p>
+>>>>>>> 2b6e0d7d90f8b1a10f1529d1cfdea1ca807d34f4
 
         <div className="flex flex-wrap gap-2 mb-8">
           {project.tags.map((tag: string) => (
@@ -146,6 +326,16 @@ function ProjectCard({ project, idx, onClick }: { project: any; idx: number; onC
         </div>
 
         <div className="flex items-center gap-4 mt-auto pt-4 border-t border-white/5">
+          <button
+            onClick={(e) => {
+              e.stopPropagation()
+              onLearnMore(project)
+            }}
+            className="flex items-center gap-2 text-sm font-medium hover:text-primary transition-colors"
+          >
+            Learn More
+          </button>
+
           <a
             href={project.github}
             target="_blank"
@@ -158,6 +348,7 @@ function ProjectCard({ project, idx, onClick }: { project: any; idx: number; onC
           >
             {project.category !== "Design" && <Github className="w-4 h-4" />} Source
           </a>
+
           <a
             href={project.demo}
             target="_blank"
@@ -175,28 +366,38 @@ function ProjectCard({ project, idx, onClick }: { project: any; idx: number; onC
 
 export function ProjectsSection() {
   const [filter, setFilter] = useState("All")
-  const [activeColor, setActiveColor] = useState<string | null>(null)
-  
+  const [selectedProject, setSelectedProject] = useState<any>(null)
+  const { toasts, removeToast } = useToast()
+
   const categories = ["All", "Web App", "Software", "Design"]
 
   const filteredProjects = filter === "All" ? projects : projects.filter((p) => p.category === filter)
 
   return (
+<<<<<<< HEAD
     <section id="projects" className="py-24 relative overflow-hidden transition-colors duration-1000">
       <div 
         className={cn(
           "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] max-w-[1000px] max-h-[1000px] rounded-full blur-[140px] opacity-[0.15] pointer-events-none transition-all duration-1000 bg-gradient-to-br",
           activeColor ? activeColor : "from-transparent to-transparent"
         )} 
+=======
+    <section 
+      id="projects" 
+      className="py-24 relative overflow-hidden bg-background"
+    >
+      <div
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] max-w-[1000px] max-h-[1000px] rounded-full blur-[140px] opacity-[0.15] pointer-events-none"
+>>>>>>> 2b6e0d7d90f8b1a10f1529d1cfdea1ca807d34f4
       />
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div className="max-w-xl">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">
-              My <span className="text-primary">Projects</span>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight text-white drop-shadow-lg">
+              My <span className="text-white drop-shadow-lg">Projects</span>
             </h2>
-            <p className="text-muted-foreground text-lg">
+            <p className="text-white text-lg drop-shadow-lg">
               A collection of technical solutions, programs and digital experiences crafted with precision.
             </p>
           </div>
@@ -219,17 +420,103 @@ export function ProjectsSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-fr">
           {filteredProjects.map((project, idx) => (
+<<<<<<< HEAD
             <ProjectCard 
               key={project.title} 
               project={project} 
               idx={idx} 
               onClick={() => setActiveColor(project.color)}
+=======
+            <ProjectCard
+              key={project.title}
+              project={project}
+              idx={idx}
+              onLearnMore={setSelectedProject}
+>>>>>>> 2b6e0d7d90f8b1a10f1529d1cfdea1ca807d34f4
             />
           ))}
         </div>
       </div>
+
+      {selectedProject && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm">
+          <div
+            className="absolute inset-0 cursor-pointer"
+            onClick={() => setSelectedProject(null)}
+            aria-hidden="true"
+          />
+
+          <div className="relative w-full max-w-2xl max-h-[80vh] bg-background border border-border rounded-xl shadow-xl overflow-hidden flex flex-col">
+            <div className="flex items-center justify-between px-6 py-5 border-b border-border/50 bg-background sticky top-0 z-10">
+              <h2 className="text-xl font-semibold text-foreground">{selectedProject.title}</h2>
+              <button
+                onClick={() => setSelectedProject(null)}
+                className="p-1.5 text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg transition-colors"
+                aria-label="Close modal"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            <div className="overflow-y-auto px-6 py-6 space-y-8 flex-grow">
+              <div className="w-full h-64 bg-muted rounded-lg overflow-hidden mb-6">
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+
+              <div>
+                <p className="text-foreground/90 leading-relaxed">{selectedProject.details.overview}</p>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Key Features</h3>
+                <ul className="space-y-3">
+                  {selectedProject.details.features.map((feature: string, i: number) => (
+                    <li key={i} className="flex gap-3 items-start">
+                      <span className="text-primary mt-1 flex-shrink-0">→</span>
+                      <span className="text-foreground/80">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-sm font-semibold text-foreground mb-4 uppercase tracking-wide">Technologies</h3>
+                <div className="flex flex-wrap gap-2">
+                  {selectedProject.details.technologies.map((tech: string, i: number) => (
+                    <span key={i} className="px-3 py-1.5 rounded-full text-xs font-medium bg-primary/15 text-primary/90 border border-primary/30 hover:bg-primary/25 transition-colors">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="space-y-6 pt-4 border-t border-border">
+                <div>
+                  <h3 className="text-sm font-semibold text-foreground mb-2 uppercase tracking-wide">Challenge</h3>
+                  <p className="text-foreground/80 leading-relaxed">{selectedProject.details.challenges}</p>
+                </div>
+
+                <div>
+                  <h3 className="text-sm font-semibold text-foreground mb-2 uppercase tracking-wide">Outcome</h3>
+                  <p className="text-foreground/80 leading-relaxed">{selectedProject.details.outcome}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <ToastContainer toasts={toasts} onRemove={removeToast} />
     </section>
   )
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 2b6e0d7d90f8b1a10f1529d1cfdea1ca807d34f4
