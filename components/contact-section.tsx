@@ -39,6 +39,7 @@ export function ContactSection() {
   const { ref, isInView } = useInView()
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
   const [errors, setErrors] = useState({ name: "", email: "", message: "" })
+  const [touched, setTouched] = useState({ name: false, email: false, message: false })
   const [submitted, setSubmitted] = useState(false)
   const { toasts, addToast, removeToast } = useToast()
 
@@ -55,21 +56,31 @@ export function ContactSection() {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     const nextFormData = { ...formData, [name]: value }
+    const nextTouched = { ...touched, [name]: true }
+    const nextErrors = validateForm(nextFormData)
+
     setFormData(nextFormData)
+    setTouched(nextTouched)
     setSubmitted(false)
-    setErrors(validateForm(nextFormData))
+    setErrors({
+      name: nextTouched.name ? nextErrors.name : "",
+      email: nextTouched.email ? nextErrors.email : "",
+      message: nextTouched.message ? nextErrors.message : "",
+    })
   }
 
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const nextErrors = validateForm()
     setErrors(nextErrors)
+    setTouched({ name: true, email: true, message: true })
 
     if (Object.values(nextErrors).some(Boolean)) return
 
     addToast(`Thank you, ${formData.name.trim()}! I've received your message and will get back to you soon.`, "success", 5000)
     setFormData({ name: "", email: "", message: "" })
     setErrors({ name: "", email: "", message: "" })
+    setTouched({ name: false, email: false, message: false })
     setSubmitted(true)
     setTimeout(() => setSubmitted(false), 3000)
   }
@@ -123,8 +134,8 @@ export function ContactSection() {
             <h3 className="text-xl font-bold mb-6 text-center">Send Me a Message</h3>
             <form onSubmit={handleFormSubmit} className="space-y-4" noValidate>
               <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="name" className="text-sm font-medium">Name</label>
                   <input
                     id="name"
                     type="text"
@@ -138,8 +149,8 @@ export function ContactSection() {
                   />
                   {errors.name && <p id="name-error" role="alert" className="mt-2 text-sm font-medium text-destructive">{errors.name}</p>}
                 </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="email" className="text-sm font-medium">Email</label>
                   <input
                     id="email"
                     type="email"
@@ -154,8 +165,8 @@ export function ContactSection() {
                   {errors.email && <p id="email-error" role="alert" className="mt-2 text-sm font-medium text-destructive">{errors.email}</p>}
                 </div>
               </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
+              <div className="flex flex-col gap-2">
+                <label htmlFor="message" className="text-sm font-medium">Message</label>
                 <textarea
                   id="message"
                   name="message"

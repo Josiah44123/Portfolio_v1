@@ -17,11 +17,7 @@ export function ExperienceSection() {
     {
       role: "President",
       organization: "Junior Philippine Computer Society (DLSL Chapter)",
-<<<<<<< HEAD
-      duration: "Present", 
-=======
       duration: "Present",
->>>>>>> 2b6e0d7d90f8b1a10f1529d1cfdea1ca807d34f4
       responsibilities: [
         "Provides overall leadership, strategic direction, and vision for the student chapter",
         "Oversees executive officers, organizational committees, and general assemblies",
